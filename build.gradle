@@ -4,9 +4,9 @@ plugins {
     id 'java'
     id 'java-library'
     id 'maven-publish'
-    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.7'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.3'
     id 'eclipse'
-    id 'com.gtnewhorizons.retrofuturagradle' version '1.3.36'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.4.9'
     id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
@@ -42,13 +42,13 @@ minecraft {
     // MCP Mappings
     mcpMappingChannel = 'stable'
     mcpMappingVersion = '39'
-    
+
     // Set username here, the UUID will be looked up automatically
     username = 'Developer'
-    
+
     // Add any additional tweaker classes here
     // extraTweakClasses.add('org.spongepowered.asm.launch.MixinTweaker')
-    
+
     // Add various JVM arguments here for runtime
     def args = ["-ea:${project.group}"]
     if (project.use_coremod.toBoolean()) {
@@ -63,12 +63,13 @@ minecraft {
 
     // Include and use dependencies' Access Transformer files
     useDependencyAccessTransformers = true
-    
+
     // Add any properties you want to swap out for a dynamic value at build time here
     // Any properties here will be added to a class at build time, the name can be configured below
     // Example:
-    injectedTags.put('VERSION', project.version)
     injectedTags.put('MOD_ID', project.mod_id)
+    injectedTags.put('NAME', project.name)
+    injectedTags.put('VERSION', project.version)
 }
 
 // Generate a group.mod_id.Tags class
@@ -87,8 +88,8 @@ repositories {
         url 'https://repo.spongepowered.org/maven'
     }
     maven {
-        name 'CurseMaven'
-        url 'https://cursemaven.com'
+        name 'Cleanroom CurseMaven'
+        url 'https://curse.cleanroommc.com'
         content {
             includeGroup 'curse.maven'
         }
@@ -102,26 +103,39 @@ dependencies {
     }
     if (project.use_mixins.toBoolean()) {
         implementation 'com.cleanroommc:configanytime:3.0'
-        implementation 'zone.rong:mixinbooter:9.1'
+        implementation 'zone.rong:mixinbooter:10.7'
     }
 
-    // Example of deobfuscating a dependency
-    implementation rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+    // Had Enough Items
+    implementation rfg.deobf('curse.maven:had-enough-items-557549:7057606')
+
+    // Mowzie's Mobs - LLibrary must be 1.7.9 or it'll crash during testing
+    implementation rfg.deobf('curse.maven:LLibrary-243298:2504999')
+    implementation rfg.deobf('curse.maven:MowziesMobs-250498:5218945')
+
+    // Baubles
+    implementation rfg.deobf('curse.maven:baubles-227083:2518667')
+
+    // Tinkers' Construct
+    implementation rfg.deobf('curse.maven:mantle-74924:2713386')
+    implementation rfg.deobf('curse.maven:tinkers-construct-74072:2902483')
+
+    // Construct's Armory
+    implementation rfg.deobf('curse.maven:constructs-armory-287683:3174535')
 
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
-        String mixin = modUtils.enableMixins('zone.rong:mixinbooter:9.1', "mixins.${project.mod_id}.refmap.json")
-        api (mixin) {
+        String mixin = modUtils.enableMixins('zone.rong:mixinbooter:10.7', "mixins.${project.mod_id}.refmap.json")
+        api(mixin) {
             transitive = false
         }
         annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
         annotationProcessor 'com.google.guava:guava:24.1.1-jre'
         annotationProcessor 'com.google.code.gson:gson:2.8.6'
-        annotationProcessor (mixin) {
+        annotationProcessor(mixin) {
             transitive = false
         }
     }
-
 }
 
 // Adds Access Transformer files to tasks
@@ -138,16 +152,14 @@ processResources {
     // This will ensure that this task is redone when the versions change
     inputs.property 'version', project.version
     inputs.property 'mcversion', project.minecraft.version
-    
+
     // Replace various properties in mcmod.info and pack.mcmeta if applicable
     filesMatching(['mcmod.info', 'pack.mcmeta']) { fcd ->
         // Replace version and mcversion
-        fcd.expand (
-                'version': project.version,
-                'mcversion': project.minecraft.version
-        )
+        fcd.expand('version': project.version,
+                'mcversion': project.minecraft.version)
     }
-    
+
     if (project.use_access_transformer.toBoolean()) {
         rename '(.+_at.cfg)', 'META-INF/$1' // Make sure Access Transformer files are in META-INF folder
     }
@@ -169,7 +181,7 @@ jar {
         attributes(attribute_map)
     }
     // Add all embedded dependencies into the jar
-    from(provider{ configurations.embed.collect {it.isDirectory() ? it : zipTree(it)} })
+    from(provider { configurations.embed.collect { it.isDirectory() ? it : zipTree(it) } })
 }
 
 idea {
@@ -195,9 +207,7 @@ idea {
             compiler.javac {
                 afterEvaluate {
                     javacAdditionalOptions = "-encoding utf8"
-                    moduleJavacAdditionalOptions = [
-                            (project.name + ".main"): tasks.compileJava.options.compilerArgs.collect { '"' + it + '"' }.join(' ')
-                    ]
+                    moduleJavacAdditionalOptions = [(project.name + ".main"): tasks.compileJava.options.compilerArgs.collect { '"' + it + '"' }.join(' ')]
                 }
             }
         }
