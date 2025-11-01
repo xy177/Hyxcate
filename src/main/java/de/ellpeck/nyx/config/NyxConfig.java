@@ -54,6 +54,8 @@ public final class NyxConfig {
     public static double meteorChanceEnd;
     public static int meteorSpawnRadius;
     public static boolean meteors;
+    public static boolean meteorMessage;
+    public static boolean meteorMessageVerbose;
     public static int meteorDisallowRadius;
     public static int meteorDisallowTime;
     public static Set<String> enchantingWhitelistDimensions;
@@ -115,6 +117,8 @@ public final class NyxConfig {
         solarEclipse = new SolarEventConfig("solarEclipse", "solarEclipse", "Solar Eclipse", 0.05D);
 
         meteors = instance.get("meteors", "meteors", true, "If meteors falling from the sky should be enabled").getBoolean();
+        meteorMessage = instance.get("meteors", "meteorMessage", true, "If fallen meteors should send chat messages on impact").getBoolean();
+        meteorMessageVerbose = instance.get("meteors", "meteorMessageVerbose", false, "If the chat message for meteor impacts should include coordinates").getBoolean();
         meteorChance = instance.get("meteors", "meteorChance", 1.875E-5D, "The chance of a meteor spawning every second, during the day").getDouble();
         meteorChanceNight = instance.get("meteors", "meteorChanceNight", 5.0E-5D, "The chance of a meteor spawning every second, during nighttime").getDouble();
         meteorGateDimension = instance.get("meteors", "meteorGateDimension", "the_nether", "The dimension that needs to be entered to increase the spawning of meteors").getString();

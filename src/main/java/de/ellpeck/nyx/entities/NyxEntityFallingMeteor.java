@@ -2,6 +2,7 @@ package de.ellpeck.nyx.entities;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capabilities.NyxWorld;
+import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.init.NyxBlocks;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.block.Block;
@@ -212,7 +213,10 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
 
                 // send "I spawned" message
                 if (!this.disableMessage) {
-                    ITextComponent text = new TextComponentTranslation("info." + Nyx.ID + ".meteor").setStyle(new Style().setColor(TextFormatting.GRAY).setItalic(true));
+                    ITextComponent text = NyxConfig.meteorMessageVerbose ? new TextComponentTranslation("info." + Nyx.ID + ".meteor_verbose") : new TextComponentTranslation("info." + Nyx.ID + ".meteor");
+                    if (NyxConfig.meteorMessageVerbose)
+                        text.appendText(" " + this.posX + ", " + this.posY + ", " + this.posZ);
+                    text.setStyle(new Style().setColor(TextFormatting.GRAY).setItalic(true));
 
                     for (EntityPlayer player : this.world.playerEntities) {
                         SoundEvent sound;
@@ -221,7 +225,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                         double dist = player.getDistanceSq(this.posX, this.posY, this.posZ);
                         // TODO: Volume should be controlled by distance
                         if (dist <= 256 * 256) {
-                            if (dist > 16 * 16) player.sendMessage(text);
+                            if (NyxConfig.meteorMessage && dist > 16 * 16) player.sendMessage(text);
                             sound = NyxSoundEvents.fallingMeteorImpact.getSoundEvent();
                             pitch = 1.0F;
                             volume = 0.35F;
