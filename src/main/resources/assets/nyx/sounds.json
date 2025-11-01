@@ -2,31 +2,31 @@
   "falling_star": {
     "category": "ambient",
     "sounds": [
-      "nyx:falling_star"
+      "nyx:random/falling_star"
     ]
   },
   "falling_star_impact": {
     "category": "ambient",
     "sounds": [
-      "nyx:falling_star_impact"
+      "nyx:random/falling_star_impact"
     ]
   },
   "falling_meteor": {
     "category": "ambient",
     "sounds": [
-      "nyx:falling_meteor"
+      "nyx:random/falling_meteor"
     ]
   },
   "falling_meteor_impact": {
     "category": "ambient",
     "sounds": [
-      "nyx:falling_meteor_impact"
+      "nyx:random/falling_meteor_impact"
     ]
   },
   "falling_meteor_impact_far": {
     "category": "ambient",
     "sounds": [
-      "nyx:falling_meteor_impact_far"
+      "nyx:random/falling_meteor_impact_far"
     ]
   },
   "hammer_smash": {
@@ -144,13 +144,23 @@
       "nyx:blocks/crystal/place"
     ]
   },
+  "comet_kitty_idle": {
+    "category": "neutral",
+    "sounds": [
+      "nyx:comet_kitty/idle1",
+      "nyx:comet_kitty/idle2",
+      "nyx:comet_kitty/idle3",
+      "nyx:comet_kitty/idle4",
+      "nyx:comet_kitty/idle5"
+    ]
+  },
   "alien_kitty_idle": {
     "category": "neutral",
     "sounds": [
-      "nyx:alien_kitty_idle1",
-      "nyx:alien_kitty_idle2",
-      "nyx:alien_kitty_idle3",
-      "nyx:alien_kitty_idle4"
+      "nyx:alien_kitty/idle1",
+      "nyx:alien_kitty/idle2",
+      "nyx:alien_kitty/idle3",
+      "nyx:alien_kitty/idle4"
     ]
   }
 }

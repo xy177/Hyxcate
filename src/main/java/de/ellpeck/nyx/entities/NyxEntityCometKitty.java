@@ -1,6 +1,7 @@
 package de.ellpeck.nyx.entities;
 
 import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.IEntityLivingData;
@@ -8,6 +9,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -92,5 +94,11 @@ public class NyxEntityCometKitty extends EntityOcelot {
             }
             return I18n.translateToLocal("entity." + s + ".name");
         }
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return NyxSoundEvents.cometKittyIdle.getSoundEvent();
     }
 }

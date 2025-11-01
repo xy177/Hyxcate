@@ -19,6 +19,7 @@ public enum NyxSoundEvents {
     beamSwordIdle("beam_sword_idle"),
     beamSwordSwing("beam_sword_swing"),
     beamSwordHit("beam_sword_hit"),
+    cometKittyIdle("comet_kitty_idle"),
     alienKittyIdle("alien_kitty_idle"),
 
     // Lunar Events
