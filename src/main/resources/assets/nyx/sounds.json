@@ -147,20 +147,20 @@
   "comet_kitty_idle": {
     "category": "neutral",
     "sounds": [
-      "nyx:comet_kitty/idle1",
-      "nyx:comet_kitty/idle2",
-      "nyx:comet_kitty/idle3",
-      "nyx:comet_kitty/idle4",
-      "nyx:comet_kitty/idle5"
+      "nyx:entity/comet_kitty/idle1",
+      "nyx:entity/comet_kitty/idle2",
+      "nyx:entity/comet_kitty/idle3",
+      "nyx:entity/comet_kitty/idle4",
+      "nyx:entity/comet_kitty/idle5"
     ]
   },
   "alien_kitty_idle": {
     "category": "neutral",
     "sounds": [
-      "nyx:alien_kitty/idle1",
-      "nyx:alien_kitty/idle2",
-      "nyx:alien_kitty/idle3",
-      "nyx:alien_kitty/idle4"
+      "nyx:entity/alien_kitty/idle1",
+      "nyx:entity/alien_kitty/idle2",
+      "nyx:entity/alien_kitty/idle3",
+      "nyx:entity/alien_kitty/idle4"
     ]
   }
 }
