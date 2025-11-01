@@ -220,19 +220,23 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
 
                     for (EntityPlayer player : this.world.playerEntities) {
                         SoundEvent sound;
-                        float pitch;
+                        float pitch = 2.0F / this.dataManager.get(SIZE);
                         float volume;
                         double dist = player.getDistanceSq(this.posX, this.posY, this.posZ);
-                        // TODO: Volume should be controlled by distance
-                        if (dist <= 256 * 256) {
+                        if (dist > 512 * 512) {
+                            return;
+                        }
+                        float distSqrt = (float) Math.sqrt(dist);
+                        if (dist <= 160 * 160) {
                             if (NyxConfig.meteorMessage && dist > 16 * 16) player.sendMessage(text);
                             sound = NyxSoundEvents.fallingMeteorImpact.getSoundEvent();
-                            pitch = 1.0F;
-                            volume = 0.35F;
+                            // close volume: 1.0F at 0 blocks -> 0.1F at 160 blocks (10 chunks)
+                            volume = Math.max(0.1F, 1.0F - (distSqrt / 160.0F) * 0.9F);
                         } else {
                             sound = NyxSoundEvents.fallingMeteorImpactFar.getSoundEvent();
-                            pitch = 0.8F;
-                            volume = 1.0F;
+                            // far volume: 1.0F at 160 blocks -> 0.1F at 512 blocks (32 chunks)
+                            float farDist = distSqrt - 160.0F;
+                            volume = Math.max(0.1F, 1.0F - (farDist / 352.0F) * 0.9F);
                         }
 
                         if (player instanceof EntityPlayerMP && player.dimension == this.world.provider.getDimension())
