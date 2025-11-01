@@ -82,9 +82,7 @@ item.nyx.kreknorite_chestplate.name=Kreknorite Chestplate
 item.nyx.kreknorite_leggings.name=Kreknorite Leggings
 item.nyx.kreknorite_boots.name=Kreknorite Boots
 item.nyx.tektite_gem_cluster.name=Tektite Gem Cluster
-item.nyx.heros_broken_artifact.name=Hero's Broken Artifact
 item.nyx.celestial_emblem.name=Celestial Emblem
-item.nyx.cyber_power_cell.name=Cyber Power Cell
 item.nyx.fallen_star_beam_sword.name=Beam Sword Type S
 item.nyx.meteorite_beam_sword.name=Beam Sword Type M
 item.nyx.frezarite_beam_sword.name=Beam Sword Type F
@@ -104,10 +102,7 @@ advancement.nyx.no_more_sleepless_nights.desc=The world has grown accustomed to 
 
 tooltip.nyx.celestial_emblem=It's pulsating with tremendous celestial energy!
 tooltip.nyx.cyber_crystal=It's capable of focusing and amplifying energy.
-tooltip.nyx.cyber_power_cell=This energetic power cell can be used to make high tech equipment.
-tooltip.nyx.earth_trinket.equip=Equip it to wield the power of geomancy!
 tooltip.nyx.fallen_star=It's so full of energy that it won't stop twinkling!
-tooltip.nyx.heros_broken_artifact=This ancient relic once belonged to a legendary hero. While impossible to repair, its power can be transferred into the creation of a powerful item.
 tooltip.nyx.tektite_gem_cluster=A cluster of very rare gems originating from outer space. They are packed with electricity.
 
 tooltip.nyx.beam_sword=With its distinctive glowing blade, this weapon is eye-catching and lethal. All attacks completely ignore armor.

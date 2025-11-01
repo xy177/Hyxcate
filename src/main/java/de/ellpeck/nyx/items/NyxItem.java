@@ -29,10 +29,6 @@ public class NyxItem extends Item {
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         if (this == NyxItems.celestialEmblem) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.celestial_emblem"));
-        } else if (this == NyxItems.cyberPowerCell) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.cyber_power_cell"));
-        } else if (this == NyxItems.herosBrokenArtifact) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.heros_broken_artifact"));
         } else if (this == NyxItems.tektiteGemCluster) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.tektite_gem_cluster"));
         }

@@ -12,7 +12,6 @@ import de.ellpeck.nyx.events.lunar.NyxEventFullMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventHarvestMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventStarShower;
 import de.ellpeck.nyx.events.solar.NyxEventRedSun;
-import de.ellpeck.nyx.events.solar.NyxEventSolarEclipse;
 import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.items.tools.*;
@@ -292,30 +291,6 @@ public final class NyxEvents {
             float mod = level / (float) NyxEnchantments.lunarEdge.getMaxLevel();
             mod *= (float) NyxConfig.maxLunarEdgeXpMult;
             event.setDroppedExperience((int) (exp + MathHelper.floor(exp * mod)));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onEntityDrop(LivingDropsEvent event) {
-        EntityLivingBase entity = event.getEntityLiving();
-        NyxWorld nyx = NyxWorld.get(entity.world);
-
-        List<EntityItem> drops = event.getDrops();
-
-        // 1/40 (2.5%) chance to get a Hero's Broken Artifact drop from any mob during an eclipse.
-        // Entity must be killed by a player, must be a monster, and must not be too weak for this to happen.
-        if (nyx.currentSolarEvent instanceof NyxEventSolarEclipse) {
-            if (entity.world.rand.nextDouble() <= 0.025D && entity.getMaxHealth() >= 16.0F && entity instanceof EntityMob &&
-                    !entity.world.isRemote && entity.getAttackingEntity() instanceof EntityPlayer) {
-                drops.add(new EntityItem(entity.world, entity.posX, entity.posY, entity.posZ, new ItemStack(NyxItems.herosBrokenArtifact)));
-            }
-        }
-
-        // Too much RNG for a Solar Eclipse? No problem! Let's rely on killing bosses instead. 1/30 (3.3%) chance.
-        // We would not want it from easy bosses so the artifact won't drop from any boss that is below 80 health.
-        if (entity.world.rand.nextDouble() <= 0.033D && entity.getMaxHealth() >= 80.0 && !entity.isNonBoss()
-                && !entity.world.isRemote && entity.getAttackingEntity() instanceof EntityPlayer) {
-            drops.add(new EntityItem(entity.world, entity.posX, entity.posY, entity.posZ, new ItemStack(NyxItems.herosBrokenArtifact)));
         }
     }
 

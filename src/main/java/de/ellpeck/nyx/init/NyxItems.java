@@ -32,7 +32,6 @@ public class NyxItems {
     public static Item meteoriteIngot;
     public static Item frezariteIngot;
     public static Item kreknoriteIngot;
-    public static Item herosBrokenArtifact;
     public static Item celestialEmblem;
     public static Item cyberPowerCell;
     public static Item meteoritePickaxe;
@@ -109,9 +108,7 @@ public class NyxItems {
         frezariteIngot = initItem(new NyxItem(EnumRarity.EPIC), "frezarite_ingot");
         kreknoriteShard = initItem(new NyxItem(EnumRarity.EPIC), "kreknorite_shard");
         kreknoriteIngot = initItem(new NyxItem(EnumRarity.EPIC), "kreknorite_ingot");
-        herosBrokenArtifact = initItem(new NyxItem(EnumRarity.EPIC), "heros_broken_artifact");
         celestialEmblem = initItem(new NyxItem(EnumRarity.EPIC), "celestial_emblem");
-        cyberPowerCell = initItem(new NyxItem(EnumRarity.EPIC), "cyber_power_cell");
         meteorFinder = initItem(new NyxToolMeteorDetector(), "meteor_detector");
 
         meteoritePickaxe = initItem(new NyxItemPickaxe(meteoriteToolMaterial), "meteorite_pickaxe");
