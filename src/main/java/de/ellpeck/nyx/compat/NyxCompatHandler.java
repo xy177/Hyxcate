@@ -3,14 +3,20 @@ package de.ellpeck.nyx.compat;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.compat.tconstruct.ConstructsArmory;
 import de.ellpeck.nyx.compat.tconstruct.TinkersConstruct;
+import de.ellpeck.nyx.compat.tconstruct.TinkersConstructClient;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 @EventBusSubscriber(modid = Nyx.ID)
 public class NyxCompatHandler {
     public static void preInit() {
         if (Loader.isModLoaded("tconstruct")) {
             TinkersConstruct.registerToolMaterials();
+            if (FMLLaunchHandler.side().isClient()) {
+                MinecraftForge.EVENT_BUS.register(new TinkersConstructClient());
+            }
 
             // Only load Construct's Armory if Tinkers' Construct is also loaded
             if (Loader.isModLoaded("conarm")) {
