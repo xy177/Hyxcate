@@ -58,8 +58,9 @@ public class NyxToolBeamSword extends NyxItemSword {
     }
 
     @Override
-    public void setDamage(ItemStack stack, int damage) {
-        // Unbreakable
+    public int getMaxDamage(ItemStack stack) {
+        Utils.setUnbreakable(stack);
+        return super.getMaxDamage(stack);
     }
 
     @Override

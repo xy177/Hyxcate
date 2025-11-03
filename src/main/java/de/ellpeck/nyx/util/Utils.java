@@ -8,13 +8,14 @@ public class Utils {
         if (stack.getTagCompound() == null) {
             stack.setTagCompound(new NBTTagCompound());
         }
-
         return stack;
     }
 
     public static ItemStack setUnbreakable(ItemStack stack) {
         checkNBT(stack);
-        stack.getTagCompound().setBoolean("Unbreakable", true);
+        if (!stack.getTagCompound().hasKey("Unbreakable")) {
+            stack.getTagCompound().setBoolean("Unbreakable", true);
+        }
         return stack;
     }
 }

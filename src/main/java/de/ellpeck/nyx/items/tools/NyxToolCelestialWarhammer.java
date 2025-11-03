@@ -64,10 +64,11 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
         return true;
     }
-    
+
     @Override
-    public void setDamage(ItemStack stack, int damage) {
-        // Unbreakable
+    public int getMaxDamage(ItemStack stack) {
+        Utils.setUnbreakable(stack);
+        return super.getMaxDamage(stack);
     }
 
     @Override
@@ -145,7 +146,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     public IRarity getForgeRarity(ItemStack stack) {
         return EnumRarity.EPIC;
     }
-    
+
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
