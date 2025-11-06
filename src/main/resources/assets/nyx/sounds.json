@@ -5,6 +5,12 @@
       "nyx:random/falling_star_loop"
     ]
   },
+  "falling_star_idle": {
+	"category": "ambient",
+    "sounds": [
+      "nyx:random/falling_star_idle_loop"
+    ]
+  },
   "falling_star_impact": {
     "category": "ambient",
     "sounds": [

@@ -6,6 +6,7 @@ import net.minecraft.util.SoundEvent;
 
 public enum NyxSoundEvents {
     fallingStar("falling_star"),
+	fallingStarIdle("falling_star_idle"),
     fallingStarImpact("falling_star_impact"),
     fallingMeteor("falling_meteor"),
     fallingMeteorImpact("falling_meteor_impact"),
