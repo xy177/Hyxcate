@@ -78,23 +78,25 @@
   "beam_sword_hit": {
     "category": "player",
     "sounds": [
-      "nyx:beam_sword_hit1",
-      "nyx:beam_sword_hit2"
+      "nyx:item/beam_sword_hit1",
+      "nyx:item/beam_sword_hit2",
+	  "nyx:item/beam_sword_hit3",
+	  "nyx:item/beam_sword_hit4"
     ]
   },
   "beam_sword_swing": {
     "category": "player",
     "sounds": [
-      "nyx:beam_sword_swing1",
-      "nyx:beam_sword_swing2",
-      "nyx:beam_sword_swing3",
-      "nyx:beam_sword_swing4"
+      "nyx:item/beam_sword_swing1",
+      "nyx:item/beam_sword_swing2",
+      "nyx:item/beam_sword_swing3",
+      "nyx:item/beam_sword_swing4"
     ]
   },
   "beam_sword_idle": {
     "category": "player",
     "sounds": [
-      "nyx:beam_sword_idle"
+      "nyx:item/beam_sword_idle_loop"
     ]
   },
   "celestial_emblem": {
