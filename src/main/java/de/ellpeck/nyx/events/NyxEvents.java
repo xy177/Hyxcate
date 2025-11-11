@@ -12,6 +12,7 @@ import de.ellpeck.nyx.events.lunar.NyxEventFullMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventHarvestMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventStarShower;
 import de.ellpeck.nyx.events.solar.NyxEventRedSun;
+import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.items.tools.*;
@@ -24,6 +25,7 @@ import net.minecraft.block.BlockEnchantmentTable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -175,14 +177,18 @@ public final class NyxEvents {
 
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event) {
-        // Tektite (Any Piece) - Explosion Resistance
+        // Explosion Resistance Attribute
         if (event.getSource().isExplosion()) {
-            int equipped = (int) Streams.stream(event.getEntityLiving().getArmorInventoryList())
-                    .filter(s -> s.getItem() instanceof ItemArmor && ((ItemArmor) s.getItem()).getArmorMaterial() == NyxItems.tektiteArmorMaterial)
-                    .count();
+            IAttributeInstance explosionResistance = event.getEntityLiving().getEntityAttribute(NyxAttributes.EXPLOSION_RESISTANCE);
+            float explosionResistanceValue = 0.0F;
 
-            // +20% resistance per armor piece
-            event.setAmount(event.getAmount() * (1 - 0.2F * equipped));
+            for (AttributeModifier attributemodifier : explosionResistance.getModifiers()) {
+                explosionResistanceValue += (float) attributemodifier.getAmount();
+            }
+            if (explosionResistanceValue <= 0) return;
+
+            // Reduce explosion damage by attribute amount
+            event.setAmount(event.getAmount() * (1 - explosionResistanceValue));
         }
     }
 
