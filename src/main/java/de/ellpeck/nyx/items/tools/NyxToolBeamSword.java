@@ -51,16 +51,15 @@ public class NyxToolBeamSword extends NyxItemSword {
 
         if (attacker instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) attacker;
-            player.world.playSound(null, player.posX, player.posY, player.posZ, NyxSoundEvents.beamSwordHit.getSoundEvent(), SoundCategory.PLAYERS, 0.7F, 1.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
+            player.world.playSound(null, player.posX, player.posY, player.posZ, NyxSoundEvents.beamSwordHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         return true;
     }
 
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        Utils.setUnbreakable(stack);
-        return super.getMaxDamage(stack);
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
     }
 
     @Override
