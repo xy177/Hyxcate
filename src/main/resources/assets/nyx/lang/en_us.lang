@@ -1,6 +1,7 @@
 itemGroup.nyx=Hyxcate
 
 attribute.name.nyx.explosion_resistance=Explosion Resistance
+attribute.name.nyx.paralysis=Paralysis Chance
 
 enchantment.nyx.lunar_edge=Lunar Edge
 enchantment.nyx.lunar_edge.desc=Increases damage of the item. Strength is affected by the current moon phase.

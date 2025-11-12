@@ -21,7 +21,6 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Nyx.ID)
 public class NyxItems {
-
     public static final List<Item> MOD_ITEMS = new ArrayList<>();
 
     public static Item fallenStar;
@@ -115,51 +114,51 @@ public class NyxItems {
         meteoriteAxe = initItem(new NyxItemAxe(meteoriteToolMaterial, 10.0F, 1.0F), "meteorite_axe");
         meteoriteShovel = initItem(new NyxItemSpade(meteoriteToolMaterial), "meteorite_shovel");
         meteoriteHoe = initItem(new NyxItemHoe(meteoriteToolMaterial), "meteorite_hoe");
-        meteoriteSword = initItem(new NyxItemSword(meteoriteToolMaterial), "meteorite_sword");
-        meteoriteHelmet = initItem(new NyxItemArmor(meteoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "meteorite_helmet");
-        meteoriteChestplate = initItem(new NyxItemArmor(meteoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "meteorite_chestplate");
-        meteoriteLeggings = initItem(new NyxItemArmor(meteoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "meteorite_leggings");
-        meteoriteBoots = initItem(new NyxItemArmor(meteoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "meteorite_boots");
+        meteoriteSword = initItem(new NyxItemSword(meteoriteToolMaterial, 1.8D, 0.0D, EnumRarity.RARE), "meteorite_sword");
+        meteoriteHelmet = initItem(new NyxItemArmor(meteoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD, EnumRarity.RARE), "meteorite_helmet");
+        meteoriteChestplate = initItem(new NyxItemArmor(meteoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST, EnumRarity.RARE), "meteorite_chestplate");
+        meteoriteLeggings = initItem(new NyxItemArmor(meteoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS, EnumRarity.RARE), "meteorite_leggings");
+        meteoriteBoots = initItem(new NyxItemArmor(meteoriteArmorMaterial, 3, EntityEquipmentSlot.FEET, EnumRarity.RARE), "meteorite_boots");
 
         frezaritePickaxe = initItem(new NyxItemPickaxe(frezariteToolMaterial), "frezarite_pickaxe");
         frezariteAxe = initItem(new NyxItemAxe(frezariteToolMaterial, 11.0F, 1.1F), "frezarite_axe");
         frezariteShovel = initItem(new NyxItemSpade(frezariteToolMaterial), "frezarite_shovel");
         frezariteHoe = initItem(new NyxItemHoe(frezariteToolMaterial), "frezarite_hoe");
-        frezariteSword = initItem(new NyxItemSword(frezariteToolMaterial), "frezarite_sword");
-        frezariteHelmet = initItem(new NyxItemArmor(frezariteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "frezarite_helmet");
-        frezariteChestplate = initItem(new NyxItemArmor(frezariteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "frezarite_chestplate");
-        frezariteLeggings = initItem(new NyxItemArmor(frezariteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "frezarite_leggings");
-        frezariteBoots = initItem(new NyxItemArmor(frezariteArmorMaterial, 3, EntityEquipmentSlot.FEET), "frezarite_boots");
+        frezariteSword = initItem(new NyxItemSword(frezariteToolMaterial, 1.8D, 0.0D, EnumRarity.EPIC), "frezarite_sword");
+        frezariteHelmet = initItem(new NyxItemArmor(frezariteArmorMaterial, 0, EntityEquipmentSlot.HEAD, EnumRarity.EPIC), "frezarite_helmet");
+        frezariteChestplate = initItem(new NyxItemArmor(frezariteArmorMaterial, 1, EntityEquipmentSlot.CHEST, EnumRarity.EPIC), "frezarite_chestplate");
+        frezariteLeggings = initItem(new NyxItemArmor(frezariteArmorMaterial, 2, EntityEquipmentSlot.LEGS, EnumRarity.EPIC), "frezarite_leggings");
+        frezariteBoots = initItem(new NyxItemArmor(frezariteArmorMaterial, 3, EntityEquipmentSlot.FEET, EnumRarity.EPIC), "frezarite_boots");
 
         kreknoritePickaxe = initItem(new NyxItemPickaxe(kreknoriteToolMaterial), "kreknorite_pickaxe");
         kreknoriteAxe = initItem(new NyxItemAxe(kreknoriteToolMaterial, 11.0F, 1.1F), "kreknorite_axe");
         kreknoriteShovel = initItem(new NyxItemSpade(kreknoriteToolMaterial), "kreknorite_shovel");
         kreknoriteHoe = initItem(new NyxItemHoe(kreknoriteToolMaterial), "kreknorite_hoe");
-        kreknoriteSword = initItem(new NyxItemSword(kreknoriteToolMaterial), "kreknorite_sword");
-        kreknoriteHelmet = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD), "kreknorite_helmet");
-        kreknoriteChestplate = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST), "kreknorite_chestplate");
-        kreknoriteLeggings = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS), "kreknorite_leggings");
-        kreknoriteBoots = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 3, EntityEquipmentSlot.FEET), "kreknorite_boots");
+        kreknoriteSword = initItem(new NyxItemSword(kreknoriteToolMaterial, 1.8D, 0.0D, EnumRarity.EPIC), "kreknorite_sword");
+        kreknoriteHelmet = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 0, EntityEquipmentSlot.HEAD, EnumRarity.EPIC), "kreknorite_helmet");
+        kreknoriteChestplate = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 1, EntityEquipmentSlot.CHEST, EnumRarity.EPIC), "kreknorite_chestplate");
+        kreknoriteLeggings = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 2, EntityEquipmentSlot.LEGS, EnumRarity.EPIC), "kreknorite_leggings");
+        kreknoriteBoots = initItem(new NyxItemArmor(kreknoriteArmorMaterial, 3, EntityEquipmentSlot.FEET, EnumRarity.EPIC), "kreknorite_boots");
 
         tektitePickaxe = initItem(new NyxItemPickaxe(tektiteToolMaterial), "tektite_pickaxe");
         tektiteAxe = initItem(new NyxItemAxe(tektiteToolMaterial, 12, 1.2F), "tektite_axe");
         tektiteShovel = initItem(new NyxItemSpade(tektiteToolMaterial), "tektite_shovel");
         tektiteHoe = initItem(new NyxItemHoe(tektiteToolMaterial), "tektite_hoe");
-        tektiteSword = initItem(new NyxItemSword(tektiteToolMaterial), "tektite_Sword");
-        tektiteGreatsword = initItem(new NyxToolTektiteGreatsword(tektiteGreatswordToolMaterial), "tektite_greatsword");
-        tektiteHelmet = initItem(new NyxItemERArmor(tektiteArmorMaterial, 0, EntityEquipmentSlot.HEAD, 0.15D), "tektite_helmet");
-        tektiteChestplate = initItem(new NyxItemERArmor(tektiteArmorMaterial, 1, EntityEquipmentSlot.CHEST, 0.30D), "tektite_chestplate");
-        tektiteLeggings = initItem(new NyxItemERArmor(tektiteArmorMaterial, 2, EntityEquipmentSlot.LEGS, 0.25D), "tektite_leggings");
-        tektiteBoots = initItem(new NyxItemERArmor(tektiteArmorMaterial, 3, EntityEquipmentSlot.FEET, 0.10D), "tektite_boots");
+        tektiteSword = initItem(new NyxItemSword(tektiteToolMaterial, 1.8D, 0.2D, EnumRarity.EPIC), "tektite_Sword");
+        tektiteGreatsword = initItem(new NyxToolTektiteGreatsword(tektiteGreatswordToolMaterial, 1.0D, 0.2D, EnumRarity.EPIC), "tektite_greatsword");
+        tektiteHelmet = initItem(new NyxItemERArmor(tektiteArmorMaterial, 0, EntityEquipmentSlot.HEAD, 0.15D, EnumRarity.EPIC), "tektite_helmet");
+        tektiteChestplate = initItem(new NyxItemERArmor(tektiteArmorMaterial, 1, EntityEquipmentSlot.CHEST, 0.30D, EnumRarity.EPIC), "tektite_chestplate");
+        tektiteLeggings = initItem(new NyxItemERArmor(tektiteArmorMaterial, 2, EntityEquipmentSlot.LEGS, 0.25D, EnumRarity.EPIC), "tektite_leggings");
+        tektiteBoots = initItem(new NyxItemERArmor(tektiteArmorMaterial, 3, EntityEquipmentSlot.FEET, 0.10D, EnumRarity.EPIC), "tektite_boots");
         tektiteBow = initItem(new NyxItemBow(2500, 1.35F, 1.5F, 0.3F, 0.5F, EnumRarity.EPIC, Ingredient.fromStacks(new ItemStack(tektiteGemCluster))), "tektite_bow");
-        celestialWarhammer = initItem(new NyxToolCelestialWarhammer(celestialWarhammerToolMaterial), "celestial_warhammer");
+        celestialWarhammer = initItem(new NyxToolCelestialWarhammer(celestialWarhammerToolMaterial, 0.8D, 0.0D, EnumRarity.EPIC), "celestial_warhammer");
 
-        fallenStarBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "fallen_star_beam_sword");
-        meteoriteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "meteorite_beam_sword");
-        frezariteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "frezarite_beam_sword");
-        kreknoriteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "kreknorite_beam_sword");
-        tektiteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "tektite_beam_sword");
-        cyberCrystalBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial), "cyber_crystal_beam_sword");
+        fallenStarBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "fallen_star_beam_sword");
+        meteoriteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "meteorite_beam_sword");
+        frezariteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "frezarite_beam_sword");
+        kreknoriteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "kreknorite_beam_sword");
+        tektiteBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "tektite_beam_sword");
+        cyberCrystalBeamSword = initItem(new NyxToolBeamSword(beamSwordToolMaterial, 1.4D, 0.0D, EnumRarity.EPIC), "cyber_crystal_beam_sword");
 
         MOD_ITEMS.forEach(event.getRegistry()::register);
     }

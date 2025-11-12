@@ -34,11 +34,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NyxToolTektiteGreatsword extends NyxItemSword {
-    private final float attackSpeed;
-
-    public NyxToolTektiteGreatsword(ToolMaterial material) {
-        super(material);
-        this.attackSpeed = 1.0F;
+    public NyxToolTektiteGreatsword(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
+        super(material, attackSpeed, paralysisChance, rarity);
     }
 
     // TODO: Improve sweep damage calculation
@@ -68,9 +65,8 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
     }
 
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        Utils.setUnbreakable(stack);
-        return super.getMaxDamage(stack);
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
     }
 
     @Override

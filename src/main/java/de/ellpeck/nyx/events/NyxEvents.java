@@ -19,6 +19,7 @@ import de.ellpeck.nyx.items.tools.*;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.BlockEnchantmentTable;
@@ -81,7 +82,7 @@ public final class NyxEvents {
         if (event.phase != TickEvent.Phase.END) return;
         EntityPlayer player = event.player;
 
-        // Meteor Hammer Ability
+        // Celestial Warhammer Ability
         // We check fall distance because we need the player to be done falling when removing the tag
         if (player.onGround && player.fallDistance <= 0 && player.getEntityData().hasKey(Nyx.ID + ":leap_start")) {
             if (!player.world.isRemote) {
@@ -170,7 +171,7 @@ public final class NyxEvents {
 
     @SubscribeEvent
     public static void onFall(LivingFallEvent event) {
-        // meteor hammer ability
+        // Celestial Warhammer Leap Ability
         if (event.getEntityLiving().getEntityData().hasKey(Nyx.ID + ":leap_start"))
             event.setDamageMultiplier(0);
     }
@@ -180,15 +181,18 @@ public final class NyxEvents {
         // Explosion Resistance Attribute
         if (event.getSource().isExplosion()) {
             IAttributeInstance explosionResistance = event.getEntityLiving().getEntityAttribute(NyxAttributes.EXPLOSION_RESISTANCE);
-            float explosionResistanceValue = 0.0F;
 
-            for (AttributeModifier attributemodifier : explosionResistance.getModifiers()) {
-                explosionResistanceValue += (float) attributemodifier.getAmount();
+            if (explosionResistance != null && !explosionResistance.getModifiers().isEmpty()) {
+                float explosionResistanceValue = 0.0F;
+
+                for (AttributeModifier attributemodifier : explosionResistance.getModifiers()) {
+                    explosionResistanceValue += (float) attributemodifier.getAmount();
+                }
+                if (explosionResistanceValue <= 0) return;
+
+                // Reduce explosion damage by attribute amount
+                event.setAmount(event.getAmount() * (1 - explosionResistanceValue));
             }
-            if (explosionResistanceValue <= 0) return;
-
-            // Reduce explosion damage by attribute amount
-            event.setAmount(event.getAmount() * (1 - explosionResistanceValue));
         }
     }
 
@@ -467,14 +471,36 @@ public final class NyxEvents {
 
     @SubscribeEvent
     public static void onDamageEvent(LivingDamageEvent event) {
-        for (ItemStack stack : event.getEntityLiving().getArmorInventoryList()) {
+        EntityLivingBase entity = event.getEntityLiving();
+        DamageSource damageSource = event.getSource();
+        EntityLivingBase trueSource = (EntityLivingBase) damageSource.getTrueSource();
 
+        if (entity instanceof EntityLivingBase && trueSource instanceof EntityLivingBase) {
+            IAttributeInstance paralysis = trueSource.getEntityAttribute(NyxAttributes.PARALYSIS);
+            if (paralysis != null && !paralysis.getModifiers().isEmpty()) {
+                float paralysisValue = 0.0F;
+
+                for (AttributeModifier attributemodifier : paralysis.getModifiers()) {
+                    paralysisValue += (float) attributemodifier.getAmount();
+                }
+                if (paralysisValue <= 0) return;
+
+                // Inflicts mob with Paralysis when the attribute is successful
+                if (Utils.setChance(paralysisValue)) {
+                    // TODO: Replace this with a unique Paralysis potion effect
+                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.stun.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
+                }
+            }
+        }
+
+        for (ItemStack stack : entity.getArmorInventoryList()) {
             // All boots are immune to magma and other hot floor blocks
             if (stack.getItem() == NyxItems.meteoriteBoots ||
                     stack.getItem() == NyxItems.frezariteBoots ||
                     stack.getItem() == NyxItems.kreknoriteBoots ||
                     stack.getItem() == NyxItems.tektiteBoots) {
-                if (event.getSource() == DamageSource.HOT_FLOOR) {
+                if (damageSource == DamageSource.HOT_FLOOR) {
                     event.setAmount(0.0F);
                     event.setCanceled(true);
                 }
@@ -506,13 +532,12 @@ public final class NyxEvents {
         if (trueSource instanceof EntityPlayer && trueSource != null) {
             Item heldItem = ((EntityPlayer) trueSource).getHeldItemMainhand().getItem();
 
-            // Setting damage to ignore armor doesn't work normally on this repository, it's incredibly stupid and I have no idea what's going on. This event works though.
-            // Beam Swords
+            // Beam swords ignore armor
             if (heldItem == NyxItems.cyberCrystalBeamSword || heldItem == NyxItems.fallenStarBeamSword || heldItem == NyxItems.frezariteBeamSword ||
                     heldItem == NyxItems.kreknoriteBeamSword || heldItem == NyxItems.meteoriteBeamSword || heldItem == NyxItems.tektiteBeamSword) {
                 damageSource.setDamageBypassesArmor();
 
-                // Also ignore invincibility frames
+                // Beam swords also ignore invincibility frames
                 entity.hurtResistantTime = 0;
                 entity.hurtTime = 0;
             }

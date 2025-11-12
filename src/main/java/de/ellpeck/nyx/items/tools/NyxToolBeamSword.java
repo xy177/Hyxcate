@@ -1,7 +1,5 @@
 package de.ellpeck.nyx.items.tools;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundBeamSword;
@@ -16,11 +14,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -38,10 +33,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NyxToolBeamSword extends NyxItemSword {
-    private final float attackSpeed;
-
-    public NyxToolBeamSword(ToolMaterial material) {
-        super(material);
+    public NyxToolBeamSword(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
+        super(material, attackSpeed, paralysisChance, rarity);
         this.attackSpeed = 1.4F;
     }
 
@@ -74,20 +67,6 @@ public class NyxToolBeamSword extends NyxItemSword {
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
         return true;
-    }
-
-    @Override
-    public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
-        Multimap<String, AttributeModifier> multimap = HashMultimap.create();
-        double attackDamageMod = this.getAttackDamage() + 3.0D;
-        double attackSpeedMod = this.attackSpeed - 4.0D;
-
-        if (equipmentSlot == EntityEquipmentSlot.MAINHAND) {
-            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Damage modifier", attackDamageMod, 0));
-            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Speed modifier", attackSpeedMod, 0));
-        }
-
-        return multimap;
     }
 
     @Override

@@ -1,7 +1,5 @@
 package de.ellpeck.nyx.items.tools;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
@@ -14,11 +12,9 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -35,11 +31,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NyxToolCelestialWarhammer extends NyxItemSword {
-    private final float attackSpeed;
-
-    public NyxToolCelestialWarhammer(ToolMaterial material) {
-        super(material);
-        this.attackSpeed = 0.8F;
+    public NyxToolCelestialWarhammer(ToolMaterial material, double attackSpeed, double paralysisChance, EnumRarity rarity) {
+        super(material, attackSpeed, paralysisChance, rarity);
     }
 
     // TODO: Improve sweep damage calculation
@@ -66,9 +59,8 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     }
 
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        Utils.setUnbreakable(stack);
-        return super.getMaxDamage(stack);
+    public void setDamage(ItemStack stack, int damage) {
+        // Unbreakable
     }
 
     @Override
@@ -120,20 +112,6 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
     @Override
     public int getMaxItemUseDuration(ItemStack stack) {
         return 36000;
-    }
-
-    @Override
-    public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
-        Multimap<String, AttributeModifier> multimap = HashMultimap.create();
-        double attackDamageMod = this.getAttackDamage() + 3.0D;
-        double attackSpeedMod = this.attackSpeed - 4.0D;
-
-        if (equipmentSlot == EntityEquipmentSlot.MAINHAND) {
-            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Damage modifier", attackDamageMod, 0));
-            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Speed modifier", attackSpeedMod, 0));
-        }
-
-        return multimap;
     }
 
     @Override

@@ -23,8 +23,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NyxItemArmor extends ItemArmor {
-    public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot) {
+    public EnumRarity rarity;
+    
+    public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, EnumRarity rarity) {
         super(material, renderIndex, equipmentSlot);
+        this.rarity = rarity;
     }
 
     @Override
@@ -68,17 +71,7 @@ public class NyxItemArmor extends ItemArmor {
 
     @Override
     public IRarity getForgeRarity(ItemStack stack) {
-        if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings) {
-            return EnumRarity.EPIC;
-        } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings) {
-            return EnumRarity.EPIC;
-        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
-            return EnumRarity.RARE;
-        } else if (this == NyxItems.tektiteBoots || this == NyxItems.tektiteChestplate || this == NyxItems.tektiteHelmet || this == NyxItems.tektiteLeggings) {
-            return EnumRarity.EPIC;
-        }
-
-        return EnumRarity.COMMON;
+        return rarity;
     }
 
     @Override
