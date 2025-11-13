@@ -9,6 +9,7 @@ import java.util.Random;
 public class NyxBlockSpaceGlass extends BlockGlass {
     public NyxBlockSpaceGlass() {
         super(Material.GLASS, false);
+        this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(SoundType.GLASS);
     }
 
