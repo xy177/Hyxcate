@@ -186,6 +186,33 @@
       "nyx:block/light_crystal/place4"
     ]
   },
+  "dense_crystal_break": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/dense_crystal/break1",
+      "nyx:block/dense_crystal/break2",
+      "nyx:block/dense_crystal/break3",
+      "nyx:block/dense_crystal/break4"
+    ]
+  },
+  "dense_crystal_hit": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/light_crystal/hit1",
+      "nyx:block/light_crystal/hit2",
+      "nyx:block/light_crystal/hit3",
+      "nyx:block/light_crystal/hit4"
+    ]
+  },
+  "dense_crystal_place": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/dense_crystal/place1",
+      "nyx:block/dense_crystal/place2",
+      "nyx:block/dense_crystal/place3",
+      "nyx:block/dense_crystal/place4"
+    ]
+  },
   "comet_kitty_idle": {
     "category": "neutral",
     "sounds": [
