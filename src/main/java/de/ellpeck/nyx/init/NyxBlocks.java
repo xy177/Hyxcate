@@ -49,11 +49,11 @@ public class NyxBlocks {
                 starStairs = initBlock(new NyxBlockStairs(starBlock.getDefaultState()), "star_stairs", ItemBlock::new),
                 meteoriteRock = initBlock(new NyxBlockMeteorRock(() -> NyxItems.meteoriteShard, EnumParticleTypes.SUSPENDED_DEPTH, SoundType.STONE, 3).setHardness(10.0F).setResistance(2000.0F), "meteorite_rock", ItemBlock::new),
                 meteoriteRockHot = initBlock(new NyxBlockMeteorRockHot(() -> NyxItems.meteoriteShard, meteoriteRock, EnumParticleTypes.FLAME, SoundType.STONE, 3, 0.05D, 0.05D).setHardness(20.0F).setResistance(3000.0F), "meteorite_rock_hot", ItemBlock::new),
-                frezariteRock = initBlock(new NyxBlockMeteorRockHot(() -> NyxItems.frezariteCrystal, Blocks.FLOWING_WATER, EnumParticleTypes.SNOW_SHOVEL, SoundType.GLASS, 4, 0.025D, 0.075D), "frezarite_rock", ItemBlock::new).setHardness(30.0F).setResistance(3000.0F),
+                frezariteRock = initBlock(new NyxBlockMeteorRockHot(() -> NyxItems.frezariteCrystal, Blocks.FLOWING_WATER, EnumParticleTypes.SNOW_SHOVEL, NyxRegistry.LIGHT_CRYSTAL, 4, 0.025D, 0.075D), "frezarite_rock", ItemBlock::new).setHardness(30.0F).setResistance(3000.0F),
                 kreknoriteRock = initBlock(new NyxBlockMeteorRockHot(() -> NyxItems.kreknoriteShard, Blocks.OBSIDIAN, EnumParticleTypes.FLAME, SoundType.STONE, 4, 0.025D, 0.075D), "kreknorite_rock", ItemBlock::new).setHardness(30.0F).setResistance(3000.0F),
                 cyberCrystal = new NyxBlockCyberCrystal(),
                 meteoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "meteorite_block", ItemBlock::new),
-                frezariteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "frezarite_block", ItemBlock::new),
+                frezariteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.ICE, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "frezarite_block", ItemBlock::new),
                 kreknoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "kreknorite_block", ItemBlock::new),
                 tektiteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.RED, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "tektite_block", ItemBlock::new),
                 meteorGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000), "meteor_glass", ItemBlock::new)

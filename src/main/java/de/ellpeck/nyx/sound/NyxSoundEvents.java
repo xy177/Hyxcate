@@ -33,15 +33,11 @@ public enum NyxSoundEvents {
     solarEclipseStart("solar_eclipse_start"),
 
     // Blocks
-    crystalBreak("crystal_break"),
-    crystalHit("crystal_hit"),
-    crystalPlace("crystal_place"),
+    denseCrystalBreak("dense_crystal_break"),
+    denseCrystalPlace("dense_crystal_place"),
     lightCrystalBreak("light_crystal_break"),
     lightCrystalHit("light_crystal_hit"),
-    lightCrystalPlace("light_crystal_place"),
-	denseCrystalBreak("dense_crystal_break"),
-    denseCrystalHit("dense_crystal_hit"),
-    denseCrystalPlace("dense_crystal_place");
+    lightCrystalPlace("light_crystal_place");
 
     private final SoundEvent soundEvent;
 

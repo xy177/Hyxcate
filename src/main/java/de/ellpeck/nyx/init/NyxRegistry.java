@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber(modid = Nyx.ID)
 public final class NyxRegistry {
 
-    public static final SoundType CRYSTAL = new SoundType(0.35F, 0.9F, NyxSoundEvents.crystalBreak.getSoundEvent(), NyxSoundEvents.crystalPlace.getSoundEvent(), NyxSoundEvents.crystalBreak.getSoundEvent(), NyxSoundEvents.crystalHit.getSoundEvent(), NyxSoundEvents.crystalPlace.getSoundEvent());
+    public static final SoundType DENSE_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.denseCrystalBreak.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.denseCrystalPlace.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent());
     public static final SoundType LIGHT_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.lightCrystalBreak.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.lightCrystalPlace.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent());
     
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs(Nyx.ID) {
