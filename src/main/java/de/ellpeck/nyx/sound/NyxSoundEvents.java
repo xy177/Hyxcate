@@ -38,6 +38,7 @@ public enum NyxSoundEvents {
     lightCrystalBreak("light_crystal_break"),
     lightCrystalHit("light_crystal_hit"),
     lightCrystalPlace("light_crystal_place");
+	lightCrystalStep("light_crystal_step");
 
     private final SoundEvent soundEvent;
 

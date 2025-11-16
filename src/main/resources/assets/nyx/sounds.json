@@ -186,6 +186,17 @@
       "nyx:block/light_crystal/place4"
     ]
   },
+  "light_crystal_step": {
+    "category": "block",
+    "sounds": [
+      "nyx:block/light_crystal/step1",
+      "nyx:block/light_crystal/step2",
+      "nyx:block/light_crystal/step3",
+      "nyx:block/light_crystal/step4",
+	  "nyx:block/light_crystal/step5",
+	  "nyx:block/light_crystal/step6"
+    ]
+  },
   "comet_kitty_idle": {
     "category": "neutral",
     "sounds": [
