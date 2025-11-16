@@ -15,12 +15,12 @@ public class NyxEventRedSun extends NyxSolarEvent {
     private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.redSun);
 
     public NyxEventRedSun(NyxWorld nyxWorld) {
-        super("red_sun", nyxWorld);
+        super("red_giant", nyxWorld);
     }
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Nyx.ID + ".red_sun")
+        return new TextComponentTranslation("info." + Nyx.ID + ".red_giant")
                 .setStyle(new Style().setColor(TextFormatting.RED).setItalic(true));
     }
 
@@ -41,7 +41,6 @@ public class NyxEventRedSun extends NyxSolarEvent {
         return NyxWorld.isNighttime(this.world);
     }
 
-    // TODO
     @Override
     public int getSkyColor() {
         return 0x420d03;
@@ -49,7 +48,7 @@ public class NyxEventRedSun extends NyxSolarEvent {
 
     @Override
     public String getSunTexture() {
-        return "red_sun";
+        return "red_giant";
     }
 
     @Override
