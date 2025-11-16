@@ -9,7 +9,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class NyxModelAlienCreeper extends ModelCreeper {
-
     private final ModelRenderer antennaBase;
     private final ModelRenderer antennaTip;
 

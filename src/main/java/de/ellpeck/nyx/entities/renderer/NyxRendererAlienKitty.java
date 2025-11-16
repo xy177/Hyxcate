@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererAlienKitty extends RenderLiving<NyxEntityAlienKitty> {
-
     private static final ResourceLocation ALIEN = new ResourceLocation(Nyx.ID, "textures/entities/alien_kitty.png");
     private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_kitty_frezarite.png");
     private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_kitty_kreknorite.png");

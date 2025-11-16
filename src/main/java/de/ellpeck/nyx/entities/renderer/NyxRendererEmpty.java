@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererEmpty extends Render<Entity> {
-
     public NyxRendererEmpty(RenderManager renderManager) {
         super(renderManager);
     }

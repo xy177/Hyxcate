@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererMeteor extends Render<NyxEntityFallingMeteor> {
-
     private static final ResourceLocation METEORITE = new ResourceLocation(Nyx.ID, "textures/models/meteor.png");
     private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/models/frezarite_meteor.png");
     private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/models/kreknorite_meteor.png");
