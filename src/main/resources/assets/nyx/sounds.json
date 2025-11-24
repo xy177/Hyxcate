@@ -48,7 +48,7 @@
       "nyx:hammer_smash"
     ]
   },
-  "volcano": {
+  "kreknorite_hit": {
     "category": "player",
     "sounds": [
       "nyx:item/kreknorite_hit1",
@@ -57,7 +57,7 @@
 	  "nyx:item/kreknorite_hit4"
     ]
   },
-  "glacier": {
+  "frezarite_hit": {
     "category": "player",
     "sounds": [
       "nyx:item/frezarite_hit1",
@@ -66,11 +66,11 @@
 	  "nyx:item/frezarite_hit4"
     ]
   },
-  "stun": {
+  "paralysis": {
     "category": "player",
     "sounds": [
-      "nyx:stun1",
-      "nyx:stun2"
+      "nyx:paralysis1",
+      "nyx:paralysis2"
     ]
   },
   "powerup": {

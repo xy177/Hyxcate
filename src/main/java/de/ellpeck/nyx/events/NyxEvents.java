@@ -117,7 +117,7 @@ public final class NyxEvents {
                     }
 
                     player.world.playSound(null, player.getPosition(), NyxSoundEvents.hammerSmash.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, (1.0F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.2F) * 0.7F);
-                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.volcano.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, (1.0F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.2F) * 0.7F);
+                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, (1.0F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.2F) * 0.7F);
                 }
             }
 
@@ -488,7 +488,7 @@ public final class NyxEvents {
                 // Inflicts mob with Paralysis when the attribute is successful
                 if (Utils.setChance(paralysisValue)) {
                     // TODO: Replace this with a unique Paralysis potion effect
-                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.stun.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
                 }
             }

@@ -52,7 +52,7 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
                     nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
 
                     if (nearbyLivingEntity.world.rand.nextInt(5) == 0) {
-                        nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.stun.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
                         nearbyLivingEntity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 15 * 20, 9));
                     }
                 }

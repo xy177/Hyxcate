@@ -83,9 +83,10 @@ public class NyxItemSword extends ItemSword {
         return super.onLeftClickEntity(stack, player, entity);
     }
 
+    // TODO: AoE ability should be a SubscribeEvent
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         if (this == NyxItems.frezariteSword) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.glacier.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
+            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
 
             // Explosion deals AoE damage
             for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
@@ -100,7 +101,7 @@ public class NyxItemSword extends ItemSword {
                 }
             }
         } else if (this == NyxItems.kreknoriteSword) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.volcano.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
+            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
 
             // Explosion deals AoE damage
             for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
