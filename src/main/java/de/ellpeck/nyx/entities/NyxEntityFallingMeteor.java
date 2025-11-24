@@ -121,7 +121,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         // init some stuff that /summon wouldn't have
         if (this.dataManager.get(SIZE) <= 0) this.dataManager.set(SIZE, 2);
         if (this.dataManager.get(TYPE) <= 0) this.dataManager.set(TYPE, 1);
-        if (this.speedModifier <= 0) this.speedModifier = 1;
+        if (this.speedModifier <= 0) this.speedModifier = 0.5F;
         if (this.trajectoryX == 0 && this.trajectoryY == 0 && this.trajectoryZ == 0)
             this.initTrajectory(2 * this.speedModifier);
     }
