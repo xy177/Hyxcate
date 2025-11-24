@@ -322,7 +322,8 @@ public final class NyxEvents {
         if (nyx == null) return;
 
         // Bigger slimes
-        if (entity instanceof EntitySlime) {
+        // This will be replaced with a unique mob so we are disabling it for now
+        /*if (entity instanceof EntitySlime) {
             EntitySlime slime = (EntitySlime) entity;
             int size = slime.getSlimeSize();
 
@@ -339,7 +340,7 @@ public final class NyxEvents {
                 // Cancelling this event just suppresses onInitialSpawn, doc is wrong
                 event.setCanceled(true);
             }
-        }
+        }*/
 
         if (nyx.currentLunarEvent instanceof NyxEventFullMoon) {
             // Set random effect
