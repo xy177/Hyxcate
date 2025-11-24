@@ -1,6 +1,5 @@
 package de.ellpeck.nyx.events;
 
-import com.google.common.collect.Streams;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
@@ -39,7 +38,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -533,8 +531,7 @@ public final class NyxEvents {
             Item heldItem = ((EntityPlayer) trueSource).getHeldItemMainhand().getItem();
 
             // Beam swords ignore armor
-            if (heldItem == NyxItems.cyberCrystalBeamSword || heldItem == NyxItems.fallenStarBeamSword || heldItem == NyxItems.frezariteBeamSword ||
-                    heldItem == NyxItems.kreknoriteBeamSword || heldItem == NyxItems.meteoriteBeamSword || heldItem == NyxItems.tektiteBeamSword) {
+            if (heldItem instanceof NyxToolBeamSword) {
                 damageSource.setDamageBypassesArmor();
 
                 // Beam swords also ignore invincibility frames
