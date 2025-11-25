@@ -56,7 +56,6 @@ public final class NyxRegistry {
         GameRegistry.addSmelting(new ItemStack(NyxBlocks.kreknoriteRock), new ItemStack(NyxItems.kreknoriteShard), 1.5F);
         GameRegistry.addSmelting(new ItemStack(NyxItems.meteoriteShard), new ItemStack(NyxItems.meteoriteIngot), 1.0F);
         GameRegistry.addSmelting(new ItemStack(NyxBlocks.meteoriteRock), new ItemStack(NyxItems.meteoriteShard), 1.0F);
-        GameRegistry.addSmelting(new ItemStack(NyxItems.tektiteGemCluster), new ItemStack(NyxBlocks.meteorGlass), 0.1F);
         
         OreDictionary.registerOre("blockFrezarite", new ItemStack(NyxBlocks.frezariteBlock));
         OreDictionary.registerOre("blockKreknorite", new ItemStack(NyxBlocks.kreknoriteBlock));
