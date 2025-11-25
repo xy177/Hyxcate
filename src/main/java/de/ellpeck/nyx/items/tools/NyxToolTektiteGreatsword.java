@@ -1,5 +1,6 @@
 package de.ellpeck.nyx.items.tools;
 
+import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import de.ellpeck.nyx.util.Utils;
@@ -13,7 +14,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -48,12 +48,11 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
 
                     nearbyLivingEntity.knockBack(attacker, knockback, MathHelper.sin(attacker.rotationYaw * 0.02F), (-MathHelper.cos(attacker.rotationYaw * 0.02F)));
 
-                    // TODO: Replace this with a unique Paralysis potion effect
                     if (Utils.setChance(this.paralysisChance.getAmount())) {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
                         nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
                         nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));
-                        nearbyLivingEntity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 15 * 20, 9));
+                        nearbyLivingEntity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 15 * 20, 0));
                     } else {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
                         nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));

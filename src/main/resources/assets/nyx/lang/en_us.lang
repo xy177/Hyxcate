@@ -132,6 +132,14 @@ entity.nyx.falling_meteor.name=Falling Meteor
 entity.nyx.falling_star.name=Falling Star
 entity.nyx.stellar_protector.name=Stellar Protector
 
+# Potions
+effect.nyx.paralysis.name=Paralysis
+
+lingering_potion.effect.paralysis=Lingering Potion of Paralysis
+potion.effect.paralysis=Potion of Paralysis
+splash_potion.effect.paralysis=Splash Potion of Paralysis
+tipped_arrow.effect.paralysis=Arrow of Paralysis
+
 # JEI Info
 item.nyx.fallen_star.jei_desc=Fallen Stars can be encountered during the night.\n\nIf you start hearing something magical and see a trail of particles heading towards the ground in the sky, it's a Fallen Star.\n\nOnce landed, they will provide light and emit particles which makes it easier to find them.
 item.nyx.frezarite_boots.jei_desc=The Frezarite Boots will temporarily freeze water below you into frosted ice while equipped. The radius is increased when these boots are enchanted with Frost Walker.

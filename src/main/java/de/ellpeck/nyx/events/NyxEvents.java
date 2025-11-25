@@ -14,6 +14,7 @@ import de.ellpeck.nyx.events.solar.NyxEventRedSun;
 import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
+import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.items.tools.*;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
@@ -201,7 +202,7 @@ public final class NyxEvents {
         if (data == null) return;
         data.update();
 
-        // Falling stars
+        // Falling Stars
         if (!event.world.isRemote && NyxConfig.fallingStars && !NyxWorld.isDaytime(event.world) && event.world.getTotalWorldTime() % 20 == 0) {
             String dimension = event.world.provider.getDimensionType().getName();
             if (NyxConfig.allowedDimensions.contains(dimension)) {
@@ -486,9 +487,8 @@ public final class NyxEvents {
 
                 // Inflicts mob with Paralysis when the attribute is successful
                 if (Utils.setChance(paralysisValue)) {
-                    // TODO: Replace this with a unique Paralysis potion effect
                     entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
-                    entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
+                    entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 10 * 20, 0));
                 }
             }
         }
@@ -538,6 +538,33 @@ public final class NyxEvents {
                 // Beam swords also ignore invincibility frames
                 entity.hurtResistantTime = 0;
                 entity.hurtTime = 0;
+            }
+        }
+    }
+
+    // Re-enable mob ai when Paralysis effect ends
+    @SubscribeEvent
+    public static void onPotionExpired(PotionEvent.PotionExpiryEvent event) {
+        EntityLivingBase entity = event.getEntityLiving();
+
+        if (event.getPotionEffect().getPotion().equals(NyxPotions.PARALYSIS) && !(entity instanceof EntityPlayer)) {
+            if (entity instanceof EntityLiving) {
+                ((EntityLiving) entity).setNoAI(false);
+            } else {
+                entity.updateBlocked = false;
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPotionRemoved(PotionEvent.PotionExpiryEvent event) {
+        EntityLivingBase entity = event.getEntityLiving();
+
+        if (event.getPotionEffect().getPotion().equals(NyxPotions.PARALYSIS) && !(entity instanceof EntityPlayer)) {
+            if (entity instanceof EntityLiving) {
+                ((EntityLiving) entity).setNoAI(false);
+            } else {
+                entity.updateBlocked = false;
             }
         }
     }
