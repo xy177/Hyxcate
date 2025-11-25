@@ -83,10 +83,5 @@ public class NyxItemArmor extends ItemArmor {
         } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_armor"));
         }
-
-        if (this == NyxItems.frezariteBoots) {
-            tooltip.add(I18n.format(""));
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_boots"));
-        }
     }
 }
