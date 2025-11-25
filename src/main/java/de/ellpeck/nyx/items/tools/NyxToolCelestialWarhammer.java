@@ -45,8 +45,9 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
                 if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
                     float attribute = (float) attacker.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
                     float sweepCalculation = (this.getAttackDamage() + 4.0F) + EnchantmentHelper.getSweepingDamageRatio(attacker) * attribute;
+                    float knockback = 2.0F + (EnchantmentHelper.getKnockbackModifier(attacker) * 0.5F);
 
-                    nearbyLivingEntity.knockBack(attacker, 2.0F, MathHelper.sin(attacker.rotationYaw * 0.02F), -MathHelper.cos(attacker.rotationYaw * 0.02F));
+                    nearbyLivingEntity.knockBack(attacker, knockback, MathHelper.sin(attacker.rotationYaw * 0.02F), (-MathHelper.cos(attacker.rotationYaw * 0.02F)));
                     nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
                 }
             }

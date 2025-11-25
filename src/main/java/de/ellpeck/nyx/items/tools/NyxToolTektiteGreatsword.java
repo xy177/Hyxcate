@@ -21,6 +21,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
@@ -43,14 +44,19 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
                 if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
                     float attribute = (float) attacker.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
                     float sweepCalculation = (this.getAttackDamage() + 4.0F) + EnchantmentHelper.getSweepingDamageRatio(attacker) * attribute;
+                    float knockback = EnchantmentHelper.getKnockbackModifier(attacker);
+
+                    nearbyLivingEntity.knockBack(attacker, knockback, MathHelper.sin(attacker.rotationYaw * 0.02F), (-MathHelper.cos(attacker.rotationYaw * 0.02F)));
 
                     // TODO: Replace this with a unique Paralysis potion effect
                     if (Utils.setChance(this.paralysisChance.getAmount())) {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
                         nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));
                         nearbyLivingEntity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 15 * 20, 9));
                     } else {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
+                        nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));
                     }
                 }
             }
