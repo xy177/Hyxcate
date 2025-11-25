@@ -24,15 +24,19 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
+import net.minecraftforge.fml.common.Optional;
 
 import javax.annotation.Nullable;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.invadermonky.futurefireproof.api.IFireproofItem;
 
 import java.util.List;
 
-public class NyxItemPickaxe extends ItemPickaxe {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
+public class NyxItemPickaxe extends ItemPickaxe implements IFireproofItem {
     public double attackSpeed;
     public AttributeModifier paralysisChance;
     public EnumRarity rarity;

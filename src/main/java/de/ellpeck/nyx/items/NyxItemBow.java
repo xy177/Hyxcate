@@ -20,12 +20,19 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IRarity;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.fml.common.Optional;
 
 import javax.annotation.Nullable;
+
+import com.invadermonky.futurefireproof.api.IFireproofItem;
+
 import java.util.List;
 
-public class NyxItemBow extends ItemBow {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
+public class NyxItemBow extends ItemBow implements IFireproofItem {
     public float damageMult;
     public float velocityMult;
     public float inaccuracy;
@@ -130,7 +137,7 @@ public class NyxItemBow extends ItemBow {
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack stack) {
+    public IRarity getForgeRarity(ItemStack stack) {
         return rarity;
     }
 

@@ -18,11 +18,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
+import net.minecraftforge.fml.common.Optional;
 
 import javax.annotation.Nullable;
+
+import com.invadermonky.futurefireproof.api.IFireproofItem;
+
 import java.util.List;
 
-public class NyxItemArmor extends ItemArmor {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
+public class NyxItemArmor extends ItemArmor implements IFireproofItem {
     public EnumRarity rarity;
     
     public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, EnumRarity rarity) {
