@@ -46,11 +46,9 @@ public class NyxToolTektiteGreatsword extends NyxItemSword {
                     float sweepCalculation = (this.getAttackDamage() + 4.0F) + EnchantmentHelper.getSweepingDamageRatio(attacker) * attribute;
                     float knockback = EnchantmentHelper.getKnockbackModifier(attacker);
 
-                    nearbyLivingEntity.knockBack(attacker, knockback, MathHelper.sin(attacker.rotationYaw * 0.02F), (-MathHelper.cos(attacker.rotationYaw * 0.02F)));
-
                     if (Utils.setChance(this.paralysisChance.getAmount())) {
                         nearbyLivingEntity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), sweepCalculation);
-                        nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        nearbyLivingEntity.world.playSound(null, nearbyLivingEntity.posX, nearbyLivingEntity.posY, nearbyLivingEntity.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (nearbyLivingEntity.world.rand.nextFloat() * 0.4F + 1.2F));
                         nearbyLivingEntity.knockBack(attacker, knockback * 0.5F, MathHelper.sin(attacker.rotationYaw * 0.0175F), (-MathHelper.cos(attacker.rotationYaw * 0.0175F)));
                         nearbyLivingEntity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 15 * 20, 0));
                     } else {

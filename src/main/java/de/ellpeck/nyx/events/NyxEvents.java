@@ -487,7 +487,7 @@ public final class NyxEvents {
 
                 // Inflicts mob with Paralysis when the attribute is successful
                 if (Utils.setChance(paralysisValue)) {
-                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralysis.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.5F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 10 * 20, 0));
                 }
             }
@@ -527,6 +527,11 @@ public final class NyxEvents {
         EntityLivingBase entity = event.getEntityLiving();
         DamageSource damageSource = event.getSource();
         Entity trueSource = damageSource.getTrueSource();
+
+        // TODO: Change this to custom damage source
+        if (damageSource == DamageSource.MAGIC) {
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralyzeZap.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+        }
 
         if (trueSource instanceof EntityPlayer && trueSource != null) {
             Item heldItem = ((EntityPlayer) trueSource).getHeldItemMainhand().getItem();

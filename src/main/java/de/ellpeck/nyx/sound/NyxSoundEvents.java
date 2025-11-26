@@ -11,7 +11,6 @@ public enum NyxSoundEvents {
     fallingMeteorImpact("falling_meteor_impact"),
     fallingMeteorImpactFar("falling_meteor_impact_far"),
     hammerSmash("hammer_smash"),
-    paralysis("paralysis"),
     celestialEmblem("celestial_emblem"),
     cometKittyIdle("comet_kitty_idle"),
     alienKittyIdle("alien_kitty_idle"),
@@ -33,13 +32,17 @@ public enum NyxSoundEvents {
     lightCrystalHit("light_crystal_hit"),
     lightCrystalPlace("light_crystal_place"),
     lightCrystalStep("light_crystal_step"),
-	
-	// Items
+
+    // Effects
+    paralyzeZap("paralyze_zap"),
+
+    // Items
     beamSwordHit("beam_sword_hit"),
     beamSwordIdle("beam_sword_idle"),
     beamSwordSwing("beam_sword_swing"),
     frezariteHit("frezarite_hit"),
-    kreknoriteHit("kreknorite_hit");
+    kreknoriteHit("kreknorite_hit"),
+    tektiteHit("tektite_hit");
 
     private final SoundEvent soundEvent;
 

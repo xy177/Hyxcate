@@ -66,11 +66,22 @@
 	  "nyx:item/frezarite_hit4"
     ]
   },
-  "paralysis": {
+  "tektite_hit": {
     "category": "player",
     "sounds": [
-      "nyx:paralysis1",
-      "nyx:paralysis2"
+      "nyx:item/tektite_hit1",
+      "nyx:item/tektite_hit2",
+      "nyx:item/tektite_hit3",
+      "nyx:item/tektite_hit4"
+    ]
+  },
+  "paralyze_zap": {
+    "category": "player",
+    "sounds": [
+      "nyx:effect/paralyze_zap1",
+      "nyx:effect/paralyze_zap2",
+      "nyx:effect/paralyze_zap3",
+      "nyx:effect/paralyze_zap4"
     ]
   },
   "beam_sword_hit": {
