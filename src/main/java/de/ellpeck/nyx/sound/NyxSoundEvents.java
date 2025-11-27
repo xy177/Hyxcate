@@ -40,12 +40,12 @@ public enum NyxSoundEvents {
     beamSwordHit("beam_sword_hit"),
     beamSwordIdle("beam_sword_idle"),
     beamSwordSwing("beam_sword_swing"),
+    equipCrystalline("equip_crystalline"),
+    equipMetallic("equip_metallic"),
     frezariteHit("frezarite_hit"),
     kreknoriteHit("kreknorite_hit"),
-    tektiteHit("tektite_hit"),
-	equipCrystalline("equip_crystalline"),
-	equipMetallic("equip_metallic");
-	
+    tektiteHit("tektite_hit");
+
 
     private final SoundEvent soundEvent;
 
