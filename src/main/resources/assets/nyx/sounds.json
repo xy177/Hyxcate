@@ -224,5 +224,23 @@
       "nyx:entity/alien_kitty/idle3",
       "nyx:entity/alien_kitty/idle4"
     ]
+  },
+  "equip_crystalline": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/equip_crystalline1",
+      "nyx:item/equip_crystalline2",
+      "nyx:item/equip_crystalline3",
+      "nyx:item/equip_crystalline4"
+    ]
+  },
+  "equip_metallic": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/equip_metallic1",
+      "nyx:item/equip_metallic2",
+      "nyx:item/equip_metallic3",
+      "nyx:item/equip_metallic4"
+    ]
   }
 }
