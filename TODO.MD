@@ -4,17 +4,13 @@
 - Ensure the meteor detector works correctly, it was previously reported that they keep pointing to older meteor crashes
 - Should check and see if the sky event mixins don't cause any incompatibilities with mods like Astral Sorcery
 - Should check which config options and misc features are worth keeping
-- Rebalance recipes for endgame content
 - Apparently the magnetization effect cannot pull items vertically and will cause them to get stuck on blocks.
 - Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
 - Change the Meteorite effect into an attributes
-- Might be fun to be able to sneak + right-click beam swords to toggle them on and off
 - Update textures for regular tools, most ingots and most metal blocks
-- Update textures for special moons
 - Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
 - Maybe disable weather during events? When rain happens during a Red Giant for example, it hides the entire effect.
-- Overlay effects when events happen? To give off the illusion of colored light. Red Giant could also use its own overlay due to the extreme heat.
 
 ## Future Updates
 
@@ -28,3 +24,7 @@
 - Moon Slime Mob
 - Kitty Comets?
 - Something to completely prevent meteors from spawning, like the Meteor Shield from the old meteors mod?
+- Update textures for special moons
+- Overlay effects when events happen? To give off the illusion of colored light. Red Giant could also use its own overlay due to the extreme heat.
+- Might be fun to be able to sneak + right-click beam swords to toggle them on and off
+- Make sure endgame content is balanced just right

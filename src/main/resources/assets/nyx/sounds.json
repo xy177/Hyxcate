@@ -47,17 +47,17 @@
     "sounds": [
       "nyx:item/kreknorite_hit1",
       "nyx:item/kreknorite_hit2",
-	  "nyx:item/kreknorite_hit3",
-	  "nyx:item/kreknorite_hit4"
+      "nyx:item/kreknorite_hit3",
+      "nyx:item/kreknorite_hit4"
     ]
   },
   "frezarite_hit": {
     "category": "player",
     "sounds": [
       "nyx:item/frezarite_hit1",
-	  "nyx:item/frezarite_hit2",
-	  "nyx:item/frezarite_hit3",
-	  "nyx:item/frezarite_hit4"
+      "nyx:item/frezarite_hit2",
+      "nyx:item/frezarite_hit3",
+      "nyx:item/frezarite_hit4"
     ]
   },
   "tektite_hit": {
@@ -130,15 +130,14 @@
     ]
   },
   "laser_shot": {
-	"category": "player",
+    "category": "player",
     "sounds": [
       "nyx:item/laser_shot1",
-	  "nyx:item/laser_shot2",
-	  "nyx:item/laser_shot3",
-	  "nyx:item/laser_shot4"
+      "nyx:item/laser_shot2",
+      "nyx:item/laser_shot3",
+      "nyx:item/laser_shot4"
     ]
   },
-  
   "celestial_emblem": {
     "category": "player",
     "sounds": [
