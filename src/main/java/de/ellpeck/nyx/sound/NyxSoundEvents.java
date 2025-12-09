@@ -50,8 +50,10 @@ public enum NyxSoundEvents {
     hammerSpecialLaunch("hammer_special_launch"),
     kreknoriteHit("kreknorite_hit"),
     laserShot("laser_shot"),
-    tektiteHit("tektite_hit");
-
+    tektiteHit("tektite_hit"),
+    meteorDetectorPrompt("meteor_detector_prompt"),
+    meteorDetectorConfirm("meteor_detector_confirm"),
+    meteorDetectorCancel("meteor_detector_cancel");
 
     private final SoundEvent soundEvent;
 

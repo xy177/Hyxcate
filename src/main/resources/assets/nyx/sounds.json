@@ -293,5 +293,23 @@
       "nyx:equip/metallic/equip3",
       "nyx:equip/metallic/equip4"
     ]
+  },
+  "meteor_detector_prompt": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/meteor_detector/prompt"
+    ]
+  },
+  "meteor_detector_confirm": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/meteor_detector/confirm"
+    ]
+  },
+  "meteor_detector_cancel": {
+    "category": "player",
+    "sounds": [
+      "nyx:item/meteor_detector/cancel"
+    ]
   }
 }
