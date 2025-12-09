@@ -9,10 +9,10 @@
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
 - Change the Meteorite effect into an attributes
 - Update textures for regular tools, most ingots and most metal blocks
-- Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
 
 ## Future Updates
 
+- Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
 - New system for allowing special mobs to spawn during events?
 - Make sky events work properly with Astral Sorcery's special night sky
 - Astral Sorcery integration for Solar Eclipse
