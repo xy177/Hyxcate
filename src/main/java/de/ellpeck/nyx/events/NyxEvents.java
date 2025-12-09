@@ -19,11 +19,13 @@ import de.ellpeck.nyx.items.tools.*;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.sound.NyxSoundFallingEntity;
 import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.BlockEnchantmentTable;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -66,6 +68,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.vecmath.Vector3d;
@@ -216,6 +219,9 @@ public final class NyxEvents {
                     NyxEntityFallingStar star = new NyxEntityFallingStar(event.world);
                     star.setPosition(startPos.getX(), startPos.getY(), startPos.getZ());
                     event.world.spawnEntity(star);
+                    if (FMLLaunchHandler.side().isClient()) {
+                        Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(star, NyxSoundEvents.fallingStar.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
+                    }
                 }
             }
         }

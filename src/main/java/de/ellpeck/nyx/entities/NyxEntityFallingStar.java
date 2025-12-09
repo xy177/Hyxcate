@@ -47,9 +47,6 @@ public class NyxEntityFallingStar extends Entity {
                 item.getEntityData().setBoolean(Nyx.ID + ":fallen_star", true);
                 this.world.spawnEntity(item);
                 this.setDead();
-            } else {
-                if (this.ticksExisted % 40 == 0)
-                    this.world.playSound(null, this.posX, this.posY, this.posZ, NyxSoundEvents.fallingStar.getSoundEvent(), SoundCategory.AMBIENT, (float) NyxConfig.fallingStarAmbientVolume, 1);
             }
         } else {
             for (int i = 0; i < 2; i++) {

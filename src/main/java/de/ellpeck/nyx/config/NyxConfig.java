@@ -104,7 +104,7 @@ public final class NyxConfig {
         fallingStarRarity = instance.get("fallingStars", "fallingStarRarity", 0.01F, "The chance in percent (1 = 100%) for a falling star to appear at night for each player each second", 0, 1).getDouble();
         fallingStarRarityShower = instance.get("fallingStars", "fallingStarRarityShower", 0.15F, "The chance for a falling star to appear during a star shower for each player per second", 0, 1).getDouble();
         fallingStarImpactVolume = instance.get("fallingStars", "fallingStarImpactVolume", 10F, "The volume for the falling star impact sound").getDouble();
-        fallingStarAmbientVolume = instance.get("fallingStars", "fallingStarAmbientVolume", 5F, "The volume for the falling star ambient sound").getDouble();
+        fallingStarAmbientVolume = instance.get("fallingStars", "fallingStarAmbientVolume", 10F, "The volume for the falling star ambient sound").getDouble();
 
         bloodMoon = new LunarEventConfig("bloodMoon", "bloodMoon", "Blood Moon", 0.05D);
         bloodMoonSpawnMultiplier = instance.get("bloodMoon", "bloodMoonSpawnMultiplier", 2, "The multiplier with which mobs should spawn during the blood moon (eg 2 means 2 mobs spawn instead of 1)", 1, 1000).getInt();
