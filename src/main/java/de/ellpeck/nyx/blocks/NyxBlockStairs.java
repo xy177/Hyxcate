@@ -15,8 +15,9 @@ import net.minecraft.world.World;
 public class NyxBlockStairs extends BlockStairs {
     public NyxBlockStairs(IBlockState modelState) {
         super(modelState);
+        this.useNeighborBrightness = true;
     }
-    
+
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.blastproof"));
