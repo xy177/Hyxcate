@@ -13,6 +13,7 @@
 ## Future Updates
 
 - Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
+- Meteor Rework: Meteors will only impact the ground and deal damage if it is being followed, otherwise they despawn. Meteors will also fall more slowly. See AS shooting star's for an example of this
 - New system for allowing special mobs to spawn during events?
 - Make sky events work properly with Astral Sorcery's special night sky
 - Astral Sorcery integration for Solar Eclipse
