@@ -25,17 +25,20 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+
+import org.lwjgl.input.Keyboard;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
+// Mostly copied from the compass
 public class NyxToolMeteorDetector extends Item {
     private static final ConcurrentHashMap<UUID, PendingDeletion> PENDING_DELETIONS = new ConcurrentHashMap<>();
 
     public NyxToolMeteorDetector() {
-        // Copied from compass and edited
         this.addPropertyOverride(new ResourceLocation("angle"), new IItemPropertyGetter() {
             @SideOnly(Side.CLIENT)
             double rotation;
@@ -43,7 +46,7 @@ public class NyxToolMeteorDetector extends Item {
             double rota;
             @SideOnly(Side.CLIENT)
             long lastUpdateTick;
-            // edit: add this variable for tracking time
+            // Add this variable for tracking time
             @SideOnly(Side.CLIENT)
             BlockPos meteorPos;
 
@@ -60,12 +63,12 @@ public class NyxToolMeteorDetector extends Item {
                         worldIn = entity.world;
                     }
 
-                    // edit: remove if check for surface world, since this should work in any dimension
+                    // Remove if check for surface world, since this should work in any dimension
                     double d0;
                     double d1 = flag ? (double) entity.rotationYaw : this.getFrameRotation((EntityItemFrame) entity);
                     d1 = MathHelper.positiveModulo(d1 / 360.0D, 1.0D);
                     double d2 = this.getSpawnToAngle(worldIn, entity) / (Math.PI * 2D);
-                    // edit: spin randomly if no spawn angle was found
+                    // Sspin randomly if no spawn angle was found
                     if (Double.isNaN(d2)) {
                         d0 = Math.random();
                     } else {
@@ -102,7 +105,7 @@ public class NyxToolMeteorDetector extends Item {
 
             @SideOnly(Side.CLIENT)
             private double getSpawnToAngle(World world, Entity e) {
-                // edit: find the nearest meteor instead of spawn
+                // Find the nearest meteor instead of spawn
                 if (this.meteorPos == null || world.getTotalWorldTime() % 100 == 0) {
                     NyxWorld data = NyxWorld.get(world);
                     if (data == null || data.meteorLandingSites.isEmpty()) return Double.NaN;
@@ -121,8 +124,13 @@ public class NyxToolMeteorDetector extends Item {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector"));
-        tooltip.add(TextFormatting.DARK_GRAY + I18n.format("tooltip.nyx.meteor_detector.hint"));
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector.hint"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector.hint2"));
+        } else {
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
+        }
     }
 
     @Override
@@ -133,6 +141,7 @@ public class NyxToolMeteorDetector extends Item {
     private EnumActionResult handleRightClick(EntityPlayer player, World world, EnumHand hand) {
         if (world.isRemote) return EnumActionResult.SUCCESS;
         player.swingArm(hand);
+        player.getCooldownTracker().setCooldown(this, 60);
         // Sneaking + right click: Confirm deletion
         if (player.isSneaking()) {
             return confirmDeletion(player) ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
@@ -212,6 +221,7 @@ public class NyxToolMeteorDetector extends Item {
 
         if (removed) {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.deleted", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.GREEN)));
+            player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.please_understand", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.GREEN)));
             player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorConfirm.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
             return true;
         } else {
