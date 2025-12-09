@@ -10,7 +10,6 @@
 - Change the Meteorite effect into an attributes
 - Update textures for regular tools, most ingots and most metal blocks
 - Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
-- Maybe disable weather during events? When rain happens during a Red Giant for example, it hides the entire effect.
 
 ## Future Updates
 

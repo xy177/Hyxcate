@@ -148,6 +148,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                     }
                     if (this.currentLunarEvent != null) {
                         isDirty = true;
+                        this.world.provider.resetRainAndThunder();
                         if (NyxConfig.eventNotifications) {
                             ITextComponent text = this.currentLunarEvent.getStartMessage();
                             for (EntityPlayer player : this.world.playerEntities) {
@@ -201,6 +202,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                     }
                     if (this.currentSolarEvent != null) {
                         isDirty = true;
+                        this.world.provider.resetRainAndThunder();
                         if (NyxConfig.eventNotifications) {
                             ITextComponent text = this.currentSolarEvent.getStartMessage();
                             for (EntityPlayer player : this.world.playerEntities) {
