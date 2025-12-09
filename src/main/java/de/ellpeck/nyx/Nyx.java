@@ -22,6 +22,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
+import java.io.File;
+
 @Mod(modid = Nyx.ID, name = Nyx.NAME, version = Nyx.VERSION, guiFactory = "de.ellpeck.nyx.util.NyxGuiFactory", dependencies = "after:tconstruct;after:conarm")
 public class Nyx {
 
@@ -40,7 +42,7 @@ public class Nyx {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        NyxConfig.init(event.getSuggestedConfigurationFile());
+        NyxConfig.init(new File(event.getModConfigurationDirectory(), NAME + ".cfg"));
         NyxRegistry.preInit();
         NyxPacketHandler.init();
         NyxCompatHandler.preInit();
