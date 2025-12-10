@@ -2,6 +2,7 @@ package de.ellpeck.nyx.items.tools;
 
 import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -25,9 +26,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-
-import org.lwjgl.input.Keyboard;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
@@ -124,7 +122,7 @@ public class NyxToolMeteorDetector extends Item {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+        if (GuiScreen.isShiftKeyDown()) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector"));
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector.hint"));
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteor_detector.hint2"));

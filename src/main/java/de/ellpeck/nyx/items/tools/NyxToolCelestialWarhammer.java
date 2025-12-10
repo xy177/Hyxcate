@@ -5,6 +5,7 @@ import de.ellpeck.nyx.items.NyxItemSword;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -24,7 +25,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.IRarity;
-import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -135,7 +135,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+        if (GuiScreen.isShiftKeyDown()) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.celestial_warhammer"));
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));

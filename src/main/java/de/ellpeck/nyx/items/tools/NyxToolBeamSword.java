@@ -8,6 +8,7 @@ import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,7 +28,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -115,7 +115,7 @@ public class NyxToolBeamSword extends NyxItemSword {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+        if (GuiScreen.isShiftKeyDown()) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.beam_sword"));
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
