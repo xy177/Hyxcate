@@ -15,12 +15,12 @@ public class NyxEventSolarEclipse extends NyxSolarEvent {
     private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.solarEclipse);
 
     public NyxEventSolarEclipse(NyxWorld nyxWorld) {
-        super("solar_eclipse", nyxWorld);
+        super("grim_eclipse", nyxWorld);
     }
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Nyx.ID + ".solar_eclipse")
+        return new TextComponentTranslation("info." + Nyx.ID + ".grim_eclipse")
                 .setStyle(new Style().setColor(TextFormatting.DARK_GRAY).setItalic(true));
     }
 
@@ -41,7 +41,6 @@ public class NyxEventSolarEclipse extends NyxSolarEvent {
         return NyxWorld.isNighttime(this.world);
     }
 
-    // TODO
     @Override
     public int getSkyColor() {
         return 0x131311;
@@ -49,7 +48,7 @@ public class NyxEventSolarEclipse extends NyxSolarEvent {
 
     @Override
     public String getSunTexture() {
-        return "solar_eclipse";
+        return "grim_eclipse";
     }
 
     @Override
