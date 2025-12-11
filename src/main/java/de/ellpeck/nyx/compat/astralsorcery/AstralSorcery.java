@@ -4,7 +4,6 @@ import hellfirepvp.astralsorcery.common.constellation.distribution.Constellation
 import hellfirepvp.astralsorcery.common.constellation.distribution.WorldSkyHandler;
 import net.minecraft.world.World;
 
-// TODO: Needs testing if checks are early enough
 public class AstralSorcery {
 
     public static boolean isDayOfLunarEclipse(World world) {

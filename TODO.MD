@@ -1,11 +1,9 @@
 ## Release
 
-- Setup ConfigAnytime if any mixins become configurable
-- Should check and see if the sky event mixins don't cause any incompatibilities with mods like Astral Sorcery
 - Should check which config options and misc features are worth keeping
 - Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
-- Change the Meteorite effect into an attributes
+- Change the Meteorite effect into an attribute
 - Update textures for regular tools, most ingots and most metal blocks
 
 ## Future Updates
@@ -26,3 +24,4 @@
 - Overlay effects when events happen? To give off the illusion of colored light. Red Giant could also use its own overlay due to the extreme heat.
 - Might be fun to be able to sneak + right-click beam swords to toggle them on and off
 - Make sure endgame content is balanced just right
+- Setup ConfigAnytime if any mixins become configurable
