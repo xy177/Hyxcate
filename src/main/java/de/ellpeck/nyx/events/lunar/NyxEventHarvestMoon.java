@@ -52,11 +52,6 @@ public class NyxEventHarvestMoon extends NyxLunarEvent {
     }
 
     @Override
-    public boolean shouldPreventSleeping() {
-        return false;
-    }
-
-    @Override
     public int getSkyColor() {
         return 0x3f3fc0;
     }

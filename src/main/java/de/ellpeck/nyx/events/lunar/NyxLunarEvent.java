@@ -32,8 +32,6 @@ public abstract class NyxLunarEvent implements INBTSerializable<NBTTagCompound> 
 
     public abstract boolean shouldStop(boolean lastDaytime);
 
-    public abstract boolean shouldPreventSleeping();
-
     public int getSkyColor() {
         return 0;
     }

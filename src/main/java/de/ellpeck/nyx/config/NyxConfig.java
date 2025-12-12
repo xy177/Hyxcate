@@ -28,7 +28,7 @@ public final class NyxConfig {
     public static double fallingStarImpactVolume;
     public static double fallingStarAmbientVolume;
     public static boolean fullMoon;
-    public static boolean specialMoonSleeping;
+    public static boolean bloodMoonSleeping;
     public static int bloodMoonSpawnMultiplier;
     public static Set<String> mobDuplicationBlacklist;
     public static boolean isMobDuplicationWhitelist;
@@ -73,7 +73,6 @@ public final class NyxConfig {
         isMobDuplicationWhitelist = instance.get("general", "isMobDuplicationWhitelist", false, "If the mobDuplicationBlacklist should act as a whitelist instead").getBoolean();
         eventTint = instance.get("general", "eventTint", true, "If moon and sun events should tint the sky").getBoolean();
         eventNotifications = instance.get("general", "eventNotifications", true, "If moon and sun events should be announced in chat when they start").getBoolean();
-        specialMoonSleeping = instance.get("general", "specialMoonSleeping", false, "If sleeping is allowed during a special moon").getBoolean();
 
         fullMoon = instance.get("fullMoon", "fullMoon", true, "If the vanilla full moon should be considered a proper lunar event").getBoolean();
         addPotionEffects = instance.get("fullMoon", "addPotionEffects", true, "If mobs spawned during certain events should have random potion effects applied to them (similarly to spiders in the base game)").getBoolean();
@@ -103,6 +102,7 @@ public final class NyxConfig {
         fallingStarAmbientVolume = instance.get("fallingStars", "fallingStarAmbientVolume", 10F, "The volume for the falling star ambient sound").getDouble();
 
         bloodMoon = new LunarEventConfig("bloodMoon", "bloodMoon", "Blood Moon", 0.05D);
+        bloodMoonSleeping = instance.get("bloodMoon", "bloodMoonSleeping", false, "If sleeping is allowed during a blood moon").getBoolean();
         bloodMoonSpawnMultiplier = instance.get("bloodMoon", "bloodMoonSpawnMultiplier", 2, "The multiplier with which mobs should spawn during the blood moon (eg 2 means 2 mobs spawn instead of 1)", 1, 1000).getInt();
         bloodMoonVanish = instance.get("bloodMoon", "bloodMoonVanish", true, "If mobs spawned by the blood moon should die at sunup").getBoolean();
         bloodMoonSpawnRadius = instance.get("bloodMoon", "bloodMoonSpawnRadius", 20, "The closest distance that mobs can spawn away from a player during the blood moon. Vanilla value is 24.").getInt();

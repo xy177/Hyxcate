@@ -43,11 +43,6 @@ public class NyxEventStarShower extends NyxLunarEvent {
     }
 
     @Override
-    public boolean shouldPreventSleeping() {
-        return false;
-    }
-
-    @Override
     public int getSkyColor() {
         return 0xdec25f;
     }

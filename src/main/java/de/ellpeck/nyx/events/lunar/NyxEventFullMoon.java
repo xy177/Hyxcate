@@ -32,9 +32,4 @@ public class NyxEventFullMoon extends NyxLunarEvent {
     public boolean shouldStop(boolean lastDaytime) {
         return NyxWorld.isDaytime(this.world);
     }
-
-    @Override
-    public boolean shouldPreventSleeping() {
-        return false;
-    }
 }

@@ -73,11 +73,6 @@ public class NyxEventBloodMoon extends NyxLunarEvent {
     }
 
     @Override
-    public boolean shouldPreventSleeping() {
-        return true;
-    }
-
-    @Override
     public int getSkyColor() {
         return 0x420d03;
     }

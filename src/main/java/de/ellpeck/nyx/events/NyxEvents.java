@@ -23,7 +23,6 @@ import de.ellpeck.nyx.sound.NyxSoundFallingEntity;
 import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
-import net.minecraft.block.BlockEnchantmentTable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -399,11 +398,8 @@ public final class NyxEvents {
         Block block = state.getBlock();
         NyxWorld nyx = NyxWorld.get(world);
 
-        if (nyx != null && nyx.currentLunarEvent != null && nyx.currentLunarEvent.shouldPreventSleeping() && !NyxConfig.specialMoonSleeping && block instanceof BlockBed) {
-            if (nyx.currentLunarEvent instanceof NyxEventBloodMoon) {
-                player.sendStatusMessage(new TextComponentTranslation("info." + Nyx.ID + ".blood_moon_sleeping"), true);
-            }
-        }
+        if (nyx != null && nyx.currentLunarEvent instanceof NyxEventBloodMoon && !NyxConfig.bloodMoonSleeping && block instanceof BlockBed)
+            player.sendStatusMessage(new TextComponentTranslation("info." + Nyx.ID + ".blood_moon_sleeping"), true);
     }
 
     @SubscribeEvent
@@ -415,7 +411,7 @@ public final class NyxEvents {
     public static void onSleep(PlayerSleepInBedEvent event) {
         EntityPlayer player = event.getEntityPlayer();
         NyxWorld nyx = NyxWorld.get(player.world);
-        if (nyx != null && nyx.currentLunarEvent != null && nyx.currentLunarEvent.shouldPreventSleeping() && !NyxConfig.specialMoonSleeping)
+        if (nyx != null && nyx.currentLunarEvent instanceof NyxEventBloodMoon && !NyxConfig.bloodMoonSleeping)
             event.setResult(EntityPlayer.SleepResult.OTHER_PROBLEM);
     }
 
