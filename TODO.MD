@@ -1,6 +1,5 @@
 ## Release
 
-- Should check which config options and misc features are worth keeping
 - Several tooltips are too long and need to be shortened. Some tooltips could be moved to JEI? (Frezarite and Kreknorite items mainly)
 - Change the Meteorite effect into an attribute
 - Update textures for regular tools, most ingots and most metal blocks
