@@ -1,2 +1,98 @@
+[![Requires MixinBooter](https://img.shields.io/badge/Requires-MixinBooter-C45D19.svg?labelColor=&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
+
 # Hyxcate
-Sky events and meteors for 1.12.2!
+
+### Celestial Events, Meteors, and MORE!
+
+![Hyxcate Banner](docs/banner.png)
+
+**Hyxcate** (a combination of the Greek goddess names Nyx and Hecate) is a grand sci-fi themed adventure mod that mainly introduces new events for day and night to make Survival even more challenging, as well as meteors containing special endgame materials. Originally it started off as a fork of **Nyx** for the **Hexxit II** modpack, it has now evolved into its own standalone mod with many features originating from Nyx being reworked or removed.
+
+#### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side! The mod is currently in Beta, things are subject to change and even be removed!_**
+
+### 🔑 Key Features
+
+![Hyxcate Event](docs/eclipse.png)
+
+- **Night Events:** Special events have a chance to trigger during the night. They can make your gameplay more difficult by spawning even more mobs per area and even more!
+- **Day Events:** Not only are there night events, there are also events for the daytime. You might become unlucky with a sudden eclipse that acts like an extended night!
+- **Falling Stars:** Stars fall during the night and can be caught, they can be used for building blocks and some recipes. In the future, there will be much more uses for these.
+- **Falling Meteors:** Meteors of rare alien materials can fall towards your world, beware of the dangerous monsters they spawn! **Meteorite**, **Frezarite**, and **Kreknorite** meteors can be encountered, while **Tektite** gems can be found rarely when mining any hot meteor blocks or when slaying creatures originating from meteors. **Cyber Crystals** are also very rarely spawned by any meteor type.
+- **Equipment:** New gear that exceeds diamonds?! **Meteorite**, **Frezarite**, **Kreknorite**, and **Tektite** are new tiers that are found exclusively in meteor crash sites, there are also special endgame weapons that utilize **Cyber Crystals**.
+- **Enchantments:** Customize weapons and armor with **Lunar Edge** and **Lunar Shield**, the benefits of these enchantments are much more viable during the night!
+
+### 📖 Quick Guide
+
+![Hyxcate Event](docs/blood_moon.png)
+
+#### 🌘 Night Events
+
+![Night Events](docs/night_events.png)
+
+- **Full Moon:** The full moon phase is now considered an event. Hostile mobs will spawn more frequently and they can also sometimes spawn with positive status effects like **Strength** or **Resistance** to make them more difficult to fight. Untamed wolves will become hostile when approached, no werewolves on sight at least!
+- **Blood Moon:** The moon and sky will turn a blood red color. Hostile mobs will spawn much more frequently and you won't be able to sleep for the night.
+- **Blue Moon:** The moon and sky will turn a deep blue color. This event is peaceful and prevents all hostile mobs from spawning. Additionally, crops will grow faster and you will be provided with the **Luck II** effect while the event remains active.
+- **Star Shower:** The moon and sky will turn a bright yellow color. Falling stars will appear much more frequently while this event is active.
+
+#### ☀️ Day Events
+
+![Day Events](docs/day_events.png)
+
+- **Grim Eclipse:** The sun gets blocked by an unknown planet-sized object. Hostile mobs will continue to spawn and not be able to burn under the sun as if it were an extended night. **NOTE:** It's not considered an actual eclipse and we're not exactly sure what the object blocking the sun is...
+- **Red Giant:** The sun will temporarily exhaust its hydrogen fuel in its core, thankfully the world is resilient enough to handle the immense heat. Currently this event is mostly cosmetic and is still a work in progress!
+
+#### ☄️ Materials
+
+![Hyxcate Materials](docs/materials.png)
+
+**NOTE:** Meteorite tier and above have a mining level of 4!
+
+- **Meteorite:** It is the most common metal found in meteors and requires a mining level of 3 to mine.
+- **Frezarite/Kreknorite:** Both metals are uncommon from meteors and are of the same strength. They require a mining level of 4 to mine.
+- **Tektite:** Gem clusters can be found rarely from mining any hot meteor rock or dropped from the unique meteor creatures.
+- **Cyber Crystal:** These crystals are highly prized for their energy source contained, they are very rarely found on any meteor crash site. They require a mining level of 4 to mine.
+
+#### 🗡️ Equipment
+
+![Hyxcate Equipment](docs/weapons.png)
+
+- **Meteorite:** Armor and weapons constructed out of **Meteorite** have the ability to pull in nearby items! The more equipment worn at once, the stronger the pull.
+- **Frezarite:** Weapons constructed out of **Frezarite** have a strong AoE ability, all affected targets will also be inflicted with **Slowness**. Armor constructed out of **Frezarite** will give infinite **Water Breathing** when the full set is worn while the boots will temporarily freeze water below the wearer.
+- **Kreknorite:** Weapons constructed out of **Kreknorite** have a strong AoE ability. All affected targets will also be inflicted with **Wither**. Armor constructed out of **Kreknorite** will give infinite **Fire Resistance** when the full set is worn.
+- **Tektite:** Armor and weapons constructed out of **Tektite** have the ability to inflict **Paralysis**. This effect will disable the mob's AI and deal damage overtime while it is active.
+- **Tektite Greatsword:** Tektite also includes a greatsword weapon. It has the same ability as its other tool counterparts except it has a much wider range.
+- **Bow of Lightspeed:** This bow can fire arrows extremely fast and make them pack a punch!
+- **Beam Swords:** These weapons are of pure plasma and energy, they will cut through even the strongest armor! They not only ignore armor, they will also ignore invincibility frames.
+- **Celestial Warhammer:** This warhammer is of the stars! Hold right-click to hit the ground and fly up onto the air, then once you hit the ground, you'll deal a large AoE attack that will knock all your foes away and inflict them with the **Glowing** effect.
+
+### 🔁 **Mod Integration**
+
+- With [**Astral Sorcery**](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) installed, Hyxcate events will never trigger on the same day the Horologium constellation (Solar Eclipse) happens.
+- With [**Demagnetize**](https://www.curseforge.com/minecraft/mc-mods/demagnetize) installed, Hyxcate magnetization effects will not pull items around activated Demagnetizers.
+- With [**Tinkers' Antique (Tinkers' Construct)**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) installed, there are new tool materials to tinker with.
+- With [**Antique Armory (Construct's Armory)**](https://www.curseforge.com/minecraft/mc-mods/antique-armory) installed, there are new armor materials to tinker with.
+- More to come!
+
+### 👨‍💻 Main Developers, Collaborators, and Friends
+
+- Lead Developer/Owner ~ IcarussOne
+- Lead Developer ~ ACGaming
+- Sound Artist ~ PessiMysterio
+- Texture Artist ~ Ichipie1125
+- Beam Sword textures, Alien Kitty textures, and earlier weapon textures ~ kimiko0402
+- Extensive feedback on earlier versions of the mod ~ xJon
+
+### 🙏 Special Thanks
+
+- Originally creating [**Nyx**](https://www.curseforge.com/minecraft/mc-mods/nyx) (licensed under MIT) ~ Ellpeck
+- Ideas from [**Falling Meteors**](https://www.curseforge.com/minecraft/mc-mods/falling-meteors-mod) ~ AlexDGr8r
+- Cat texture from [**Xyn**](https://www.curseforge.com/minecraft/mc-mods/xyn-fork) ~ TheSlayer5934
+- Creating the [**Hexxit edition of Red's Pack**](https://www.planetminecraft.com/texture-pack/reds-pack-hexxit-edition/), a few textures were used as a base for some parts of the mod ~ DeadDirtyRed
+- [**Base texture for the Celestial Emblem**](https://github.com/malcolmriley/unused-textures) ~ MCThe_Paragon
+
+### 🌐 Translators
+
+- German ~ ACGaming
+
+Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-Modding-Team/Hyxcate/pulls) or send your translation via [**Discord**](https://acgam.ing/discord)!
+
