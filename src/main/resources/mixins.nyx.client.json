@@ -3,6 +3,7 @@
   "refmap": "mixins.nyx.refmap.json",
   "client": [
     "NyxCloudColorMixin",
+    "NyxLightmapColorsMixin",
     "NyxRenderSkyMixin",
     "NyxSkyColorMixin",
     "NyxSunBrightnessBodyMixin"
