@@ -29,7 +29,7 @@
 
 ![Night Events](docs/night_events.png)
 
-- **Full Moon:** The full moon phase is now considered an event. Hostile mobs will spawn more frequently and they can also sometimes spawn with positive status effects like **Strength** or **Resistance** to make them more difficult to fight. Untamed wolves will become hostile when approached, no werewolves on sight at least!
+- **Full Moon:** The full moon phase is now considered an event, but only when no other event is active. Hostile mobs will spawn more frequently and they can also sometimes spawn with positive status effects like **Strength** or **Resistance** to make them more difficult to fight. Untamed wolves will become hostile when approached, no werewolves on sight at least!
 - **Blood Moon:** The moon and sky will turn a blood red color. Hostile mobs will spawn much more frequently and you won't be able to sleep for the night.
 - **Blue Moon:** The moon and sky will turn a deep blue color. This event is peaceful and prevents all hostile mobs from spawning. Additionally, crops will grow faster and you will be provided with the **Luck II** effect while the event remains active.
 - **Star Shower:** The moon and sky will turn a bright yellow color. Falling stars will appear much more frequently while this event is active.
