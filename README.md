@@ -12,7 +12,7 @@
 
 ### 🔑 Key Features
 
-![Hyxcate Event](docs/eclipse.png)
+![Grim Eclipse](docs/eclipse.png)
 
 - **Night Events:** Special events have a chance to trigger during the night. They can make your gameplay more difficult by spawning even more mobs per area and even more!
 - **Day Events:** Not only are there night events, there are also events for the daytime. You might become unlucky with a sudden eclipse that acts like an extended night!
@@ -23,7 +23,7 @@
 
 ### 📖 Quick Guide
 
-![Hyxcate Event](docs/blood_moon.png)
+![Blood Moon](docs/blood_moon.png)
 
 #### 🌘 Night Events
 
