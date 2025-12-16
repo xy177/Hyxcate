@@ -29,7 +29,7 @@ public class NyxBlockMeteorRockHot extends NyxBlockMeteorRock {
         this.convertedBlock = convertedBlock;
         this.cooldownChance = cooldownChance;
         this.tektiteChance = tektiteChance;
-
+        this.setLightLevel(0.2F);
         this.setTickRandomly(true);
     }
 

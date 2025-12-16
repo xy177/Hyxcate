@@ -30,10 +30,11 @@ public class NyxBlockCyberCrystal extends Block {
     public NyxBlockCyberCrystal() {
         super(Material.ROCK);
         this.setHardness(3);
-        this.setLightLevel(0.9375F);
+        this.setLightLevel(0.625F);
         this.setSoundType(NyxRegistry.DENSE_CRYSTAL);
         this.setTickRandomly(true);
         this.setHarvestLevel("pickaxe", 4);
+        this.useNeighborBrightness = true;
         NyxBlocks.initBlock(this, "cyber_crystal", ItemBlock::new);
     }
 
