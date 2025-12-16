@@ -3,6 +3,7 @@ package de.ellpeck.nyx.entities.renderer;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.entities.NyxEntityAlienCreeper;
 import de.ellpeck.nyx.entities.renderer.layers.NyxLayerAlienCreeperCharge;
+import de.ellpeck.nyx.entities.renderer.layers.NyxLayerGlowing;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -10,15 +11,17 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper> {
-    private static final ResourceLocation SKIN = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper.png");
+    private static final ResourceLocation ALIEN = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper.png");
+    public static final ResourceLocation ALIEN_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_layer.png");
 
     public NyxRendererAlienCreeper(RenderManager renderManager) {
         super(renderManager, new NyxModelAlienCreeper(), 0.5F);
+        this.addLayer(new NyxLayerGlowing<>(this, ALIEN_GLOW));
         this.addLayer(new NyxLayerAlienCreeperCharge(this));
     }
 
-    private void updateCreeperScale(NyxEntityAlienCreeper entitycreeper, float partialTickTime) {
-        float f1 = entitycreeper.getCreeperFlashIntensity(partialTickTime);
+    private void updateCreeperScale(NyxEntityAlienCreeper entity, float partialTickTime) {
+        float f1 = entity.getCreeperFlashIntensity(partialTickTime);
         float f2 = 1.0F + MathHelper.sin(f1 * 100.0F) * f1 * 0.01F;
 
         if (f1 < 0.0F) {
@@ -36,8 +39,8 @@ public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper>
         GlStateManager.scale(f3, f4, f3);
     }
 
-    private int updateCreeperColorMultiplier(NyxEntityAlienCreeper entityCreeper, float lightBrightness, float partialTickTime) {
-        float var5 = entityCreeper.getCreeperFlashIntensity(partialTickTime);
+    private int updateCreeperColorMultiplier(NyxEntityAlienCreeper entity, float lightBrightness, float partialTickTime) {
+        float var5 = entity.getCreeperFlashIntensity(partialTickTime);
 
         if ((int) (var5 * 10.0F) % 2 == 0) {
             return 0;
@@ -60,17 +63,17 @@ public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper>
     }
 
     @Override
-    protected void preRenderCallback(NyxEntityAlienCreeper entityliving, float partialTickTime) {
-        updateCreeperScale(entityliving, partialTickTime);
+    protected void preRenderCallback(NyxEntityAlienCreeper entity, float partialTickTime) {
+        updateCreeperScale(entity, partialTickTime);
     }
 
     @Override
-    protected int getColorMultiplier(NyxEntityAlienCreeper entityliving, float lightBrightness, float partialTickTime) {
-        return updateCreeperColorMultiplier(entityliving, lightBrightness, partialTickTime);
+    protected int getColorMultiplier(NyxEntityAlienCreeper entity, float lightBrightness, float partialTickTime) {
+        return updateCreeperColorMultiplier(entity, lightBrightness, partialTickTime);
     }
 
     @Override
     protected ResourceLocation getEntityTexture(NyxEntityAlienCreeper entity) {
-        return SKIN;
+        return ALIEN;
     }
 }

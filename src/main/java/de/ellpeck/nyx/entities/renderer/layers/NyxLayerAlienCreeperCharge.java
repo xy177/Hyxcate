@@ -15,17 +15,17 @@ public class NyxLayerAlienCreeperCharge implements LayerRenderer<NyxEntityAlienC
     private final NyxRendererAlienCreeper alienCreeperRendered;
     private final NyxModelAlienCreeper alienCreeperModel = new NyxModelAlienCreeper(2.0F);
 
-    public NyxLayerAlienCreeperCharge(NyxRendererAlienCreeper alienCreeperRenderedIn) {
-        this.alienCreeperRendered = alienCreeperRenderedIn;
+    public NyxLayerAlienCreeperCharge(NyxRendererAlienCreeper renderer) {
+        this.alienCreeperRendered = renderer;
     }
 
     @Override
-    public void doRenderLayer(NyxEntityAlienCreeper entityAlienCreeper, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
-        if (entityAlienCreeper.getPowered()) {
+    public void doRenderLayer(NyxEntityAlienCreeper entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        if (entity.getPowered()) {
             this.alienCreeperRendered.bindTexture(LIGHTNING_TEXTURE);
             GlStateManager.matrixMode(GL11.GL_TEXTURE);
             GlStateManager.loadIdentity();
-            float f = (float) entityAlienCreeper.ticksExisted + partialTicks;
+            float f = (float) entity.ticksExisted + partialTicks;
             GlStateManager.translate(f * 0.01F, f * 0.01F, 0.0F);
             GlStateManager.matrixMode(GL11.GL_MODELVIEW);
             GlStateManager.enableBlend();
@@ -34,7 +34,7 @@ public class NyxLayerAlienCreeperCharge implements LayerRenderer<NyxEntityAlienC
             GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
             this.alienCreeperModel.setModelAttributes(this.alienCreeperRendered.getMainModel());
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-            this.alienCreeperModel.render(entityAlienCreeper, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.alienCreeperModel.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
             GlStateManager.matrixMode(GL11.GL_TEXTURE);
             GlStateManager.loadIdentity();
