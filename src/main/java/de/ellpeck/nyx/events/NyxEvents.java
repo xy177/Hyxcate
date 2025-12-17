@@ -100,9 +100,7 @@ public final class NyxEvents {
                         if (!entity.isOnSameTeam(player)) {
                             if (entity == player) continue;
 
-                            // TODO: Add custom damage over time effect here
-                            entity.setFire(10 + (player.world.rand.nextInt(10)));
-                            entity.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 10 * 20, 0, false, false));
+                            entity.addPotionEffect(new PotionEffect(NyxPotions.CELESTIAL_ERASURE, 8 * 20, 0, false, false));
                             entity.attackEntityFrom(source, damage);
                             entity.knockBack(player, 3.0F, player.posX - entity.posX, player.posZ - entity.posZ);
                             entity.motionY = 1;
@@ -332,27 +330,6 @@ public final class NyxEvents {
         NyxWorld nyx = NyxWorld.get(entity.world);
         if (nyx == null) return;
 
-        // Bigger slimes
-        // This will be replaced with a unique mob so we are disabling it for now
-        /*if (entity instanceof EntitySlime) {
-            EntitySlime slime = (EntitySlime) entity;
-            int size = slime.getSlimeSize();
-
-            if (nyx.currentLunarEvent instanceof NyxEventFullMoon) {
-                int i = slime.world.rand.nextInt(5);
-                if (i <= 1) size += 2;
-                if (i <= 2) size += 2;
-            } else if (nyx.currentLunarEvent instanceof NyxEventHarvestMoon) {
-                int i = slime.world.rand.nextInt(15);
-                if (i <= 8) size += 5;
-            }
-            if (size != slime.getSlimeSize()) {
-                slime.setSlimeSize(size, true);
-                // Cancelling this event just suppresses onInitialSpawn, doc is wrong
-                event.setCanceled(true);
-            }
-        }*/
-
         if (nyx.currentLunarEvent instanceof NyxEventFullMoon) {
             // Set random effect
             if (NyxConfig.addPotionEffects && !(entity instanceof EntityCreeper)) {
@@ -473,6 +450,7 @@ public final class NyxEvents {
 
         if (entity instanceof EntityLivingBase && trueSource instanceof EntityLivingBase) {
             IAttributeInstance paralysis = ((EntityLivingBase) trueSource).getEntityAttribute(NyxAttributes.PARALYSIS);
+
             if (paralysis != null && !paralysis.getModifiers().isEmpty()) {
                 float paralysisValue = 0.0F;
 
@@ -484,7 +462,7 @@ public final class NyxEvents {
                 // Inflicts mob with Paralysis when the attribute is successful
                 if (Utils.setChance(paralysisValue)) {
                     entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
-                    entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 10 * 20, 0));
+                    entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
                 }
             }
         }
@@ -523,6 +501,10 @@ public final class NyxEvents {
         EntityLivingBase entity = event.getEntityLiving();
         DamageSource damageSource = event.getSource();
         Entity trueSource = damageSource.getTrueSource();
+
+        if (damageSource == NyxDamageSource.CELESTIAL) {
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.starAura.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+        }
 
         if (damageSource == NyxDamageSource.DEEP_FREEZE) {
             entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
