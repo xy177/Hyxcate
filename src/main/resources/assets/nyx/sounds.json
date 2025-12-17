@@ -311,5 +311,23 @@
     "sounds": [
       "nyx:item/meteor_detector/cancel"
     ]
+  },
+  "star_aura": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:random/star_aura1",
+      "nyx:random/star_aura2",
+      "nyx:random/star_aura3",
+      "nyx:random/star_aura4"
+    ]
+  },
+  "star_explode": {
+    "category": "ambient",
+    "sounds": [
+      "nyx:random/star_explode1",
+      "nyx:random/star_explode2",
+      "nyx:random/star_explode3",
+      "nyx:random/star_explode4"
+    ]
   }
 }

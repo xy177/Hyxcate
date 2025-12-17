@@ -53,7 +53,11 @@ public enum NyxSoundEvents {
     tektiteHit("tektite_hit"),
     meteorDetectorPrompt("meteor_detector_prompt"),
     meteorDetectorConfirm("meteor_detector_confirm"),
-    meteorDetectorCancel("meteor_detector_cancel");
+    meteorDetectorCancel("meteor_detector_cancel"),
+
+    // Random
+    starAura("star_aura"),
+    starExplode("star_explode");
 
     private final SoundEvent soundEvent;
 
