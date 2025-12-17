@@ -3,6 +3,9 @@ package de.ellpeck.nyx.items;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.init.NyxBlocks;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
+import de.ellpeck.nyx.sound.NyxSoundFallenEntity;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
@@ -15,6 +18,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.fml.common.Optional;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import javax.annotation.Nullable;
 
@@ -39,10 +43,7 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
         }
 
         // This tag is set to true only by stars spawned by falling
-        if (!entityItem.getEntityData().getBoolean(Nyx.ID + ":fallen_star"))
-            return false;
-
-        if (NyxWorld.isDaytime(entityItem.world)) {
+        if (entityItem.getEntityData().getBoolean(Nyx.ID + ":fallen_star") && NyxWorld.isDaytime(entityItem.world)) {
             entityItem.setDead();
             return true;
         }
@@ -51,6 +52,9 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
         if (entityItem.onGround && !entityItem.getEntityData().getBoolean(lastOnGround)) {
             entityItem.getEntityData().setBoolean(lastOnGround, true);
             this.placeStarAir(entityItem);
+            if (FMLLaunchHandler.side().isClient()) {
+                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.fallingStarIdle.getSoundEvent(), 1F));
+            }
         }
         return false;
     }
