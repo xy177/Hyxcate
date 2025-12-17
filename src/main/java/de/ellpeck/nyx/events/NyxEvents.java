@@ -467,7 +467,7 @@ public final class NyxEvents {
                 }
             }
 
-            if (heldItem instanceof INyxTool) {
+            if (heldItem instanceof INyxTool && !damageSource.damageType.equals("mob")) {
                 ToolMaterial material = ((INyxTool) heldItem).getToolMaterial();
 
                 if (material == NyxItems.frezariteToolMaterial || material == NyxItems.kreknoriteToolMaterial) {
