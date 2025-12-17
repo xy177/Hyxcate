@@ -32,6 +32,7 @@ public enum NyxSoundEvents {
     fallingMeteorImpact("falling_meteor_impact"),
     fallingMeteorImpactFar("falling_meteor_impact_far"),
     fallingStar("falling_star"),
+    fallingStarIdle("falling_star_idle"),
     fallingStarImpact("falling_star_impact"),
 
     // Effects
