@@ -472,9 +472,9 @@ public final class NyxEvents {
 
                 if (material == NyxItems.frezariteToolMaterial || material == NyxItems.kreknoriteToolMaterial) {
                     if (material == NyxItems.frezariteToolMaterial) {
-                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     } else {
-                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     }
 
                     // Explosion deals AoE damage
