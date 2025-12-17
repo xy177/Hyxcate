@@ -493,13 +493,13 @@ public final class NyxEvents {
             }
         }
 
-        for (ItemStack stack : entity.getArmorInventoryList()) {
-            // All boots are immune to magma and other hot floor blocks
-            if (stack.getItem() == NyxItems.meteoriteBoots ||
-                    stack.getItem() == NyxItems.frezariteBoots ||
-                    stack.getItem() == NyxItems.kreknoriteBoots ||
-                    stack.getItem() == NyxItems.tektiteBoots) {
-                if (damageSource == DamageSource.HOT_FLOOR) {
+        if (damageSource == DamageSource.HOT_FLOOR) {
+            for (ItemStack stack : entity.getArmorInventoryList()) {
+                // All boots are immune to magma and other hot floor blocks
+                if (stack.getItem() == NyxItems.meteoriteBoots ||
+                        stack.getItem() == NyxItems.frezariteBoots ||
+                        stack.getItem() == NyxItems.kreknoriteBoots ||
+                        stack.getItem() == NyxItems.tektiteBoots) {
                     event.setAmount(0.0F);
                     event.setCanceled(true);
                 }
