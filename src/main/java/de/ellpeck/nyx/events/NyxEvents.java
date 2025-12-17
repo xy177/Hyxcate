@@ -15,6 +15,7 @@ import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
 import de.ellpeck.nyx.init.NyxPotions;
+import de.ellpeck.nyx.items.INyxTool;
 import de.ellpeck.nyx.items.tools.*;
 import de.ellpeck.nyx.network.NyxPacketHandler;
 import de.ellpeck.nyx.network.NyxPacketWorld;
@@ -41,6 +42,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -449,6 +451,7 @@ public final class NyxEvents {
         Entity trueSource = damageSource.getTrueSource();
 
         if (entity instanceof EntityLivingBase && trueSource instanceof EntityLivingBase) {
+            Item heldItem = ((EntityLivingBase) trueSource).getHeldItemMainhand().getItem();
             IAttributeInstance paralysis = ((EntityLivingBase) trueSource).getEntityAttribute(NyxAttributes.PARALYSIS);
 
             if (paralysis != null && !paralysis.getModifiers().isEmpty()) {
@@ -463,6 +466,32 @@ public final class NyxEvents {
                 if (Utils.setChance(paralysisValue)) {
                     entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
+                }
+            }
+
+            if (heldItem instanceof INyxTool) {
+                ToolMaterial material = ((INyxTool) heldItem).getToolMaterial();
+
+                if (material == NyxItems.frezariteToolMaterial || material == NyxItems.kreknoriteToolMaterial) {
+                    if (material == NyxItems.frezariteToolMaterial) {
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    } else {
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    }
+
+                    System.out.print("test!");
+                    // Explosion deals AoE damage
+                    for (Entity nearbyLivingEntity : entity.world.getEntitiesWithinAABBExcludingEntity(trueSource, entity.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
+                        if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(trueSource) && !nearbyLivingEntity.isEntityEqual(trueSource)) {
+                            if (nearbyLivingEntity instanceof EntityLiving) {
+                                EntityLiving entity2 = (EntityLiving) nearbyLivingEntity;
+
+                                entity2.addPotionEffect(new PotionEffect(material == NyxItems.frezariteToolMaterial ? NyxPotions.DEEP_FREEZE : NyxPotions.INFERNO, 8 * 20, 2));
+                            }
+
+                            nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage((EntityLivingBase) trueSource), event.getAmount() + 4.0F);
+                        }
+                    }
                 }
             }
         }

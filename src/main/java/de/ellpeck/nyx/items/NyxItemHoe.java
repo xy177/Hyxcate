@@ -39,7 +39,7 @@ public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
     public AttributeModifier paralysisChance;
     public EnumRarity rarity;
     private final ToolMaterial material;
-    
+
     public NyxItemHoe(ToolMaterial material, double paralysisChance, EnumRarity rarity) {
         super(material);
         this.paralysisChance = new AttributeModifier(NyxAttributes.PARALYSIS_ID.toString(), paralysisChance, 1);
@@ -86,45 +86,6 @@ public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
         return super.onLeftClickEntity(stack, player, entity);
     }
 
-    // TODO: AoE ability should be a SubscribeEvent
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        if (this == NyxItems.frezariteHoe) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-
-            // Explosion deals AoE damage
-            for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
-                if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
-                    if (nearbyLivingEntity instanceof EntityLiving) {
-                        EntityLiving entity = (EntityLiving) nearbyLivingEntity;
-
-                        entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 2));
-                    }
-
-                    nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), 1.0F);
-                }
-            }
-        } else if (this == NyxItems.kreknoriteHoe) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-
-            // Explosion deals AoE damage
-            for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
-                if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
-                    if (nearbyLivingEntity instanceof EntityLiving) {
-                        EntityLiving entity = (EntityLiving) nearbyLivingEntity;
-
-                        entity.setFire(10);
-                        entity.addPotionEffect(new PotionEffect(MobEffects.WITHER, 10 * 20, 1));
-                    }
-
-                    nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), 1.0F);
-                }
-            }
-        }
-
-        stack.damageItem(1, attacker);
-        return true;
-    }
-
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (isSelected && this == NyxItems.meteoriteHoe) {
@@ -152,7 +113,7 @@ public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_tool"));
         }
     }
-    
+
     @Override
     public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
         Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(equipmentSlot);
@@ -163,9 +124,9 @@ public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
 
         return multimap;
     }
-    
-	@Override
-	public ToolMaterial getToolMaterial() {
-		return material;
-	}
+
+    @Override
+    public ToolMaterial getToolMaterial() {
+        return material;
+    }
 }

@@ -90,44 +90,6 @@ public class NyxItemSword extends ItemSword implements INyxTool, IFireproofItem 
         return super.onLeftClickEntity(stack, player, entity);
     }
 
-    // TODO: AoE ability should be a SubscribeEvent
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        if (this == NyxItems.frezariteSword) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-
-            // Explosion deals AoE damage
-            for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
-                if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
-                    if (nearbyLivingEntity instanceof EntityLiving) {
-                        EntityLiving entity = (EntityLiving) nearbyLivingEntity;
-
-                        entity.addPotionEffect(new PotionEffect(NyxPotions.DEEP_FREEZE, 10 * 20, 1));
-                    }
-
-                    nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), this.getAttackDamage() + 4.0F);
-                }
-            }
-        } else if (this == NyxItems.kreknoriteSword) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.25F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
-
-            // Explosion deals AoE damage
-            for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(attacker, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
-                if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(attacker) && !nearbyLivingEntity.isEntityEqual(attacker)) {
-                    if (nearbyLivingEntity instanceof EntityLiving) {
-                        EntityLiving entity = (EntityLiving) nearbyLivingEntity;
-
-                        entity.addPotionEffect(new PotionEffect(NyxPotions.INFERNO, 10 * 20, 1));
-                    }
-
-                    nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage(attacker), this.getAttackDamage() + 4.0F);
-                }
-            }
-        }
-
-        stack.damageItem(1, attacker);
-        return true;
-    }
-
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (isSelected && this == NyxItems.meteoriteSword) {
@@ -168,9 +130,9 @@ public class NyxItemSword extends ItemSword implements INyxTool, IFireproofItem 
 
         return multimap;
     }
-    
-	@Override
-	public ToolMaterial getToolMaterial() {
-		return material;
-	}
+
+    @Override
+    public ToolMaterial getToolMaterial() {
+        return material;
+    }
 }
