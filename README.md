@@ -57,13 +57,13 @@
 ![Hyxcate Equipment](docs/weapons.png)
 
 - **Meteorite:** Armor and weapons constructed out of **Meteorite** have the ability to pull in nearby items! The more equipment worn at once, the stronger the pull.
-- **Frezarite:** Weapons constructed out of **Frezarite** have a strong AoE ability, all affected targets will also be inflicted with **Slowness**. Armor constructed out of **Frezarite** will give infinite **Water Breathing** when the full set is worn while the boots will temporarily freeze water below the wearer.
-- **Kreknorite:** Weapons constructed out of **Kreknorite** have a strong AoE ability. All affected targets will also be inflicted with **Wither**. Armor constructed out of **Kreknorite** will give infinite **Fire Resistance** when the full set is worn.
+- **Frezarite:** Weapons constructed out of **Frezarite** have a strong AoE ability, all affected targets will also be inflicted with **Deep Freeze II**. Armor constructed out of **Frezarite** will give infinite **Water Breathing** when the full set is worn while the boots will temporarily freeze water below the wearer.
+- **Kreknorite:** Weapons constructed out of **Kreknorite** have a strong AoE ability. All affected targets will also be inflicted with **Inferno II**. Armor constructed out of **Kreknorite** will give infinite **Fire Resistance** when the full set is worn.
 - **Tektite:** Armor and weapons constructed out of **Tektite** have the ability to inflict **Paralysis**. This effect will disable the mob's AI and deal damage overtime while it is active.
 - **Tektite Greatsword:** Tektite also includes a greatsword weapon. It has the same ability as its other tool counterparts except it has a much wider range.
 - **Bow of Lightspeed:** This bow can fire arrows extremely fast and make them pack a punch!
 - **Beam Swords:** These weapons are of pure plasma and energy, they will cut through even the strongest armor! They not only ignore armor, they will also ignore invincibility frames.
-- **Celestial Warhammer:** This warhammer is of the stars! Hold right-click to hit the ground and fly up onto the air, then once you hit the ground, you'll deal a large AoE attack that will knock all your foes away and inflict them with the **Glowing** effect.
+- **Celestial Warhammer:** This warhammer is of the stars! Hold right-click to hit the ground and fly up onto the air, then once you hit the ground, you'll deal a large AoE attack that will knock all your foes away and inflict them with the **Celestial Erasure** effect.
 
 ### 🔁 **Mod Integration**
 
