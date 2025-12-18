@@ -9,11 +9,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class NyxSoundFallenEntity extends MovingSound {
-    private final EntityItem entityStar;
+    private final EntityItem entityItem;
 
-    public NyxSoundFallenEntity(EntityItem entityStar, SoundEvent soundEvent, float volume) {
+    public NyxSoundFallenEntity(EntityItem entityItem, SoundEvent soundEvent, float volume) {
         super(soundEvent, SoundCategory.AMBIENT);
-        this.entityStar = entityStar;
+        this.entityItem = entityItem;
         this.repeat = true;
         this.repeatDelay = 0;
         this.volume = volume;
@@ -21,17 +21,12 @@ public class NyxSoundFallenEntity extends MovingSound {
 
     @Override
     public void update() {
-        if (this.entityStar.isDead) {
+        if (this.entityItem.isDead) {
             this.volume = this.volume - 0.05F;
         } else {
-            this.xPosF = (float) this.entityStar.posX;
-            this.yPosF = (float) this.entityStar.posY;
-            this.zPosF = (float) this.entityStar.posZ;
+            this.xPosF = (float) this.entityItem.posX;
+            this.yPosF = (float) this.entityItem.posY;
+            this.zPosF = (float) this.entityItem.posZ;
         }
-    }
-
-    @Override
-    public boolean isDonePlaying() {
-        return this.volume <= 0.0F;
     }
 }
