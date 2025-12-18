@@ -30,7 +30,7 @@ import java.util.List;
 @Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofItem", striprefs = true)
 public class NyxItemArmor extends ItemArmor implements IFireproofItem {
     public EnumRarity rarity;
-    
+
     public NyxItemArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlot, EnumRarity rarity) {
         super(material, renderIndex, equipmentSlot);
         this.rarity = rarity;
@@ -80,14 +80,13 @@ public class NyxItemArmor extends ItemArmor implements IFireproofItem {
         return rarity;
     }
 
+    // TODO: Remove these tooltips in favor of a proper set bonus tooltip
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
         if (this == NyxItems.frezariteBoots || this == NyxItems.frezariteChestplate || this == NyxItems.frezariteHelmet || this == NyxItems.frezariteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_armor"));
         } else if (this == NyxItems.kreknoriteBoots || this == NyxItems.kreknoriteChestplate || this == NyxItems.kreknoriteHelmet || this == NyxItems.kreknoriteLeggings) {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_armor"));
-        } else if (this == NyxItems.meteoriteBoots || this == NyxItems.meteoriteChestplate || this == NyxItems.meteoriteHelmet || this == NyxItems.meteoriteLeggings) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_armor"));
         }
     }
 }

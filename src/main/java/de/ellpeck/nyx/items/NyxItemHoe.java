@@ -3,24 +3,18 @@ package de.ellpeck.nyx.items;
 import de.ellpeck.nyx.events.NyxEvents;
 import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxItems;
-import de.ellpeck.nyx.sound.NyxSoundEvents;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
@@ -105,12 +99,14 @@ public class NyxItemHoe extends ItemHoe implements INyxTool, IFireproofItem {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (this == NyxItems.frezariteHoe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_tool"));
-        } else if (this == NyxItems.kreknoriteHoe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_tool"));
-        } else if (this == NyxItems.meteoriteHoe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_tool"));
+        if (GuiScreen.isShiftKeyDown()) {
+            if (this.getToolMaterial() == NyxItems.frezariteToolMaterial) {
+                tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_tool"));
+            } else if (this.getToolMaterial() == NyxItems.kreknoriteToolMaterial) {
+                tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_tool"));
+            }
+        } else if (this.getToolMaterial() == NyxItems.frezariteToolMaterial || this.getToolMaterial() == NyxItems.kreknoriteToolMaterial) {
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
         }
     }
 

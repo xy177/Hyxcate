@@ -3,6 +3,7 @@ package de.ellpeck.nyx.items;
 import de.ellpeck.nyx.events.NyxEvents;
 import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxItems;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -98,12 +99,14 @@ public class NyxItemAxe extends ItemAxe implements INyxTool, IFireproofItem {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        if (this == NyxItems.frezariteAxe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_tool"));
-        } else if (this == NyxItems.kreknoriteAxe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_tool"));
-        } else if (this == NyxItems.meteoriteAxe) {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.meteorite_tool"));
+        if (GuiScreen.isShiftKeyDown()) {
+            if (this.getToolMaterial() == NyxItems.frezariteToolMaterial) {
+                tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.frezarite_tool"));
+            } else if (this.getToolMaterial() == NyxItems.kreknoriteToolMaterial) {
+                tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.kreknorite_tool"));
+            }
+        } else if (this.getToolMaterial() == NyxItems.frezariteToolMaterial || this.getToolMaterial() == NyxItems.kreknoriteToolMaterial){
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.nyx.shift"));
         }
     }
 
