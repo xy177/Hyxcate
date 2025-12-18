@@ -56,7 +56,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         pos = world.getPrecipitationHeight(pos).up(MathHelper.getInt(world.rand, 64, 96));
         meteor.setPosition(pos.getX(), pos.getY(), pos.getZ());
         world.spawnEntity(meteor);
-        if (FMLLaunchHandler.side().isClient()) {
+        if (FMLLaunchHandler.side().isClient() && !world.isRemote) {
             // TODO: Make volume configurable?
             Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(meteor, NyxSoundEvents.fallingMeteor.getSoundEvent(), 5F));
         }

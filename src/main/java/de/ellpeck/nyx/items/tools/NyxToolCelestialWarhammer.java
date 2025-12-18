@@ -102,8 +102,7 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
         if (!world.isRemote) {
             world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerHit.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
             ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
-        }
-        if (FMLLaunchHandler.side().isClient()) {
+        } else if (FMLLaunchHandler.side().isClient()) {
             Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundCelestialWarhammer(1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F)));
         }
     }
