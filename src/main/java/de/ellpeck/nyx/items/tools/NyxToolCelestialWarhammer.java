@@ -2,9 +2,11 @@ package de.ellpeck.nyx.items.tools;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.items.NyxItemSword;
+import de.ellpeck.nyx.sound.NyxSoundCelestialWarhammer;
 import de.ellpeck.nyx.sound.NyxSoundEvents;
 import de.ellpeck.nyx.util.Utils;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -25,6 +27,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.IRarity;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -97,9 +100,11 @@ public class NyxToolCelestialWarhammer extends NyxItemSword {
         }
 
         if (!world.isRemote) {
-            world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerSpecialLaunch.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F));
             world.playSound(null, entityLiving.getPosition(), NyxSoundEvents.hammerHit.getSoundEvent(), SoundCategory.PLAYERS, 1.35F, 1.5F / (world.rand.nextFloat() * 0.4F + 0.8F));
             ((WorldServer) world).spawnParticle(EnumParticleTypes.END_ROD, false, entityLiving.posX, entityLiving.posY + entityLiving.getEyeHeight(), entityLiving.posZ, 30, 0.25, 0.25, 0.25, 0.05);
+        }
+        if (FMLLaunchHandler.side().isClient()) {
+            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundCelestialWarhammer(1.35F, 1.0F / (world.rand.nextFloat() * 0.4F + 0.8F)));
         }
     }
 
