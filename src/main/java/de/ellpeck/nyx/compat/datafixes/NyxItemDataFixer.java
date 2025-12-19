@@ -18,27 +18,29 @@ public class NyxItemDataFixer implements IFixableData {
 
     static {
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "crystal"), new ResourceLocation(Nyx.ID, "cyber_crystal"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "gleaning_meteor_rock"), new ResourceLocation(Nyx.ID, "cyber_crystal"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "gleaning_meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "lunar_water_bottle"), new ResourceLocation("minecraft", "glass_bottle"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_block"), new ResourceLocation(Nyx.ID, "meteorite_block"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_dust"), new ResourceLocation(Nyx.ID, "tektite_gem_cluster"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_dust"), new ResourceLocation(Nyx.ID, "meteor_glass"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_finder"), new ResourceLocation(Nyx.ID, "meteor_detector"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_ingot"), new ResourceLocation(Nyx.ID, "meteorite_ingot"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_shard"), new ResourceLocation(Nyx.ID, "meteorite_shard"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "unrefined_crystal"), new ResourceLocation(Nyx.ID, "cyber_crystal"));
 
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_axe"), new ResourceLocation(Nyx.ID, "meteorite_axe"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_bow"), new ResourceLocation("minecraft", "bow"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_hammer"), new ResourceLocation(Nyx.ID, "kreknorite_block"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_hoe"), new ResourceLocation(Nyx.ID, "meteorite_hoe"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_pickaxe"), new ResourceLocation(Nyx.ID, "meteorite_pickaxe"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_shovel"), new ResourceLocation(Nyx.ID, "meteorite_shovel"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_sword"), new ResourceLocation(Nyx.ID, "meteorite_sword"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_axe"), new ResourceLocation(Nyx.ID, "tektite_axe"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_bow"), new ResourceLocation(Nyx.ID, "tektite_bow"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_hammer"), new ResourceLocation(Nyx.ID, "celestial_warhammer"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_hoe"), new ResourceLocation(Nyx.ID, "tektite_hoe"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_pickaxe"), new ResourceLocation(Nyx.ID, "tektite_pickaxe"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_shovel"), new ResourceLocation(Nyx.ID, "tektite_shovel"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_sword"), new ResourceLocation(Nyx.ID, "tektite_greatsword"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "scythe"), new ResourceLocation(Nyx.ID, "tektite_greatsword"));
 
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_boots"), new ResourceLocation(Nyx.ID, "meteorite_boots"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_chest"), new ResourceLocation(Nyx.ID, "meteorite_chestplate"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_helm"), new ResourceLocation(Nyx.ID, "meteorite_helmet"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_pants"), new ResourceLocation(Nyx.ID, "meteorite_leggings"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_boots"), new ResourceLocation(Nyx.ID, "tektite_boots"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_chest"), new ResourceLocation(Nyx.ID, "tektite_chestplate"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_helm"), new ResourceLocation(Nyx.ID, "tektite_helmet"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_pants"), new ResourceLocation(Nyx.ID, "tektite_leggings"));
     }
 
     public NyxItemDataFixer() {

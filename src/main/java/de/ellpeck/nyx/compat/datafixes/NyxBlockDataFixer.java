@@ -19,7 +19,7 @@ public class NyxBlockDataFixer implements IFixableData {
 
     static {
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "crystal"), new ResourceLocation(Nyx.ID, "cyber_crystal"));
-        BLOCK_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "gleaning_meteor_rock"), new ResourceLocation(Nyx.ID, "cyber_crystal"));
+        BLOCK_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "gleaning_meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_block"), new ResourceLocation(Nyx.ID, "meteorite_block"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
     }
