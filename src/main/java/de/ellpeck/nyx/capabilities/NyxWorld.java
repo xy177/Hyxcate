@@ -157,7 +157,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                             for (EntityPlayer player : this.world.playerEntities) {
                                 player.sendMessage(text);
                                 if (this.currentLunarEvent.getStartSound() != null)
-                                    this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentLunarEvent.getStartSound(), SoundCategory.AMBIENT, 1.0F, 1.0F);
+                                    this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentLunarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
                             }
                         }
                     }
@@ -213,7 +213,7 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
                             for (EntityPlayer player : this.world.playerEntities) {
                                 player.sendMessage(text);
                                 if (this.currentSolarEvent.getStartSound() != null)
-                                    this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentSolarEvent.getStartSound(), SoundCategory.AMBIENT, 1.0F, 1.0F);
+                                    this.world.playSound(null, player.posX, player.posY, player.posZ, this.currentSolarEvent.getStartSound(), SoundCategory.AMBIENT, 10.0F, 1.0F);
                             }
                         }
                     }
