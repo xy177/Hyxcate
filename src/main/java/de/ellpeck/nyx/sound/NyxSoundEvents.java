@@ -35,15 +35,16 @@ public enum NyxSoundEvents {
     EQUIP_CRYSTALLINE("equip.crystalline"),
     EQUIP_METALLIC("equip.metallic"),
 
-    // Events (Lunar) - No unique sounds yet, these will be done in the future!
+    // Events (Lunar)
     EVENT_BLOOD_MOON_START("event.blood_moon.start"),
     EVENT_BLUE_MOON_START("event.blue_moon.start"),
+    EVENT_FULL_MOON_START("event.full_moon.start"),
     EVENT_STAR_SHOWER_START("event.star_shower.start"),
 
-    // Events (Solar) - No unique sounds yet, these will be done in the future!
+    // Events (Solar)
     EVENT_GRIM_ECLIPSE_START("event.grim_eclipse.start"),
-    EVENT_RED_SUN_START_SPECIAL("event.red_giant.start.special"),
     EVENT_RED_SUN_START("event.red_giant.start"),
+    EVENT_RED_SUN_START_SPECIAL("event.red_giant.start.special"),
 
     // Items
     ITEM_BEAM_SWORD_HIT("item.beam_sword.hit"),

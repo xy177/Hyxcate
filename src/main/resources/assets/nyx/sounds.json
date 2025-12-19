@@ -172,22 +172,27 @@
   },
   "event.blood_moon.start": {
     "sounds": [
-      "ambient/cave/cave5"
+      "nyx:event/blood_moon"
     ]
   },
   "event.blue_moon.start": {
     "sounds": [
-      "ambient/cave/cave7"
+      "nyx:event/blue_moon"
+    ]
+  },
+  "event.full_moon.start": {
+    "sounds": [
+      "nyx:event/full_moon"
     ]
   },
   "event.grim_eclipse.start": {
     "sounds": [
-      "ambient/cave/cave6"
+      "nyx:event/grim_eclipse"
     ]
   },
   "event.red_giant.start": {
     "sounds": [
-      "ambient/cave/cave9"
+      "nyx:event/red_giant"
     ]
   },
   "event.red_giant.start.special": {
@@ -197,7 +202,7 @@
   },
   "event.star_shower.start": {
     "sounds": [
-      "ambient/cave/cave11"
+      "nyx:event/star_shower"
     ]
   },
   "item.beam_sword.hit": {

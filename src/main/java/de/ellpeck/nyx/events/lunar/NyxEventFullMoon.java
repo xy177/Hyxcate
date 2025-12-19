@@ -3,6 +3,8 @@ package de.ellpeck.nyx.events.lunar;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.capabilities.NyxWorld;
 import de.ellpeck.nyx.config.NyxConfig;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -17,6 +19,11 @@ public class NyxEventFullMoon extends NyxLunarEvent {
     public ITextComponent getStartMessage() {
         return new TextComponentTranslation("info." + Nyx.ID + ".full_moon")
                 .setStyle(new Style().setColor(TextFormatting.GRAY).setItalic(true));
+    }
+
+    @Override
+    public SoundEvent getStartSound() {
+        return NyxSoundEvents.EVENT_FULL_MOON_START.getSoundEvent();
     }
 
     @Override
