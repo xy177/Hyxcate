@@ -3,7 +3,7 @@
   "defaults": {
     "model": "cube_all",
     "textures": {
-      "all": "nyx:blocks/meteor_glass"
+      "all": "nyx:blocks/tektite_glass"
     }
   },
   "variants": {

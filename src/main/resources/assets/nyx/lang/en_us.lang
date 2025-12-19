@@ -40,7 +40,6 @@ tile.nyx.star_stairs.name=Star Block Stairs
 tile.nyx.star_slab.name=Star Block Slab
 tile.nyx.star_slab_double.name=Star Block Double Slab
 tile.nyx.cyber_crystal.name=Cyber Crystal
-tile.nyx.meteor_glass.name=Meteoric Glass
 tile.nyx.frezarite_block.name=Block of Frezarite
 tile.nyx.frezarite_rock.name=Frezarite Rock
 tile.nyx.kreknorite_block.name=Block of Kreknorite
@@ -49,6 +48,7 @@ tile.nyx.meteorite_block.name=Block of Meteorite
 tile.nyx.meteorite_rock.name=Meteorite Rock
 tile.nyx.meteorite_rock_hot.name=Hot Meteorite Rock
 tile.nyx.tektite_block.name=Block of Tektite
+tile.nyx.tektite_glass.name=Tektite Glass
 
 item.nyx.fallen_star.name=Fallen Star
 item.nyx.meteor_detector.name=Meteor Detector

@@ -34,7 +34,7 @@ public class NyxBlocks {
     public static Block frezariteBlock;
     public static Block kreknoriteBlock;
     public static Block tektiteBlock;
-    public static Block meteorGlass;
+    public static Block tektiteGlass;
 
     @SubscribeEvent
     public static void onBlockRegistry(RegistryEvent.Register<Block> event) {
@@ -55,7 +55,7 @@ public class NyxBlocks {
                 frezariteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.ICE, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "frezarite_block", ItemBlock::new),
                 kreknoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "kreknorite_block", ItemBlock::new),
                 tektiteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.RED, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "tektite_block", ItemBlock::new),
-                meteorGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000), "meteor_glass", ItemBlock::new)
+                tektiteGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000), "tektite_glass", ItemBlock::new)
         );
 
         // TODO: Set resistance and map color as well

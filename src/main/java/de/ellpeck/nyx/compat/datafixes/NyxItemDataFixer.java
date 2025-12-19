@@ -21,8 +21,9 @@ public class NyxItemDataFixer implements IFixableData {
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "gleaning_meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "lunar_water_bottle"), new ResourceLocation("minecraft", "glass_bottle"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_block"), new ResourceLocation(Nyx.ID, "meteorite_block"));
-        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_dust"), new ResourceLocation(Nyx.ID, "meteor_glass"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_dust"), new ResourceLocation(Nyx.ID, "tektite_glass"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_finder"), new ResourceLocation(Nyx.ID, "meteor_detector"));
+        ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_glass"), new ResourceLocation(Nyx.ID, "tektite_glass"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_ingot"), new ResourceLocation(Nyx.ID, "meteorite_ingot"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_rock"), new ResourceLocation(Nyx.ID, "meteorite_rock"));
         ITEM_NAME_MAPPINGS.put(new ResourceLocation(Nyx.ID, "meteor_shard"), new ResourceLocation(Nyx.ID, "meteorite_shard"));
