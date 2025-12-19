@@ -1,187 +1,5 @@
 {
-  "falling_star": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_star/falling_loop"
-    ]
-  },
-  "falling_star_idle": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_star/idle_loop"
-    ]
-  },
-  "falling_star_impact": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_star/impact1",
-      "nyx:entity/falling_star/impact2",
-      "nyx:entity/falling_star/impact3",
-      "nyx:entity/falling_star/impact4"
-    ]
-  },
-  "falling_meteor": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_meteor/falling_loop"
-    ]
-  },
-  "falling_meteor_impact": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_meteor/impact1",
-      "nyx:entity/falling_meteor/impact2"
-    ]
-  },
-  "falling_meteor_impact_far": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:entity/falling_meteor/impact_far1",
-      "nyx:entity/falling_meteor/impact_far2",
-      "nyx:entity/falling_meteor/impact_far3",
-      "nyx:entity/falling_meteor/impact_far4"
-    ]
-  },
-  "kreknorite_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/kreknorite/hit1",
-      "nyx:item/kreknorite/hit2",
-      "nyx:item/kreknorite/hit3",
-      "nyx:item/kreknorite/hit4"
-    ]
-  },
-  "frezarite_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/frezarite/hit1",
-      "nyx:item/frezarite/hit2",
-      "nyx:item/frezarite/hit3",
-      "nyx:item/frezarite/hit4"
-    ]
-  },
-  "tektite_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/tektite/hit1",
-      "nyx:item/tektite/hit2",
-      "nyx:item/tektite/hit3",
-      "nyx:item/tektite/hit4"
-    ]
-  },
-  "paralyze_zap": {
-    "category": "player",
-    "sounds": [
-      "nyx:effect/paralysis/zap1",
-      "nyx:effect/paralysis/zap2",
-      "nyx:effect/paralysis/zap3",
-      "nyx:effect/paralysis/zap4"
-    ]
-  },
-  "beam_sword_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/beam_sword/hit1",
-      "nyx:item/beam_sword/hit2",
-      "nyx:item/beam_sword/hit3",
-      "nyx:item/beam_sword/hit4"
-    ]
-  },
-  "beam_sword_swing": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/beam_sword/swing1",
-      "nyx:item/beam_sword/swing2",
-      "nyx:item/beam_sword/swing3",
-      "nyx:item/beam_sword/swing4"
-    ]
-  },
-  "hammer_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/celestial_warhammer/hit1",
-      "nyx:item/celestial_warhammer/hit2",
-      "nyx:item/celestial_warhammer/hit3",
-      "nyx:item/celestial_warhammer/hit4"
-    ]
-  },
-  "hammer_special_launch": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/celestial_warhammer/launch1",
-      "nyx:item/celestial_warhammer/launch2",
-      "nyx:item/celestial_warhammer/launch3",
-      "nyx:item/celestial_warhammer/launch4"
-    ]
-  },
-  "hammer_special_hit": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/celestial_warhammer/smash1",
-      "nyx:item/celestial_warhammer/smash2",
-      "nyx:item/celestial_warhammer/smash3",
-      "nyx:item/celestial_warhammer/smash4"
-    ]
-  },
-  "beam_sword_idle": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/beam_sword/idle_loop"
-    ]
-  },
-  "laser_shot": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/laser_gun/shoot1",
-      "nyx:item/laser_gun/shoot2",
-      "nyx:item/laser_gun/shoot3",
-      "nyx:item/laser_gun/shoot4"
-    ]
-  },
-  "celestial_emblem": {
-    "category": "player",
-    "sounds": [
-      "nyx:item/celestial_emblem/create"
-    ]
-  },
-  "blood_moon_start": {
-    "category": "ambient",
-    "sounds": [
-      "ambient/cave/cave5"
-    ]
-  },
-  "harvest_moon_start": {
-    "category": "ambient",
-    "sounds": [
-      "ambient/cave/cave7"
-    ]
-  },
-  "star_shower_start": {
-    "category": "ambient",
-    "sounds": [
-      "ambient/cave/cave11"
-    ]
-  },
-  "red_sun_start": {
-    "category": "ambient",
-    "sounds": [
-      "ambient/cave/cave9"
-    ]
-  },
-  "red_sun_start_special": {
-    "category": "ambient",
-    "sounds": [
-      "nyx:event/red_giant_special"
-    ]
-  },
-  "solar_eclipse_start": {
-    "category": "ambient",
-    "sounds": [
-      "ambient/cave/cave6"
-    ]
-  },
-  "dense_crystal_break": {
-    "category": "block",
+  "block.dense_crystal.break": {
     "sounds": [
       "nyx:block/dense_crystal/break1",
       "nyx:block/dense_crystal/break2",
@@ -189,8 +7,7 @@
       "nyx:block/dense_crystal/break4"
     ]
   },
-  "dense_crystal_place": {
-    "category": "block",
+  "block.dense_crystal.place": {
     "sounds": [
       "nyx:block/dense_crystal/place1",
       "nyx:block/dense_crystal/place2",
@@ -198,8 +15,7 @@
       "nyx:block/dense_crystal/place4"
     ]
   },
-  "light_crystal_break": {
-    "category": "block",
+  "block.light_crystal.break": {
     "sounds": [
       "nyx:block/light_crystal/break1",
       "nyx:block/light_crystal/break2",
@@ -207,8 +23,7 @@
       "nyx:block/light_crystal/break4"
     ]
   },
-  "light_crystal_hit": {
-    "category": "block",
+  "block.light_crystal.hit": {
     "sounds": [
       "nyx:block/light_crystal/hit1",
       "nyx:block/light_crystal/hit2",
@@ -216,8 +31,7 @@
       "nyx:block/light_crystal/hit4"
     ]
   },
-  "light_crystal_place": {
-    "category": "block",
+  "block.light_crystal.place": {
     "sounds": [
       "nyx:block/light_crystal/place1",
       "nyx:block/light_crystal/place2",
@@ -225,8 +39,7 @@
       "nyx:block/light_crystal/place4"
     ]
   },
-  "light_crystal_step": {
-    "category": "block",
+  "block.light_crystal.step": {
     "sounds": [
       "nyx:block/light_crystal/step1",
       "nyx:block/light_crystal/step2",
@@ -236,8 +49,7 @@
       "nyx:block/light_crystal/step6"
     ]
   },
-  "meteoric_rock_break": {
-    "category": "block",
+  "block.meteoric_rock.break": {
     "sounds": [
       "nyx:block/meteoric_rock/break1",
       "nyx:block/meteoric_rock/break2",
@@ -247,8 +59,7 @@
       "nyx:block/meteoric_rock/break6"
     ]
   },
-  "meteoric_rock_place": {
-    "category": "block",
+  "block.meteoric_rock.place": {
     "sounds": [
       "nyx:block/meteoric_rock/place1",
       "nyx:block/meteoric_rock/place2",
@@ -256,8 +67,7 @@
       "nyx:block/meteoric_rock/place4"
     ]
   },
-  "meteoric_rock_step": {
-    "category": "block",
+  "block.meteoric_rock.step": {
     "sounds": [
       "nyx:block/meteoric_rock/step1",
       "nyx:block/meteoric_rock/step2",
@@ -267,8 +77,39 @@
       "nyx:block/meteoric_rock/step6"
     ]
   },
-  "alien_kitty_idle": {
-    "category": "neutral",
+  "effect.deep_freeze.start": {
+    "sounds": [
+      "nyx:effect/deep_freeze/start1",
+      "nyx:effect/deep_freeze/start2",
+      "nyx:effect/deep_freeze/start3",
+      "nyx:effect/deep_freeze/start4"
+    ]
+  },
+  "effect.inferno.start": {
+    "sounds": [
+      "nyx:effect/inferno/start1",
+      "nyx:effect/inferno/start2",
+      "nyx:effect/inferno/start3",
+      "nyx:effect/inferno/start4"
+    ]
+  },
+  "effect.paralysis.start": {
+    "sounds": [
+      "nyx:effect/paralysis/start1",
+      "nyx:effect/paralysis/start2",
+      "nyx:effect/paralysis/start3",
+      "nyx:effect/paralysis/start4"
+    ]
+  },
+  "effect.paralysis.zap": {
+    "sounds": [
+      "nyx:effect/paralysis/zap1",
+      "nyx:effect/paralysis/zap2",
+      "nyx:effect/paralysis/zap3",
+      "nyx:effect/paralysis/zap4"
+    ]
+  },
+  "entity.alien_kitty.idle": {
     "sounds": [
       "nyx:entity/alien_kitty/idle1",
       "nyx:entity/alien_kitty/idle2",
@@ -276,8 +117,44 @@
       "nyx:entity/alien_kitty/idle4"
     ]
   },
-  "equip_crystalline": {
-    "category": "player",
+  "entity.meteor.falling": {
+    "sounds": [
+      "nyx:entity/meteor/falling_loop"
+    ]
+  },
+  "entity.meteor.impact.far": {
+    "sounds": [
+      "nyx:entity/meteor/impact_far1",
+      "nyx:entity/meteor/impact_far2",
+      "nyx:entity/meteor/impact_far3",
+      "nyx:entity/meteor/impact_far4"
+    ]
+  },
+  "entity.meteor.impact": {
+    "sounds": [
+      "nyx:entity/meteor/impact1",
+      "nyx:entity/meteor/impact2"
+    ]
+  },
+  "entity.star.falling": {
+    "sounds": [
+      "nyx:entity/star/falling_loop"
+    ]
+  },
+  "entity.star.idle": {
+    "sounds": [
+      "nyx:entity/star/idle_loop"
+    ]
+  },
+  "entity.star.impact": {
+    "sounds": [
+      "nyx:entity/star/impact1",
+      "nyx:entity/star/impact2",
+      "nyx:entity/star/impact3",
+      "nyx:entity/star/impact4"
+    ]
+  },
+  "equip.crystalline": {
     "sounds": [
       "nyx:equip/crystalline/equip1",
       "nyx:equip/crystalline/equip2",
@@ -285,8 +162,7 @@
       "nyx:equip/crystalline/equip4"
     ]
   },
-  "equip_metallic": {
-    "category": "player",
+  "equip.metallic": {
     "sounds": [
       "nyx:equip/metallic/equip1",
       "nyx:equip/metallic/equip2",
@@ -294,26 +170,110 @@
       "nyx:equip/metallic/equip4"
     ]
   },
-  "meteor_detector_prompt": {
-    "category": "player",
+  "event.blood_moon.start": {
     "sounds": [
-      "nyx:item/meteor_detector/prompt"
+      "ambient/cave/cave5"
     ]
   },
-  "meteor_detector_confirm": {
-    "category": "player",
+  "event.blue_moon.start": {
     "sounds": [
-      "nyx:item/meteor_detector/confirm"
+      "ambient/cave/cave7"
     ]
   },
-  "meteor_detector_cancel": {
-    "category": "player",
+  "event.grim_eclipse.start": {
+    "sounds": [
+      "ambient/cave/cave6"
+    ]
+  },
+  "event.red_giant.start": {
+    "sounds": [
+      "ambient/cave/cave9"
+    ]
+  },
+  "event.red_giant.start.special": {
+    "sounds": [
+      "nyx:event/red_giant_special"
+    ]
+  },
+  "event.star_shower.start": {
+    "sounds": [
+      "ambient/cave/cave11"
+    ]
+  },
+  "item.beam_sword.hit": {
+    "sounds": [
+      "nyx:item/beam_sword/hit1",
+      "nyx:item/beam_sword/hit2",
+      "nyx:item/beam_sword/hit3",
+      "nyx:item/beam_sword/hit4"
+    ]
+  },
+  "item.beam_sword.idle": {
+    "sounds": [
+      "nyx:item/beam_sword/idle_loop"
+    ]
+  },
+  "item.beam_sword.swing": {
+    "sounds": [
+      "nyx:item/beam_sword/swing1",
+      "nyx:item/beam_sword/swing2",
+      "nyx:item/beam_sword/swing3",
+      "nyx:item/beam_sword/swing4"
+    ]
+  },
+  "item.celestial_emblem.create": {
+    "sounds": [
+      "nyx:item/celestial_emblem/create"
+    ]
+  },
+  "item.celestial_warhammer.hit": {
+    "sounds": [
+      "nyx:item/celestial_warhammer/hit1",
+      "nyx:item/celestial_warhammer/hit2",
+      "nyx:item/celestial_warhammer/hit3",
+      "nyx:item/celestial_warhammer/hit4"
+    ]
+  },
+  "item.celestial_warhammer.launch": {
+    "sounds": [
+      "nyx:item/celestial_warhammer/launch1",
+      "nyx:item/celestial_warhammer/launch2",
+      "nyx:item/celestial_warhammer/launch3",
+      "nyx:item/celestial_warhammer/launch4"
+    ]
+  },
+  "item.celestial_warhammer.smash": {
+    "sounds": [
+      "nyx:item/celestial_warhammer/smash1",
+      "nyx:item/celestial_warhammer/smash2",
+      "nyx:item/celestial_warhammer/smash3",
+      "nyx:item/celestial_warhammer/smash4"
+    ]
+  },
+  "item.laser_gun.shoot": {
+    "sounds": [
+      "nyx:item/laser_gun/shoot1",
+      "nyx:item/laser_gun/shoot2",
+      "nyx:item/laser_gun/shoot3",
+      "nyx:item/laser_gun/shoot4"
+    ]
+  },
+  "item.meteor_detector_cancel": {
     "sounds": [
       "nyx:item/meteor_detector/cancel"
     ]
   },
-  "star_aura": {
-    "category": "ambient",
+  "item.meteor_detector.confirm": {
+    "sounds": [
+      "nyx:item/meteor_detector/confirm"
+    ]
+  },
+  "item.meteor_detector.prompt": {
+    "sounds": [
+      "nyx:item/meteor_detector/prompt"
+    ]
+  },
+  "random.star_aura": {
     "sounds": [
       "nyx:random/star_aura1",
       "nyx:random/star_aura2",
@@ -321,8 +281,7 @@
       "nyx:random/star_aura4"
     ]
   },
-  "star_explode": {
-    "category": "ambient",
+  "random.star_explode": {
     "sounds": [
       "nyx:random/star_explode1",
       "nyx:random/star_explode2",

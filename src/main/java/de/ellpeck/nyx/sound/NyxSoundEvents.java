@@ -5,60 +5,62 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum NyxSoundEvents {
-    // Lunar Events - No unique sounds yet, these will be done in the future!
-    bloodMoonStart("blood_moon_start"),
-    harvestMoonStart("harvest_moon_start"),
-    starShowerStart("star_shower_start"),
-
-    // Solar Events - No unique sounds yet, these will be done in the future!
-    redSunStart("red_sun_start"),
-    redSunStartSpecial("red_sun_start_special"),
-    solarEclipseStart("solar_eclipse_start"),
-
     // Blocks
-    denseCrystalBreak("dense_crystal_break"),
-    denseCrystalPlace("dense_crystal_place"),
-    lightCrystalBreak("light_crystal_break"),
-    lightCrystalHit("light_crystal_hit"),
-    lightCrystalPlace("light_crystal_place"),
-    lightCrystalStep("light_crystal_step"),
-    meteoricRockBreak("meteoric_rock_break"),
-    meteoricRockPlace("meteoric_rock_place"),
-    meteoricRockStep("meteoric_rock_step"),
-
-    // Entities
-    alienKittyIdle("alien_kitty_idle"),
-    fallingMeteor("falling_meteor"),
-    fallingMeteorImpact("falling_meteor_impact"),
-    fallingMeteorImpactFar("falling_meteor_impact_far"),
-    fallingStar("falling_star"),
-    fallingStarIdle("falling_star_idle"),
-    fallingStarImpact("falling_star_impact"),
+    denseCrystalBreak("block.dense_crystal.break"),
+    denseCrystalPlace("block.dense_crystal.place"),
+    lightCrystalBreak("block.light_crystal.break"),
+    lightCrystalHit("block.light_crystal.hit"),
+    lightCrystalPlace("block.light_crystal.place"),
+    lightCrystalStep("block.light_crystal.step"),
+    meteoricRockBreak("block.meteoric_rock.break"),
+    meteoricRockPlace("block.meteoric_rock.place"),
+    meteoricRockStep("block.meteoric_rock.step"),
 
     // Effects
-    paralyzeZap("paralyze_zap"),
+    frezariteHit("effect.deep_freeze.start"),
+    kreknoriteHit("effect.inferno.start"),
+    tektiteHit("effect.paralysis.start"),
+    paralyzeZap("effect.paralysis.zap"),
+
+    // Entities
+    alienKittyIdle("entity.alien_kitty.idle"),
+    fallingMeteor("entity.meteor.falling"),
+    fallingMeteorImpactFar("entity.meteor.impact.far"),
+    fallingMeteorImpact("entity.meteor.impact"),
+    fallingStar("entity.star.falling"),
+    fallingStarIdle("entity.star.idle"),
+    fallingStarImpact("entity.star.impact"),
+
+    // Equip
+    equipCrystalline("equip.crystalline"),
+    equipMetallic("equip.metallic"),
+
+    // Events (Lunar) - No unique sounds yet, these will be done in the future!
+    bloodMoonStart("event.blood_moon.start"),
+    harvestMoonStart("event.blue_moon.start"),
+    starShowerStart("event.star_shower.start"),
+
+    // Events (Solar) - No unique sounds yet, these will be done in the future!
+    solarEclipseStart("event.grim_eclipse.start"),
+    redSunStartSpecial("event.red_giant.start.special"),
+    redSunStart("event.red_giant.start"),
 
     // Items
-    beamSwordHit("beam_sword_hit"),
-    beamSwordIdle("beam_sword_idle"),
-    beamSwordSwing("beam_sword_swing"),
-    celestialEmblem("celestial_emblem"),
-    equipCrystalline("equip_crystalline"),
-    equipMetallic("equip_metallic"),
-    frezariteHit("frezarite_hit"),
-    hammerHit("hammer_hit"),
-    hammerSpecialHit("hammer_special_hit"),
-    hammerSpecialLaunch("hammer_special_launch"),
-    kreknoriteHit("kreknorite_hit"),
-    laserShot("laser_shot"),
-    tektiteHit("tektite_hit"),
-    meteorDetectorPrompt("meteor_detector_prompt"),
-    meteorDetectorConfirm("meteor_detector_confirm"),
-    meteorDetectorCancel("meteor_detector_cancel"),
+    beamSwordHit("item.beam_sword.hit"),
+    beamSwordIdle("item.beam_sword.idle"),
+    beamSwordSwing("item.beam_sword.swing"),
+    celestialEmblem("item.celestial_emblem.create"),
+    hammerHit("item.celestial_warhammer.hit"),
+    hammerSpecialLaunch("item.celestial_warhammer.launch"),
+    hammerSpecialHit("item.celestial_warhammer.smash"),
+    laserShot("item.laser_gun.shoot"),
+    meteorDetectorCancel("item.meteor_detector.cancel"),
+    meteorDetectorConfirm("item.meteor_detector.confirm"),
+    meteorDetectorPrompt("item.meteor_detector.prompt"),
 
     // Random
-    starAura("star_aura"),
-    starExplode("star_explode");
+    starAura("random.star_aura"),
+    starExplode("random.star_explode");
 
     private final SoundEvent soundEvent;
 
