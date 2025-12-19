@@ -481,7 +481,7 @@ public final class NyxEvents {
                             if (nearbyLivingEntity instanceof EntityLiving) {
                                 EntityLiving entity2 = (EntityLiving) nearbyLivingEntity;
 
-                                entity2.addPotionEffect(new PotionEffect(material == NyxItems.frezariteToolMaterial ? NyxPotions.DEEP_FREEZE : NyxPotions.INFERNO, 8 * 20, 2));
+                                entity2.addPotionEffect(new PotionEffect(material == NyxItems.frezariteToolMaterial ? NyxPotions.DEEP_FREEZE : NyxPotions.INFERNO, 8 * 20, 0));
                             }
 
                             nearbyLivingEntity.attackEntityFrom(DamageSource.causeMobDamage((EntityLivingBase) trueSource), event.getAmount() + 4.0F);

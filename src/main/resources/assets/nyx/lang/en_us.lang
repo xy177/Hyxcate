@@ -123,11 +123,11 @@ tooltip.nyx.tektite_gem_cluster=They are packed with electricity.
 
 tooltip.nyx.beam_sword=With its distinctive glowing blade, this weapon is eye-catching and lethal. All attacks completely ignore armor and invincibility frames.
 tooltip.nyx.blastproof=Blastproof
-tooltip.nyx.celestial_warhammer=Wider attack range and knockback. Hold right-click to leap into the air and do a smash attack that inflicts Celestial Erasure (0:08) on all targets.
+tooltip.nyx.celestial_warhammer=Wider attack range and knockback. Hold right-click to leap into the air and do a smash attack that inflicts Astral Erosion (0:08) on all targets.
 tooltip.nyx.frezarite_armor=Equipping a full set gives you infinite Water Breathing.
-tooltip.nyx.frezarite_tool=All attacks will deal area of effect damage. Inflicts Deep Freeze II (0:08) on all targets.
+tooltip.nyx.frezarite_tool=All attacks will deal area of effect damage. Inflicts Deep Freeze (0:08) on all targets.
 tooltip.nyx.kreknorite_armor=Equipping a full set gives you infinite Fire Resistance.
-tooltip.nyx.kreknorite_tool=All attacks will deal area of effect damage. Inflicts Inferno II (0:08) on all targets.
+tooltip.nyx.kreknorite_tool=All attacks will deal area of effect damage. Inflicts Inferno (0:08) on all targets.
 tooltip.nyx.meteor_detector=Points you to nearby meteor crash sites.
 tooltip.nyx.meteor_detector.hint=Right-click to track how far in blocks the meteor crash site is.
 tooltip.nyx.meteor_detector.hint2=Shift + right-click to delete the currently tracked meteor crash site.
