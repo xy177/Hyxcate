@@ -34,7 +34,7 @@ public class NyxEventHarvestMoon extends NyxLunarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return NyxSoundEvents.harvestMoonStart.getSoundEvent();
+        return NyxSoundEvents.EVENT_BLUE_MOON_START.getSoundEvent();
     }
 
     @Override

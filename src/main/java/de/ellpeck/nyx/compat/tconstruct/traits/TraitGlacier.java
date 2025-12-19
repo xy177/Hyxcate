@@ -43,7 +43,7 @@ public class TraitGlacier extends AbstractTrait {
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
         if (player instanceof EntityPlayer) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
+            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.EFFECT_DEEP_FREEZE_START.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 2.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
             // Explosion deals AoE damage
             for (Entity nearbyLivingEntity : target.world.getEntitiesWithinAABBExcludingEntity(player, target.getEntityBoundingBox().grow(1.5D, 1.5D, 1.5D))) {
                 if (nearbyLivingEntity instanceof EntityLivingBase && !nearbyLivingEntity.isOnSameTeam(player) && !nearbyLivingEntity.isEntityEqual(player)) {

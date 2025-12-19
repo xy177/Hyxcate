@@ -120,7 +120,7 @@ public final class NyxEvents {
                         ((WorldServer) player.world).spawnParticle(EnumParticleTypes.BLOCK_DUST, player.posX, player.posY, player.posZ, particleAmount * 2, particleDistance, 0.0D, particleDistance, 1.0D, blockId);
                     }
 
-                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.hammerSpecialHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+                    player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_CELESTIAL_WARHAMMER_SMASH.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
                 }
             }
 
@@ -223,7 +223,7 @@ public final class NyxEvents {
                     star.setPosition(startPos.getX(), startPos.getY(), startPos.getZ());
                     event.world.spawnEntity(star);
                     if (FMLLaunchHandler.side().isClient()) {
-                        Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(star, NyxSoundEvents.fallingStar.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
+                        Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(star, NyxSoundEvents.ENTITY_STAR_FALLING.getSoundEvent(), (float) NyxConfig.fallingStarAmbientVolume));
                     }
                 }
             }
@@ -462,7 +462,7 @@ public final class NyxEvents {
                 }
                 // Inflicts mob with Paralysis when the attribute is successful
                 if (paralysisValue > 0 && Utils.setChance(paralysisValue)) {
-                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                    entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     entity.addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
                 }
             }
@@ -472,9 +472,9 @@ public final class NyxEvents {
 
                 if (material == NyxItems.frezariteToolMaterial || material == NyxItems.kreknoriteToolMaterial) {
                     if (material == NyxItems.frezariteToolMaterial) {
-                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_DEEP_FREEZE_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     } else {
-                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+                        entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_INFERNO_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
                     }
 
                     // Explosion deals AoE damage
@@ -529,19 +529,19 @@ public final class NyxEvents {
         Entity trueSource = damageSource.getTrueSource();
 
         if (damageSource == NyxDamageSource.CELESTIAL) {
-            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.starAura.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.RANDOM_STAR_AURA.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         if (damageSource == NyxDamageSource.DEEP_FREEZE) {
-            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.frezariteHit.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_DEEP_FREEZE_START.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         if (damageSource == NyxDamageSource.INFERNO) {
-            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.kreknoriteHit.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_INFERNO_START.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         if (damageSource == NyxDamageSource.PARALYSIS) {
-            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.paralyzeZap.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
+            entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, NyxSoundEvents.EFFECT_PARALYSIS_ZAP.getSoundEvent(), SoundCategory.NEUTRAL, 0.5F, 2.0F / (entity.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         if (trueSource instanceof EntityPlayer && trueSource != null) {

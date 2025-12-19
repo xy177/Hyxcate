@@ -28,7 +28,7 @@ public class TraitStunlockArmor extends AbstractArmorTrait {
 
             if (!player.world.isRemote) {
                 if (trueSource instanceof EntityLivingBase) {
-                    trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
+                    trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
                     trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 1.0F, 1.5F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
                     ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
                     TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ELECTRO, trueSource, 5);

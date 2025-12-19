@@ -55,7 +55,7 @@ public class NyxEventBloodMoon extends NyxLunarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return NyxSoundEvents.bloodMoonStart.getSoundEvent();
+        return NyxSoundEvents.EVENT_BLOOD_MOON_START.getSoundEvent();
     }
 
     @Override

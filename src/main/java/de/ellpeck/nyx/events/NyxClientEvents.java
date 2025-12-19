@@ -249,7 +249,7 @@ public final class NyxClientEvents {
             final ItemStack result = event.crafting;
 
             if (!result.isEmpty() && result.getItem() == NyxItems.celestialEmblem) {
-                event.player.playSound(NyxSoundEvents.celestialEmblem.getSoundEvent(), 0.5F, 1.0F);
+                event.player.playSound(NyxSoundEvents.ITEM_CELESTIAL_EMBLEM_CREATE.getSoundEvent(), 0.5F, 1.0F);
                 lastCraftSoundTime = event.player.world.getWorldTime();
                 return;
             }
@@ -258,7 +258,7 @@ public final class NyxClientEvents {
 
             for (int slots = inv.getSizeInventory(), i = 0; i < slots; ++i) {
                 if (inv.getStackInSlot(i).isEmpty() && inv.getStackInSlot(i).getItem() == NyxItems.celestialEmblem) {
-                    event.player.playSound(NyxSoundEvents.celestialEmblem.getSoundEvent(), 0.5F, 1.0F);
+                    event.player.playSound(NyxSoundEvents.ITEM_CELESTIAL_EMBLEM_CREATE.getSoundEvent(), 0.5F, 1.0F);
                     lastCraftSoundTime = event.player.world.getWorldTime();
                     break;
                 }

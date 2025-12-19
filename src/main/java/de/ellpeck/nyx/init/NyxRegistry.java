@@ -20,9 +20,9 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber(modid = Nyx.ID)
 public final class NyxRegistry {
 
-    public static final SoundType DENSE_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.denseCrystalBreak.getSoundEvent(), NyxSoundEvents.lightCrystalStep.getSoundEvent(), NyxSoundEvents.denseCrystalPlace.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent());
-    public static final SoundType LIGHT_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.lightCrystalBreak.getSoundEvent(), NyxSoundEvents.lightCrystalStep.getSoundEvent(), NyxSoundEvents.lightCrystalPlace.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent(), NyxSoundEvents.lightCrystalHit.getSoundEvent());
-    public static final SoundType METEORIC_ROCK = new SoundType(1.0F, 1.0F, NyxSoundEvents.meteoricRockBreak.getSoundEvent(), NyxSoundEvents.meteoricRockStep.getSoundEvent(), NyxSoundEvents.meteoricRockPlace.getSoundEvent(), NyxSoundEvents.meteoricRockStep.getSoundEvent(), NyxSoundEvents.meteoricRockStep.getSoundEvent());
+    public static final SoundType DENSE_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_DENSE_CRYSTAL_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_DENSE_CRYSTAL_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
+    public static final SoundType LIGHT_CRYSTAL = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent(), NyxSoundEvents.BLOCK_LIGHT_CRYSTAL_HIT.getSoundEvent());
+    public static final SoundType METEORIC_ROCK = new SoundType(1.0F, 1.0F, NyxSoundEvents.BLOCK_METEORIC_ROCK_BREAK.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_PLACE.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent(), NyxSoundEvents.BLOCK_METEORIC_ROCK_STEP.getSoundEvent());
     
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs(Nyx.ID) {
         @Override

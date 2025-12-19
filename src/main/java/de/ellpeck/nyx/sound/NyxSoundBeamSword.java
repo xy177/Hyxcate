@@ -17,7 +17,7 @@ public class NyxSoundBeamSword extends MovingSound {
     protected ItemStack swordStack;
 
     public NyxSoundBeamSword(ItemStack swordStack) {
-        super(NyxSoundEvents.beamSwordIdle.getSoundEvent(), SoundCategory.PLAYERS);
+        super(NyxSoundEvents.ITEM_BEAM_SWORD_IDLE.getSoundEvent(), SoundCategory.PLAYERS);
         this.attenuationType = ISound.AttenuationType.NONE;
         this.repeat = true;
         this.repeatDelay = 0;

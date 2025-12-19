@@ -154,12 +154,12 @@ public class NyxToolMeteorDetector extends Item {
 
         if (nearest == null) {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.none_found").setStyle(new Style().setColor(TextFormatting.RED)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
             return EnumActionResult.FAIL;
         }
 
         player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.distance", Math.round(Math.sqrt(player.getDistanceSq(nearest)))).setStyle(new Style().setColor(TextFormatting.YELLOW)));
-        player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorPrompt.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+        player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_PROMPT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
         return EnumActionResult.SUCCESS;
     }
 
@@ -173,7 +173,7 @@ public class NyxToolMeteorDetector extends Item {
 
             if (nearest == null || player.getDistanceSq(nearest) > 32 * 32) {
                 player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.no_pending").setStyle(new Style().setColor(TextFormatting.RED)));
-                player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+                player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
                 return EnumActionResult.FAIL;
             }
 
@@ -186,28 +186,28 @@ public class NyxToolMeteorDetector extends Item {
             ITextComponent sneakHint = new TextComponentTranslation("info.nyx.meteor_detector.sneak_confirm").setStyle(new Style().setColor(TextFormatting.GREEN).setItalic(true));
             player.sendMessage(sneakHint);
 
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorPrompt.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_PROMPT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
             return EnumActionResult.SUCCESS;
         }
 
         // Timeout check (30 seconds)
         if (player.world.getTotalWorldTime() - pending.timestamp > 600) {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.expired").setStyle(new Style().setColor(TextFormatting.RED)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
             return EnumActionResult.FAIL;
         }
 
         // Dimension check (same ID)
         if (player.world.provider.getDimension() != pending.dimensionId) {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.wrong_dimension").setStyle(new Style().setColor(TextFormatting.RED)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
             return EnumActionResult.FAIL;
         }
 
         // Distance check (within 32 blocks of original position)
         if (player.getDistanceSq(pending.playerPos) > 32 * 32) {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.moved_too_far").setStyle(new Style().setColor(TextFormatting.RED)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
             return EnumActionResult.FAIL;
         }
 
@@ -216,11 +216,11 @@ public class NyxToolMeteorDetector extends Item {
             data.sendToClients();
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.deleted", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.GREEN)));
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.reset", pending.pos.getX(), pending.pos.getY(), pending.pos.getZ()).setStyle(new Style().setColor(TextFormatting.YELLOW)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorConfirm.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CONFIRM.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
             return EnumActionResult.SUCCESS;
         } else {
             player.sendMessage(new TextComponentTranslation("info.nyx.meteor_detector.already_gone").setStyle(new Style().setColor(TextFormatting.RED)));
-            player.world.playSound(null, player.getPosition(), NyxSoundEvents.meteorDetectorCancel.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
+            player.world.playSound(null, player.getPosition(), NyxSoundEvents.ITEM_METEOR_DETECTOR_CANCEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F);
             return EnumActionResult.FAIL;
         }
     }

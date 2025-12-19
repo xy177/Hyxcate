@@ -20,7 +20,7 @@ public class TraitStunlock extends AbstractTrait {
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
         if (random.nextInt(5) == 0 && wasHit) {
-            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.tektiteHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
+            target.world.playSound(null, target.posX, target.posY, target.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
             target.world.playSound(null, target.posX, target.posY, target.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 1.0F, 1.5F / (target.world.rand.nextFloat() * 0.4F + 1.2F));
             target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
             TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ELECTRO, target, 5);

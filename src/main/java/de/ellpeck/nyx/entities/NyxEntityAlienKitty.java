@@ -122,7 +122,7 @@ public class NyxEntityAlienKitty extends EntityOcelot {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return NyxSoundEvents.alienKittyIdle.getSoundEvent();
+        return NyxSoundEvents.ENTITY_ALIEN_KITTY_IDLE.getSoundEvent();
     }
 
     @Override

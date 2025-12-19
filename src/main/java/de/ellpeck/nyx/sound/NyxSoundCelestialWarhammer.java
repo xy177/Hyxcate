@@ -14,7 +14,7 @@ public class NyxSoundCelestialWarhammer extends MovingSound {
     protected BlockPos position;
 
     public NyxSoundCelestialWarhammer(float volume, float pitch) {
-        super(NyxSoundEvents.hammerSpecialLaunch.getSoundEvent(), SoundCategory.PLAYERS);
+        super(NyxSoundEvents.ITEM_CELESTIAL_WARHAMMER_LAUNCH.getSoundEvent(), SoundCategory.PLAYERS);
         this.attenuationType = AttenuationType.NONE;
         this.player = Minecraft.getMinecraft().player;
         this.position = player.getPosition();

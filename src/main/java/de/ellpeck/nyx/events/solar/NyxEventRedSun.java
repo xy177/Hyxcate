@@ -26,7 +26,7 @@ public class NyxEventRedSun extends NyxSolarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return this.world.rand.nextInt(100) < 1 ? NyxSoundEvents.redSunStartSpecial.getSoundEvent() : NyxSoundEvents.redSunStart.getSoundEvent();
+        return this.world.rand.nextInt(100) < 1 ? NyxSoundEvents.EVENT_RED_SUN_START_SPECIAL.getSoundEvent() : NyxSoundEvents.EVENT_RED_SUN_START.getSoundEvent();
     }
 
     @Override

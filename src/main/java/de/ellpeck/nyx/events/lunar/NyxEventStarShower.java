@@ -27,7 +27,7 @@ public class NyxEventStarShower extends NyxLunarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return NyxSoundEvents.starShowerStart.getSoundEvent();
+        return NyxSoundEvents.EVENT_STAR_SHOWER_START.getSoundEvent();
     }
 
     @Override

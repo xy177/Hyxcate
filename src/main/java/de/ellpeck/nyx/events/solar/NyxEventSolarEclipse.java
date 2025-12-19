@@ -26,7 +26,7 @@ public class NyxEventSolarEclipse extends NyxSolarEvent {
 
     @Override
     public SoundEvent getStartSound() {
-        return NyxSoundEvents.solarEclipseStart.getSoundEvent();
+        return NyxSoundEvents.EVENT_GRIM_ECLIPSE_START.getSoundEvent();
     }
 
     @Override

@@ -58,7 +58,7 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
         world.spawnEntity(meteor);
         if (FMLLaunchHandler.side().isClient() && !world.isRemote) {
             // TODO: Make volume configurable?
-            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(meteor, NyxSoundEvents.fallingMeteor.getSoundEvent(), 5F));
+            Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallingEntity(meteor, NyxSoundEvents.ENTITY_METEOR_FALLING.getSoundEvent(), 5F));
         }
         return meteor;
     }
@@ -232,12 +232,12 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                         float distSqrt = (float) Math.sqrt(dist);
                         if (dist <= 160 * 160) {
                             msg = ".meteor";
-                            sound = NyxSoundEvents.fallingMeteorImpact.getSoundEvent();
+                            sound = NyxSoundEvents.ENTITY_METEOR_IMPACT.getSoundEvent();
                             // close volume: 1.0F at 0 blocks -> 0.1F at 160 blocks (10 chunks)
                             volume = Math.max(0.1F, 1.0F - (distSqrt / 160.0F) * 0.9F);
                         } else {
                             msg = ".meteor_far";
-                            sound = NyxSoundEvents.fallingMeteorImpactFar.getSoundEvent();
+                            sound = NyxSoundEvents.ENTITY_METEOR_IMPACT_FAR.getSoundEvent();
                             // far volume: 1.0F at 160 blocks -> 0.1F at 512 blocks (32 chunks)
                             float farDist = distSqrt - 160.0F;
                             volume = Math.max(0.1F, 1.0F - (farDist / 352.0F) * 0.9F);

@@ -46,7 +46,7 @@ public class NyxItemFallenStar extends Item implements IFireproofItem {
             entityItem.getEntityData().setBoolean(lastOnGround, true);
             this.placeStarAir(entityItem);
             if (FMLLaunchHandler.side().isClient() && !entityItem.world.isRemote) {
-                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.fallingStarIdle.getSoundEvent(), 1F));
+                Minecraft.getMinecraft().getSoundHandler().playSound(new NyxSoundFallenEntity(entityItem, NyxSoundEvents.ENTITY_STAR_IDLE.getSoundEvent(), 1F));
             }
         }
         return false;

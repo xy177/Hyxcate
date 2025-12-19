@@ -44,7 +44,7 @@ public class NyxToolBeamSword extends NyxItemSword {
 
         if (attacker instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) attacker;
-            player.world.playSound(null, player.posX, player.posY, player.posZ, NyxSoundEvents.beamSwordHit.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
+            player.world.playSound(null, player.posX, player.posY, player.posZ, NyxSoundEvents.ITEM_BEAM_SWORD_HIT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         return true;
@@ -58,7 +58,7 @@ public class NyxToolBeamSword extends NyxItemSword {
     @Override
     public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) {
         if (stack.getItemDamage() < stack.getMaxDamage() && entityLiving instanceof EntityPlayer && ((EntityPlayer) entityLiving).getCooledAttackStrength(0) > 0.1F) {
-            entityLiving.world.playSound(null, entityLiving.posX, entityLiving.posY, entityLiving.posZ, NyxSoundEvents.beamSwordSwing.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1.5F / (entityLiving.world.rand.nextFloat() * 0.4F + 1.2F));
+            entityLiving.world.playSound(null, entityLiving.posX, entityLiving.posY, entityLiving.posZ, NyxSoundEvents.ITEM_BEAM_SWORD_SWING.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1.5F / (entityLiving.world.rand.nextFloat() * 0.4F + 1.2F));
         }
 
         return super.onEntitySwing(entityLiving, stack);
