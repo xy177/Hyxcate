@@ -41,6 +41,6 @@ public class NyxPotions {
                 .registerPotionAttributeModifier(SharedMonsterAttributes.MOVEMENT_SPEED, NyxAttributes.MOVEMENT_SPEED_ID.toString(), -1.0D, 2)
                 .registerPotionAttributeModifier(SharedMonsterAttributes.ATTACK_SPEED, NyxAttributes.ATTACK_SPEED_ID.toString(), -1.0D, 2));
 
-        registry.registerAll(DEEP_FREEZE, INFERNO, PARALYSIS);
+        registry.registerAll(CELESTIAL_ERASURE, DEEP_FREEZE, INFERNO, PARALYSIS);
     }
 }
