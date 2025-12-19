@@ -102,6 +102,6 @@ Want to help translating? Submit a [**Pull Request**](https://github.com/Elite-M
 - Organ Sting by nomiqbomi -- https://freesound.org/s/578805/ -- License: Creative Commons 0
 - Victory (short sting) by xkeril -- https://freesound.org/s/706753/ -- License: Creative Commons 0
 - StarsTwinklingB.wav by aj_heels -- https://freesound.org/s/520542/ -- License: Attribution 4.0
-- 10056 giant fireball blow.wav by Robinhood76 -- https://freesound.org/s/564041/ -- License: Attribution NonCommercial 4.0
+- Fire Breath.wav by bspiller5 -- https://freesound.org/s/157616/ -- License: Creative Commons 0
 - Scary noise by SamsterBirdies -- https://freesound.org/s/555382/ -- License: Creative Commons 0
 - Red Sun in the Sky - Note Block Cover by Jimmy145 -- https://youtu.be/PCERgEtiX7c
