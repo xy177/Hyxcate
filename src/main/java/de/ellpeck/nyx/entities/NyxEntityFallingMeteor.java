@@ -354,12 +354,12 @@ public class NyxEntityFallingMeteor extends NyxEntityFallingStar {
                         world.spawnEntity(kitty);
                     }
                 } else { // Boring mobs
-                    if (this.dataManager.get(TYPE) == 3) {
+                    if (this.dataManager.get(TYPE) == 3 && world.rand.nextBoolean()) {
                         EntityBlaze blaze = new EntityBlaze(world); // TODO: Replace with meteor blaze
                         blaze.setLocationAndAngles(x, y, z, 0.0F, 0.0F);
                         world.spawnEntity(blaze);
                     } else {
-                        NyxEntityAlienCreeper creeper = new NyxEntityAlienCreeper(world);
+                        NyxEntityAlienCreeper creeper = new NyxEntityAlienCreeper(world, this.dataManager.get(TYPE));
                         creeper.setLocationAndAngles(x, y, z, 0.0F, 0.0F);
                         world.spawnEntity(creeper);
                     }

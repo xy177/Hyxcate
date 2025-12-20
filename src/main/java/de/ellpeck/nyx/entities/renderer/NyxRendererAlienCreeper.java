@@ -3,7 +3,7 @@ package de.ellpeck.nyx.entities.renderer;
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.entities.NyxEntityAlienCreeper;
 import de.ellpeck.nyx.entities.renderer.layers.NyxLayerAlienCreeperCharge;
-import de.ellpeck.nyx.entities.renderer.layers.NyxLayerGlowing;
+import de.ellpeck.nyx.entities.renderer.layers.NyxLayerAlienCreeperGlow;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,11 +12,12 @@ import net.minecraft.util.math.MathHelper;
 
 public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper> {
     private static final ResourceLocation ALIEN = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper.png");
-    public static final ResourceLocation ALIEN_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_layer.png");
+    private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_frezarite.png");
+    private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_kreknorite.png");
 
     public NyxRendererAlienCreeper(RenderManager renderManager) {
         super(renderManager, new NyxModelAlienCreeper(), 0.5F);
-        this.addLayer(new NyxLayerGlowing<>(this, ALIEN_GLOW));
+        this.addLayer(new NyxLayerAlienCreeperGlow(this));
         this.addLayer(new NyxLayerAlienCreeperCharge(this));
     }
 
@@ -74,6 +75,13 @@ public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper>
 
     @Override
     protected ResourceLocation getEntityTexture(NyxEntityAlienCreeper entity) {
-        return ALIEN;
+        switch (entity.getDataManager().get(NyxEntityAlienCreeper.TYPE)) {
+            case 2: // Frezarite
+                return FREZARITE;
+            case 3: // Kreknorite
+                return KREKNORITE;
+            default: // Alien
+                return ALIEN;
+        }
     }
 }

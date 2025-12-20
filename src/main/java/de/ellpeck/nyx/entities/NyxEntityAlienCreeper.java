@@ -6,6 +6,10 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -14,9 +18,24 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class NyxEntityAlienCreeper extends EntityCreeper {
+    public static final DataParameter<Integer> TYPE = EntityDataManager.createKey(NyxEntityAlienCreeper.class, DataSerializers.VARINT);
+
     public NyxEntityAlienCreeper(World world) {
         super(world);
-        isImmuneToFire = true;
+        this.isImmuneToFire = true;
+        this.dataManager.set(TYPE, world.rand.nextInt(4) + 1);
+    }
+
+    public NyxEntityAlienCreeper(World world, int type) {
+        super(world);
+        this.isImmuneToFire = true;
+        this.dataManager.set(TYPE, type);
+    }
+
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.dataManager.register(TYPE, 1);
     }
 
     @Override
@@ -64,5 +83,17 @@ public class NyxEntityAlienCreeper extends EntityCreeper {
     @Override
     protected SoundEvent getAmbientSound() {
         return NyxSoundEvents.ENTITY_ALIEN_CREEPER_IDLE.getSoundEvent();
+    }
+
+    @Override
+    public void writeEntityToNBT(NBTTagCompound compound) {
+        super.writeEntityToNBT(compound);
+        compound.setInteger("type", this.dataManager.get(TYPE));
+    }
+
+    @Override
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.dataManager.set(TYPE, compound.getInteger("type"));
     }
 }
