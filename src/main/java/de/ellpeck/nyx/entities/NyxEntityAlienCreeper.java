@@ -1,15 +1,17 @@
 package de.ellpeck.nyx.entities;
 
 import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.sound.NyxSoundEvents;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class NyxEntityAlienCreeper extends EntityCreeper {
     public NyxEntityAlienCreeper(World world) {
@@ -28,7 +30,7 @@ public class NyxEntityAlienCreeper extends EntityCreeper {
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
     }
 
     @Override
@@ -51,5 +53,16 @@ public class NyxEntityAlienCreeper extends EntityCreeper {
     @Override
     public boolean canBreatheUnderwater() {
         return true;
+    }
+
+    @Override
+    public int getTalkInterval() {
+        return super.getTalkInterval() * 2;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return NyxSoundEvents.ENTITY_ALIEN_CREEPER_IDLE.getSoundEvent();
     }
 }

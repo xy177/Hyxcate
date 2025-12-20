@@ -23,6 +23,7 @@ public enum NyxSoundEvents {
     EFFECT_PARALYSIS_ZAP("effect.paralysis.zap"),
 
     // Entities
+    ENTITY_ALIEN_CREEPER_IDLE("entity.alien_creeper.idle"),
     ENTITY_ALIEN_KITTY_IDLE("entity.alien_kitty.idle"),
     ENTITY_METEOR_FALLING("entity.meteor.falling"),
     ENTITY_METEOR_IMPACT_FAR("entity.meteor.impact.far"),
