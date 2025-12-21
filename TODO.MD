@@ -6,9 +6,6 @@
 - Rename all class files
 - New attributes for Frezarite, Kreknorite, and Tektite to provide an effect when hit
 
-Put this on Future Updates if it can't be done:
-- Update textures for regular tools, most ingots and most metal blocks
-
 ## Future Updates
 
 - More API features for addon creators or integration with other mods
@@ -31,3 +28,4 @@ Put this on Future Updates if it can't be done:
 - Set bonus tooltip can be changed to be much more intuitive where it shows which pieces of the set are equipped and what the set does. See Botania armor for a good example of this. (1/4 Set Bonus: Water Breathing)
 - Rework Frezarite, Kreknorite, and Tektite sets to block a set of configurable potion effects when the full set is worn
 - Replace 'Star Air' with a cleaner approach
+- Some textures still need to be polished up and armor textures still need to be updated to be consistent
