@@ -11,9 +11,9 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class NyxLayerAlienCreeperCharge implements LayerRenderer<NyxEntityAlienCreeper> {
-    private static final ResourceLocation ALIEN_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_armor.png");
-    private static final ResourceLocation FREZARITE_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_armor_frezarite.png");
-    private static final ResourceLocation KREKNORITE_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_armor_kreknorite.png");
+    private static final ResourceLocation ALIEN_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/meteorite_armor.png");
+    private static final ResourceLocation FREZARITE_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/frezarite_armor.png");
+    private static final ResourceLocation KREKNORITE_CHARGE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/kreknorite_armor.png");
     private final NyxRendererAlienCreeper renderer;
     private final NyxModelAlienCreeper model = new NyxModelAlienCreeper(2.0F);
 

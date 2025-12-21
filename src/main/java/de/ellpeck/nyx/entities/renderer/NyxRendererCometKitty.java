@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxRendererCometKitty extends RenderLiving<NyxEntityCometKitty> {
-    private static final ResourceLocation SKIN = new ResourceLocation(Nyx.ID, "textures/entities/comet_kitty.png");
+    private static final ResourceLocation SKIN = new ResourceLocation(Nyx.ID, "textures/entities/comet_kitty/meteorite.png");
 
     public NyxRendererCometKitty(RenderManager renderManager) {
         super(renderManager, new NyxModelCometKitty(), 0.4F);

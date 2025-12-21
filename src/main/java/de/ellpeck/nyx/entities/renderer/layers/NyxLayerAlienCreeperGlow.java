@@ -9,9 +9,9 @@ import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class NyxLayerAlienCreeperGlow implements LayerRenderer<NyxEntityAlienCreeper> {
-    private static final ResourceLocation ALIEN_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_layer.png");
-    private static final ResourceLocation FREZARITE_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_layer_frezarite.png");
-    private static final ResourceLocation KREKNORITE_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper_layer_kreknorite.png");
+    private static final ResourceLocation ALIEN_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/meteorite_glow.png");
+    private static final ResourceLocation FREZARITE_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/frezarite_glow.png");
+    private static final ResourceLocation KREKNORITE_GLOW = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/kreknorite_glow.png");
     private final NyxRendererAlienCreeper renderer;
 
     public NyxLayerAlienCreeperGlow(NyxRendererAlienCreeper renderer) {
