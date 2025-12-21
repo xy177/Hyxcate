@@ -68,6 +68,7 @@
 ### 🔁 **Mod Integration**
 
 - With [**Astral Sorcery**](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) installed, Hyxcate events will never trigger on the same day the Horologium constellation (Solar Eclipse) happens.
+- With [**CraftTweaker**](https://www.curseforge.com/minecraft/mc-mods/crafttweaker) installed, current lunar and solar events can be detected. See [this explanation page](https://github.com/Elite-Modding-Team/Hyxcate/blob/main/docs/crafttweaker.md).
 - With [**Demagnetize**](https://www.curseforge.com/minecraft/mc-mods/demagnetize) installed, Hyxcate magnetization effects will not pull items around activated Demagnetizers.
 - With [**Future Fireproof**](https://www.curseforge.com/minecraft/mc-mods/future-fireproof) installed, many items and blocks added by Hyxcate will become immune to being destroyed by fire or lava, similar to Netherite from modern versions of Minecraft.
 - With [**Tinkers' Antique (Tinkers' Construct)**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) installed, there are new tool materials to tinker with.

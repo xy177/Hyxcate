@@ -128,6 +128,10 @@ dependencies {
     // Astral Sorcery
     implementation rfg.deobf('curse.maven:astral-sorcery-241721:3044416')
 
+    // CraftTweaker
+    implementation 'curse.maven:mtlib-253211:3308160'
+    implementation 'curse.maven:crafttweaker-239197:6929088'
+
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
         String mixin = modUtils.enableMixins('zone.rong:mixinbooter:10.7', "mixins.${project.mod_id}.refmap.json")
