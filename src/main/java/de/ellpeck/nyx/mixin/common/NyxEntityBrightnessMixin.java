@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.common;
 
 import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventRedSun;
+import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.World;
@@ -20,7 +20,7 @@ public abstract class NyxEntityBrightnessMixin {
     @Inject(method = "getBrightness", at = @At("HEAD"), cancellable = true)
     private void nyxSetBrightness(CallbackInfoReturnable<Float> cir) {
         NyxWorld nyxWorld = NyxWorld.get(this.world);
-        if (this instanceof IMob && nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventRedSun) {
+        if (this instanceof IMob && nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventRedGiant) {
             cir.setReturnValue(0.0F);
         }
     }

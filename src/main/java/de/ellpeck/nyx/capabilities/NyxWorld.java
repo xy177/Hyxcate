@@ -3,8 +3,8 @@ package de.ellpeck.nyx.capabilities;
 import de.ellpeck.nyx.compat.astralsorcery.AstralSorcery;
 import de.ellpeck.nyx.config.NyxConfig;
 import de.ellpeck.nyx.events.lunar.*;
-import de.ellpeck.nyx.events.solar.NyxEventRedSun;
-import de.ellpeck.nyx.events.solar.NyxEventSolarEclipse;
+import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
+import de.ellpeck.nyx.events.solar.NyxEventGrimEclipse;
 import de.ellpeck.nyx.events.solar.NyxSolarEvent;
 import de.ellpeck.nyx.init.NyxRegistry;
 import de.ellpeck.nyx.network.NyxPacketHandler;
@@ -56,10 +56,10 @@ public class NyxWorld implements ICapabilityProvider, INBTSerializable<NBTTagCom
 
     public NyxWorld(World world) {
         this.world = world;
-        this.solarEvents.add(new NyxEventRedSun(this));
-        this.solarEvents.add(new NyxEventSolarEclipse(this));
+        this.solarEvents.add(new NyxEventRedGiant(this));
+        this.solarEvents.add(new NyxEventGrimEclipse(this));
 
-        this.lunarEvents.add(new NyxEventHarvestMoon(this));
+        this.lunarEvents.add(new NyxEventBlueMoon(this));
         this.lunarEvents.add(new NyxEventStarShower(this));
         this.lunarEvents.add(new NyxEventBloodMoon(this));
         // This needs to stay at the end to prioritize random events

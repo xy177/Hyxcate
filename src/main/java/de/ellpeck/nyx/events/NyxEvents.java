@@ -8,9 +8,9 @@ import de.ellpeck.nyx.entities.NyxEntityFallingMeteor;
 import de.ellpeck.nyx.entities.NyxEntityFallingStar;
 import de.ellpeck.nyx.events.lunar.NyxEventBloodMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventFullMoon;
-import de.ellpeck.nyx.events.lunar.NyxEventHarvestMoon;
+import de.ellpeck.nyx.events.lunar.NyxEventBlueMoon;
 import de.ellpeck.nyx.events.lunar.NyxEventStarShower;
-import de.ellpeck.nyx.events.solar.NyxEventRedSun;
+import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
 import de.ellpeck.nyx.init.NyxAttributes;
 import de.ellpeck.nyx.init.NyxEnchantments;
 import de.ellpeck.nyx.init.NyxItems;
@@ -319,7 +319,7 @@ public final class NyxEvents {
         // Don't spawn mobs during harvest moon
         if (event.getSpawner() == null) {
             NyxWorld nyx = NyxWorld.get(entity.world);
-            if (nyx != null && nyx.currentLunarEvent instanceof NyxEventHarvestMoon) event.setResult(Event.Result.DENY);
+            if (nyx != null && nyx.currentLunarEvent instanceof NyxEventBlueMoon) event.setResult(Event.Result.DENY);
         }
     }
 
@@ -354,7 +354,7 @@ public final class NyxEvents {
                 doExtraSpawn(entity, "full_moon_spawn");
         }
 
-        if (nyx.currentSolarEvent instanceof NyxEventRedSun && entity.world.canSeeSky(entity.getPosition())) {
+        if (nyx.currentSolarEvent instanceof NyxEventRedGiant && entity.world.canSeeSky(entity.getPosition())) {
             IAttributeInstance maxHealthAttribute = entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
             double newMaxHealth = maxHealthAttribute.getBaseValue() * 1.5;
             maxHealthAttribute.setBaseValue(newMaxHealth);

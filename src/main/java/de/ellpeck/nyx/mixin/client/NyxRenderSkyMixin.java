@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.client;
 
 import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventRedSun;
+import de.ellpeck.nyx.events.solar.NyxEventRedGiant;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RenderGlobal;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ public abstract class NyxRenderSkyMixin {
     @ModifyConstant(method = "renderSky(FI)V", constant = @Constant(floatValue = 30.0F, ordinal = 6))
     private float nyxRenderSky(float constant) {
         NyxWorld nyxWorld = NyxWorld.get(this.world);
-        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventRedSun) {
+        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventRedGiant) {
             return 90.0F;
         }
         return constant;

@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.client;
 
 import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventSolarEclipse;
+import de.ellpeck.nyx.events.solar.NyxEventGrimEclipse;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +14,7 @@ public abstract class NyxSunBrightnessBodyMixin {
     @Inject(method = "getSunBrightnessBody", at = @At("HEAD"), cancellable = true)
     private void nyxSetSunBrightnessBody(float partialTicks, CallbackInfoReturnable<Float> cir) {
         NyxWorld nyxWorld = NyxWorld.get((World) (Object) this);
-        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventSolarEclipse) {
+        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventGrimEclipse) {
             cir.setReturnValue(0.0F);
         }
     }

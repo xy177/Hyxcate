@@ -11,22 +11,22 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
-public class NyxEventSolarEclipse extends NyxSolarEvent {
-    private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.solarEclipse);
+public class NyxEventRedGiant extends NyxSolarEvent {
+    private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.redSun);
 
-    public NyxEventSolarEclipse(NyxWorld nyxWorld) {
-        super("grim_eclipse", nyxWorld);
+    public NyxEventRedGiant(NyxWorld nyxWorld) {
+        super("red_giant", nyxWorld);
     }
 
     @Override
     public ITextComponent getStartMessage() {
-        return new TextComponentTranslation("info." + Nyx.ID + ".grim_eclipse")
-                .setStyle(new Style().setColor(TextFormatting.DARK_GRAY).setItalic(true));
+        return new TextComponentTranslation("info." + Nyx.ID + ".red_giant")
+                .setStyle(new Style().setColor(TextFormatting.RED).setItalic(true));
     }
 
     @Override
     public SoundEvent getStartSound() {
-        return NyxSoundEvents.EVENT_GRIM_ECLIPSE_START.getSoundEvent();
+        return this.world.rand.nextInt(100) < 1 ? NyxSoundEvents.EVENT_RED_SUN_START_SPECIAL.getSoundEvent() : NyxSoundEvents.EVENT_RED_SUN_START.getSoundEvent();
     }
 
     @Override
@@ -43,12 +43,12 @@ public class NyxEventSolarEclipse extends NyxSolarEvent {
 
     @Override
     public int getSkyColor() {
-        return 0x131311;
+        return 0x420d03;
     }
 
     @Override
     public String getSunTexture() {
-        return "grim_eclipse";
+        return "red_giant";
     }
 
     @Override

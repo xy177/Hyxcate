@@ -18,11 +18,11 @@ import net.minecraft.world.chunk.Chunk;
 
 import java.util.Iterator;
 
-public class NyxEventHarvestMoon extends NyxLunarEvent {
+public class NyxEventBlueMoon extends NyxLunarEvent {
 
     private final ConfigImpl config = new ConfigImpl(() -> NyxConfig.harvestMoon);
 
-    public NyxEventHarvestMoon(NyxWorld nyxWorld) {
+    public NyxEventBlueMoon(NyxWorld nyxWorld) {
         super("blue_moon", nyxWorld);
     }
 

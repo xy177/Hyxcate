@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.mixin.common;
 
 import de.ellpeck.nyx.capabilities.NyxWorld;
-import de.ellpeck.nyx.events.solar.NyxEventSolarEclipse;
+import de.ellpeck.nyx.events.solar.NyxEventGrimEclipse;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,7 +14,7 @@ public abstract class NyxMobValidLightLevelMixin {
     @Redirect(method = "isValidLightLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"))
     private boolean nyxSetValidLightLevel(World world) {
         NyxWorld nyxWorld = NyxWorld.get(world);
-        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventSolarEclipse) {
+        if (nyxWorld != null && nyxWorld.currentSolarEvent instanceof NyxEventGrimEclipse) {
             return true;
         }
         return world.isThundering();
