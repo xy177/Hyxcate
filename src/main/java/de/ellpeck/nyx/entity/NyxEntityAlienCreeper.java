@@ -1,6 +1,6 @@
 package de.ellpeck.nyx.entity;
 
-import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.init.NyxLootTables;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
@@ -61,7 +61,14 @@ public class NyxEntityAlienCreeper extends EntityCreeper {
     @Nonnull
     @Override
     protected ResourceLocation getLootTable() {
-        return NyxEntities.ALIEN_CREEPER;
+        switch (this.getDataManager().get(TYPE)) {
+            case 2: // Frezarite
+                return NyxLootTables.ALIEN_CREEPER_FREZARITE;
+            case 3: // Kreknorite
+                return NyxLootTables.ALIEN_CREEPER_KREKNORITE;
+            default: // Meteorite
+                return NyxLootTables.ALIEN_CREEPER_METEORITE;
+        }
     }
 
     @Override

@@ -2,6 +2,7 @@ package de.ellpeck.nyx.entity;
 
 import de.ellpeck.nyx.Nyx;
 import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.init.NyxLootTables;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
@@ -32,7 +33,7 @@ public class NyxEntityCometKitty extends EntityOcelot {
     @Nonnull
     @Override
     protected ResourceLocation getLootTable() {
-        return NyxEntities.COMET_KITTY;
+        return NyxLootTables.COMET_KITTY_METEORITE;
     }
 
     @Override

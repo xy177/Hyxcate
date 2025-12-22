@@ -1,7 +1,7 @@
 package de.ellpeck.nyx.entity;
 
 import de.ellpeck.nyx.Nyx;
-import de.ellpeck.nyx.init.NyxEntities;
+import de.ellpeck.nyx.init.NyxLootTables;
 import de.ellpeck.nyx.init.NyxSoundEvents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityAgeable;
@@ -51,7 +51,14 @@ public class NyxEntityAlienKitty extends EntityOcelot {
     @Nonnull
     @Override
     protected ResourceLocation getLootTable() {
-        return NyxEntities.COMET_KITTY;
+        switch (this.getDataManager().get(TYPE)) {
+            case 2: // Frezarite
+                return NyxLootTables.ALIEN_KITTY_FREZARITE;
+            case 3: // Kreknorite
+                return NyxLootTables.ALIEN_KITTY_KREKNORITE;
+            default: // Alien Green
+                return NyxLootTables.ALIEN_KITTY_GREEN;
+        }
     }
 
     @Override

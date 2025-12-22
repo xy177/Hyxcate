@@ -11,10 +11,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 @Mod.EventBusSubscriber(modid = Nyx.ID)
 public class NyxEntities {
-
-    public static final ResourceLocation ALIEN_CREEPER = new ResourceLocation(Nyx.ID, "entities/alien_creeper");
-    public static final ResourceLocation COMET_KITTY = new ResourceLocation(Nyx.ID, "entities/comet_kitty");
-
     private static int id = 1;
 
     @SubscribeEvent

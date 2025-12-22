@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper> {
-    private static final ResourceLocation ALIEN = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/meteorite.png");
+    private static final ResourceLocation METEORITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/meteorite.png");
     private static final ResourceLocation FREZARITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/frezarite.png");
     private static final ResourceLocation KREKNORITE = new ResourceLocation(Nyx.ID, "textures/entities/alien_creeper/kreknorite.png");
 
@@ -81,8 +81,8 @@ public class NyxRendererAlienCreeper extends RenderLiving<NyxEntityAlienCreeper>
                 return FREZARITE;
             case 3: // Kreknorite
                 return KREKNORITE;
-            default: // Alien
-                return ALIEN;
+            default: // Meteorite
+                return METEORITE;
         }
     }
 }
