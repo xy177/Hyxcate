@@ -148,7 +148,7 @@ public final class NyxEvents {
 
             // Magnetization Enchantment, controlled by the enchantment level
             if (magnetizationLevel != 0) {
-                pullItems(player, 4.0D * magnetizationLevel, 0.0125F * magnetizationLevel);
+                pullItems(player, 6.0D, 0.004F + (0.002F * magnetizationLevel));
             }
         }
     }
