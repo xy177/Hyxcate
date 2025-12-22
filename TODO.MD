@@ -1,10 +1,5 @@
-## Release
-
-- Make sure TiC integration is balanced and just right (currently partially done)
-
-## Future Updates
-
 - More API features for addon creators or integration with other mods
+- More TiC compat additions
 - Shooting Star spawns should be reworked to only spawn up to an x amount per night, star showers will possibly keep the current system instead
 - Meteor Rework: Meteors will only impact the ground and deal damage if it is being followed, otherwise they despawn. Meteors will also fall more slowly. See AS shooting star's for an example of this
 - Enchantment Rework: Rework for Lunar Edge and Lunar Shield while also introducing Solar counterparts

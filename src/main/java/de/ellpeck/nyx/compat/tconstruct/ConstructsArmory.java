@@ -11,13 +11,11 @@ public class ConstructsArmory {
     public static final AbstractArmorTrait ASTRAL_PLATING = new TraitAstralPlating();
     public static final AbstractArmorTrait FREZARITES_WARD = new TraitFrezaritesWard();
     public static final AbstractArmorTrait GLEAMING_ARMOR = new TraitGleamingArmor();
-    public static final AbstractArmorTrait HYPERCHARGE_ARMOR = new TraitHyperchargeArmor();
     public static final AbstractArmorTrait KREKNORITES_WARD = new TraitKreknoritesWard();
     public static final AbstractArmorTrait STAR_SHIELD_ARMOR = new TraitStarShieldArmor();
     public static final AbstractArmorTrait STUNLOCK_ARMOR = new TraitStunlockArmor();
     public static final AbstractArmorTrait SUPERCHARGE_ARMOR = new TraitSuperchargeArmor();
 
-    // TODO: Rework traits for Cyber Crystal, Frezarite, Kreknorite, Meteorite, Tektite
     // Materials are already registered in the Tinkers' Construct class, this only adds support for Construct's Armory armor
     public static void registerToolMaterials() {
         TinkerRegistry.addMaterialStats(TinkersConstruct.FALLEN_STAR,
@@ -34,11 +32,11 @@ public class ConstructsArmory {
                 new PlatesMaterialStats(1.6F, 16.0F, 6.0F),
                 new TrimMaterialStats(18.0F));
         ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, GLEAMING_ARMOR, ArmorMaterialType.CORE);
-        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, HYPERCHARGE_ARMOR, ArmorMaterialType.CORE);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, SUPERCHARGE_ARMOR, ArmorMaterialType.CORE);
         ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, ArmorTraits.alien, ArmorMaterialType.CORE);
-        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, HYPERCHARGE_ARMOR, ArmorMaterialType.PLATES);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, SUPERCHARGE_ARMOR, ArmorMaterialType.PLATES);
         ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, ArmorTraits.alien, ArmorMaterialType.PLATES);
-        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, HYPERCHARGE_ARMOR, ArmorMaterialType.TRIM);
+        ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, SUPERCHARGE_ARMOR, ArmorMaterialType.TRIM);
         ArmorMaterials.addArmorTrait(TinkersConstruct.CYBER_CRYSTAL, ArmorTraits.alien, ArmorMaterialType.TRIM);
 
         TinkerRegistry.addMaterialStats(TinkersConstruct.TEKTITE,

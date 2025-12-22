@@ -8,7 +8,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 
 public class TraitGleamingArmor extends AbstractArmorTrait {
-    public static final float DAMAGE_MULT = 0.5F;
+    public static final float DAMAGE_MULT = 0.4F;
 
     public TraitGleamingArmor() {
         super(Nyx.ID + "." + "gleaming", 0xA36BB4);

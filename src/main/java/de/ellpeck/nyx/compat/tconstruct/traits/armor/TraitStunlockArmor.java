@@ -2,19 +2,17 @@ package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.init.NyxPotions;
 import de.ellpeck.nyx.init.NyxSoundEvents;
+import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import slimeknights.tconstruct.common.Sounds;
-import slimeknights.tconstruct.shared.client.ParticleEffect;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 public class TraitStunlockArmor extends AbstractArmorTrait {
     public TraitStunlockArmor() {
@@ -23,15 +21,13 @@ public class TraitStunlockArmor extends AbstractArmorTrait {
 
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
-        if (random.nextInt(10) == 0) {
+        if (NyxUtils.setChance(0.05F)) {
             Entity trueSource = source.getTrueSource();
 
             if (!player.world.isRemote) {
                 if (trueSource instanceof EntityLivingBase) {
                     trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, NyxSoundEvents.EFFECT_PARALYSIS_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
-                    trueSource.world.playSound(null, trueSource.posX, trueSource.posY, trueSource.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 1.0F, 1.5F / (trueSource.world.rand.nextFloat() * 0.4F + 1.2F));
-                    ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10 * 20, 9));
-                    TinkerTools.proxy.spawnEffectParticle(ParticleEffect.Type.HEART_ELECTRO, trueSource, 5);
+                    ((EntityLivingBase) trueSource).addPotionEffect(new PotionEffect(NyxPotions.PARALYSIS, 8 * 20, 0));
                 }
             }
         }

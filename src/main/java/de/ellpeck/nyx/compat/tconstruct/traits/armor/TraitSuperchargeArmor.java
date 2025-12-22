@@ -2,6 +2,7 @@ package de.ellpeck.nyx.compat.tconstruct.traits.armor;
 
 import c4.conarm.lib.traits.AbstractArmorTrait;
 import de.ellpeck.nyx.Nyx;
+import de.ellpeck.nyx.util.NyxUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -20,7 +21,7 @@ public class TraitSuperchargeArmor extends AbstractArmorTrait {
 
     @Override
     public float onDamaged(ItemStack armor, EntityPlayer player, DamageSource source, float damage, float newDamage, LivingDamageEvent event) {
-        if (random.nextInt(15) == 0) {
+        if (NyxUtils.setChance(0.05F)) {
             if (!player.world.isRemote) {
                 if (player instanceof EntityPlayer) {
                     player.world.playSound(null, player.posX, player.posY, player.posZ, Sounds.shocking_discharge, SoundCategory.PLAYERS, 0.5F, 0.5F / (player.world.rand.nextFloat() * 0.4F + 1.2F));
