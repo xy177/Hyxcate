@@ -38,7 +38,7 @@ public abstract class NyxBlockSlab extends Block {
         this.doubleSlab = doubleSlab;
     }
 
-    public static NyxBlockSlab[] makeSlab(String baseName, Material material, SoundType soundType, float hardness) {
+    public static NyxBlockSlab[] makeSlab(String baseName, Material material, SoundType soundType, float hardness, float resistance) {
         MutableObject<NyxBlockSlab> singl = new MutableObject<>();
         MutableObject<NyxBlockSlab> doubl = new MutableObject<>();
         singl.setValue(new NyxBlockSlab(material, singl::getValue, doubl::getValue) {
@@ -47,7 +47,7 @@ public abstract class NyxBlockSlab extends Block {
                 return false;
             }
         });
-        singl.getValue().setSoundType(soundType).setHardness(hardness);
+        singl.getValue().setSoundType(soundType).setHardness(hardness).setResistance(resistance);
         NyxBlocks.initBlock(singl.getValue(), baseName, b -> new NyxItemSlab(b, singl::getValue, doubl::getValue));
         doubl.setValue(new NyxBlockSlab(material, singl::getValue, doubl::getValue) {
             @Override

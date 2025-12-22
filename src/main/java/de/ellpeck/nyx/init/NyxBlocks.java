@@ -55,11 +55,11 @@ public class NyxBlocks {
                 frezariteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.ICE, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "frezarite_block", ItemBlock::new),
                 kreknoriteBlock = initBlock(new Block(Material.ROCK).setHardness(3), "kreknorite_block", ItemBlock::new),
                 tektiteBlock = initBlock(new NyxBlock(Material.ROCK, MapColor.RED, 3.0F, 3000.0F, NyxRegistry.LIGHT_CRYSTAL), "tektite_block", ItemBlock::new),
-                tektiteGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000), "tektite_glass", ItemBlock::new)
+                tektiteGlass = initBlock(new NyxBlockSpaceGlass().setHardness(2).setResistance(3000.0F), "tektite_glass", ItemBlock::new)
         );
 
-        // TODO: Set resistance and map color as well
-        NyxBlockSlab[] slabs = NyxBlockSlab.makeSlab("star_slab", Material.ROCK, NyxRegistry.LIGHT_CRYSTAL, 2.0F);
+        // TODO: Set map color as well
+        NyxBlockSlab[] slabs = NyxBlockSlab.makeSlab("star_slab", Material.ROCK, NyxRegistry.LIGHT_CRYSTAL, 2.0F, 2000.0F);
         reg.registerAll(slabs);
         starSlab = slabs[0];
     }
