@@ -17,14 +17,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+
+import com.invadermonky.futurefireproof.api.IFireproofBlock;
+
 import java.util.List;
 import java.util.Random;
 
-public class NyxBlockCyberCrystal extends Block {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofBlock", striprefs = true)
+public class NyxBlockCyberCrystal extends Block implements IFireproofBlock {
     private static final AxisAlignedBB BOUNDS = new AxisAlignedBB(4 / 16F, 0, 4 / 16F, 12 / 16F, 12 / 16F, 12 / 16F);
 
     public NyxBlockCyberCrystal() {

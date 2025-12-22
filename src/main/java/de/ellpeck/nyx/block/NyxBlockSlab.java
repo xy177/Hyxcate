@@ -18,12 +18,18 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.fml.common.Optional;
+
 import org.apache.commons.lang3.mutable.MutableObject;
+
+import com.invadermonky.futurefireproof.api.IFireproofBlock;
 
 import java.util.Random;
 import java.util.function.Supplier;
 
-public abstract class NyxBlockSlab extends Block {
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofBlock", striprefs = true)
+public abstract class NyxBlockSlab extends Block implements IFireproofBlock {
 
     protected static final PropertyEnum<EnumBlockHalf> HALF = PropertyEnum.create("half", EnumBlockHalf.class);
     protected static final AxisAlignedBB AABB_BOTTOM_HALF = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);

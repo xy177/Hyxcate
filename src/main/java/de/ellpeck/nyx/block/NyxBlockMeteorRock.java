@@ -10,13 +10,18 @@ import net.minecraft.item.Item;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class NyxBlockMeteorRock extends Block {
+import com.invadermonky.futurefireproof.api.IFireproofBlock;
+
+// If Future Fireproof is installed, make it fireproof like Netherite!
+@Optional.Interface(modid = "futurefireproof", iface = "com.invadermonky.futurefireproof.api.IFireproofBlock", striprefs = true)
+public class NyxBlockMeteorRock extends Block implements IFireproofBlock {
 
     protected final Supplier<Item> droppedItem;
     private final EnumParticleTypes particleType;
