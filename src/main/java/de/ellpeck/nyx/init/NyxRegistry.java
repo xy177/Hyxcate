@@ -76,7 +76,7 @@ public final class NyxRegistry {
     }
 
     @SubscribeEvent
-    public static void registerSoundEvents(RegistryEvent.Register<SoundEvent> event) {
+    public static void onSoundEventRegistry(RegistryEvent.Register<SoundEvent> event) {
         for (NyxSoundEvents soundEvents : NyxSoundEvents.values()) {
             event.getRegistry().register(soundEvents.getSoundEvent());
         }
