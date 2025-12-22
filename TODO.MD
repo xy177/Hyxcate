@@ -1,8 +1,6 @@
 ## Release
 
 - Make sure TiC integration is balanced and just right (currently partially done)
-- Rework config file
-- New attributes for Frezarite, Kreknorite, and Tektite to provide an effect when hit
 
 ## Future Updates
 
@@ -28,3 +26,5 @@
 - Replace 'Star Air' with a cleaner approach
 - Some textures still need to be polished up and armor textures still need to be updated to be consistent
 - Rename all class files
+- Rework config file
+- New attributes for Frezarite, Kreknorite, and Tektite to provide an effect when hit
