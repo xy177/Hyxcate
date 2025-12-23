@@ -164,8 +164,10 @@ public class TinkersConstruct {
         TinkerRegistry.registerMelting(NyxItems.meteoriteShard, METEORITE_FLUID, Material.VALUE_Ingot * 2);
         TinkerSmeltery.registerToolpartMeltingCasting(METEORITE);
 
+        TinkerRegistry.registerMelting(NyxItems.frezariteCrystal, FREZARITE_FLUID, Material.VALUE_Ingot * 2);
         TinkerSmeltery.registerToolpartMeltingCasting(FREZARITE);
 
+        TinkerRegistry.registerMelting(NyxItems.kreknoriteShard, KREKNORITE_FLUID, Material.VALUE_Ingot * 2);
         TinkerSmeltery.registerToolpartMeltingCasting(KREKNORITE);
     }
 }
