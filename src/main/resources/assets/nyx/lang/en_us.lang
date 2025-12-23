@@ -191,7 +191,7 @@ material.nyx.meteorite.name=Meteorite
 material.nyx.tektite.name=Tektite
 
 modifier.nyx.feint.name=Feint
-modifier.nyx.feint.desc=§oFaster than the speed of light!§r\nYour tool has a 20% chance to deal an additional +25% damage while also gaining the ability to pierce through armor.
+modifier.nyx.feint.desc=§oFaster than the speed of light!§r\nYour tool has a 20% chance to deal an additional +25% damage that will pierce through armor.
 modifier.nyx.frezarites_bane.name=Frezarite's Bane
 modifier.nyx.frezarites_bane.desc=§oIt's a nuclear winter!§r\nSuccessful hits inflicts Deep Freeze on your target more and more.
 modifier.nyx.gleaming.name=Gleaming
